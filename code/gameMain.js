@@ -31,8 +31,8 @@ xel.gameSetup = function () {
 
   // Add some sample stuff
   xel.sc1 = xel.mgr.getScene("sc1");
-  xel.spr1 = xel.hx.sprite("assets/placeable/library/bookcaseBooks_SW.png");
-  xel.spr2 = xel.hx.sprite("assets/placeable/library/bookcaseGlass_S.png");
+  xel.spr1 = xel.hx.sprite("assets/2d/placeable/library/bookcaseBooks_SW.png");
+  xel.spr2 = xel.hx.sprite("assets/2d/placeable/library/bookcaseGlass_S.png");
   xel.spr1.vx = 5 * xel.hx.randomInt(-1, -0.1);
   xel.spr1.vy = 5 * xel.hx.randomInt(0.1, 1);
   xel.spr2.vx = 5 * xel.hx.randomInt(0.1, 1);
