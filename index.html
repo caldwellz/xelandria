@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xelandria</title>
+  </head>
+  <body onload="main()">
+    <script>
+      // Set up engine object and platform variables
+      xel = {
+        platform: "browser",
+        windowWidth: window.innerWidth,
+        windowHeight: window.innerHeight,
+        maxFPS: 60
+      };
+    </script>
+    <script src="lib/hexi.min.js"></script>\
+    <script src="code/gameActors.js"></script>
+    <script src="code/gameLogic.js"></script>
+    <script src="code/gameMain.js"></script>
+  </body>
+</html>
