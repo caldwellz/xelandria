@@ -1,0 +1,20 @@
+{ "columns":1,
+ "grid":
+    {
+     "height":128,
+     "orientation":"isometric",
+     "width":256
+    },
+ "image":"library_4.png",
+ "imageheight":18432,
+ "imagewidth":256,
+ "margin":0,
+ "name":"library_4",
+ "spacing":0,
+ "tilecount":36,
+ "tiledversion":"1.2.3",
+ "tileheight":512,
+ "tilewidth":256,
+ "type":"tileset",
+ "version":1.2
+}

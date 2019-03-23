@@ -1,0 +1,14 @@
+[
+    {
+        "color": "#ff00ff00",
+        "name": "container",
+        "properties": [
+        ]
+    },
+    {
+        "color": "#ff0000ff",
+        "name": "transition",
+        "properties": [
+        ]
+    }
+]
