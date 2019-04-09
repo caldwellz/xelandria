@@ -4,20 +4,43 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xelandria</title>
+    <style>
+      #statusMsg {
+        min-height: 1rem;
+        border: 2px solid black;
+        margin-top: 0;
+        padding: 3px;
+      }
+    </style>
   </head>
-  <body onload="main()">
+  <body>
+    <h4 id="statusMsg"></h4>
     <script>
-      // Set up engine object and platform variables
-      xel = {
-        platform: "browser",
-        windowWidth: window.innerWidth,
-        windowHeight: window.innerHeight,
-        maxFPS: 60
+      // Set up environment (browser) logging
+      window.onerror = function(e) {
+        document.getElementById("statusMsg").innerHTML = e;
+      };
+      logger = {
+        file: "index.html"
+      };
+      logger.log = function (msg) {
+        msgText = logger.file + ': ' + msg;
+        document.getElementById("statusMsg").innerHTML = msgText;
+        console.log(msgText);
+      };
+      logger.warn = function (msg) {
+        msgText = logger.file + ': ' + msg;
+        document.getElementById("statusMsg").innerHTML = '<span style="color: orange;">' + msgText + '</span>';
+        console.warn(msgText);
+      };
+      logger.error = function (msg) {
+        msgText = logger.file + ': ' + msg;
+        document.getElementById("statusMsg").innerHTML = '<span style="color: red;">' + msgText + '</span>';
+        console.error(msgText);
       };
     </script>
-    <script src="lib/hexi.min.js"></script>\
-    <script src="code/gameActors.js"></script>
-    <script src="code/gameLogic.js"></script>
-    <script src="code/gameMain.js"></script>
+	  <script src="https://pixijs.download/v5.0.0-rc.3/pixi-legacy.min.js"></script>
+    <script src="code/engine/xel.js"></script>
+    <script src="code/main.js"></script>
   </body>
 </html>
