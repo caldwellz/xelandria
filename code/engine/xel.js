@@ -3,21 +3,26 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 // *** imports
-if (typeof logger === 'undefined') { throw "Please set up environment-specific logger"; }
+if (typeof logger === 'undefined') { throw "Logger not loaded!"; }
 else logger.file = "xel.js";
-if (typeof PIXI === 'undefined') { throw "xel.js: PIXI not loaded!"; }
+if (typeof PIXI === 'undefined') { throw "PIXI not loaded!"; }
 var xel = xel || {};
 // ***
 
 xel.initialize = function () {
-	xel.app = new PIXI.Application();
+	xel.app = new PIXI.Application({resizeTo: document.body});
+  document.body.removeChild(logger.logbox); // Move it after the canvas element
+  document.body.appendChild(xel.app.view);
+  document.body.appendChild(logger.logbox);
 };
 
 xel.destroy = function () {
-  xel.app.destroy(true, true);
+  document.body.removeChild(xel.app.view);
+  xel.app.destroy(false, true);
+  logger.clear();
 };
 
 xel.reload = function () {
   xel.destroy();
   xel.initialize();
-}
+};
