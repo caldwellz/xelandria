@@ -3,9 +3,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 // *** imports
-if (typeof logger === 'undefined') { throw "Logger not loaded!"; }
-else logger.file = "main.js";
-if (typeof xel === 'undefined') { throw "xel engine does not exist!"; }
+if (typeof logger === 'undefined') { throw "main.js: Logger not loaded!"; }
+if (typeof xel === 'undefined') { throw "main.js: xel engine does not exist!"; }
 // ***
 
 function main() {

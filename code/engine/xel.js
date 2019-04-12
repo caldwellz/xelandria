@@ -3,9 +3,8 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 // *** imports
-if (typeof logger === 'undefined') { throw "Logger not loaded!"; }
-else logger.file = "xel.js";
-if (typeof PIXI === 'undefined') { throw "PIXI not loaded!"; }
+if (typeof logger === 'undefined') { throw "xel.js: Logger not loaded!"; }
+if (typeof PIXI === 'undefined') { throw "xel.js: PIXI not loaded!"; }
 var xel = xel || {};
 // ***
 

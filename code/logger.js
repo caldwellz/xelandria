@@ -3,48 +3,59 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 var logger = {};
+logger.messages = new Array();
 logger.logbox = document.createElement("div");
 logger.logbox.id = "logbox";
-logger.file = "logger.js";
 document.body.append(logger.logbox);
 
 logger.clear = function () {
-  logger.logbox.innerHTML = "";
+  this.messages = new Array();
+  this.logbox.innerHTML = "";
+  console.clear();
+}
+
+logger.push = function (msg) {
+  if (msg) {
+    this.messages.unshift(msg);
+    this.logbox.innerHTML = this.messages.join("<br />");
+  }
+};
+
+logger.rewrite = function (msg) {
+  if (msg) {
+    this.messages[0] = msg;
+    this.logbox.innerHTML = this.messages.join("<br />");
+  }
 }
 
 logger.log = function (msg) {
   if (msg) {
-    msgText = logger.file + ': ' + msg;
-    var boxContent = msgText + '<br />' + logger.logbox.innerHTML;
-    logger.logbox.innerHTML = boxContent;
-    console.log(msgText);
+    logger.push(msg);
+    console.log(msg);
   }
 };
 
 logger.warn = function (msg) {
   if (msg) {
-    msgText = logger.file + ': ' + msg;
-    var boxContent = '<span style="color: orange;">' + msgText + '</span><br />' + logger.logbox.innerHTML;
-    logger.logbox.innerHTML = boxContent;
-    console.warn(msgText);
+    msgHTML = '<span style="color: orange;">WARN: ' + msg + '</span>';
+    logger.push(msgHTML);
+    console.warn(msg);
   }
 };
 
 logger.error = function (msg) {
   if (msg) {
-    msgText = logger.file + ': ' + msg;
-    var boxContent = '<span style="color: red;">' + msgText + '</span><br />' + logger.logbox.innerHTML;
-    logger.logbox.innerHTML = boxContent;
-    console.error(msgText);
+    msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
+    logger.push(msgHTML);
+    console.error(msg);
   }
 };
 
-// Uncaught throws will be logged in console by the window
+// Uncaught throws will typically be logged in console by the window
 logger.boxError = function (msg) {
   if (msg) {
-    msgText = logger.file + ': ' + msg;
-    var boxContent = '<span style="color: red;">' + msgText + '</span><br />' + logger.logbox.innerHTML;
-    logger.logbox.innerHTML = boxContent;
+    msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
+    logger.push(msgHTML);
   }
 };
 
