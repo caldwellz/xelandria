@@ -9,22 +9,22 @@ logger.logbox.id = "logbox";
 document.body.append(logger.logbox);
 
 logger.clear = function () {
-  this.messages = new Array();
-  this.logbox.innerHTML = "";
+  logger.messages = new Array();
+  logger.logbox.innerHTML = "";
   console.clear();
 }
 
 logger.push = function (msg) {
   if (msg) {
-    this.messages.unshift(msg);
-    this.logbox.innerHTML = this.messages.join("<br />");
+    logger.messages.unshift(msg);
+    logger.logbox.innerHTML = logger.messages.join("<br />");
   }
 };
 
 logger.rewrite = function (msg) {
   if (msg) {
-    this.messages[0] = msg;
-    this.logbox.innerHTML = this.messages.join("<br />");
+    logger.messages[0] = msg;
+    logger.logbox.innerHTML = logger.messages.join("<br />");
   }
 }
 
