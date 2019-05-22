@@ -8,6 +8,7 @@ if (typeof xel === 'undefined') { throw "main.js: xel engine does not exist!"; }
 // ***
 
 function main() {
+  logger.debugMode = true;
   xel.initialize();
 }
 

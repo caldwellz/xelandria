@@ -12,7 +12,7 @@ logger.clear = function () {
   logger.messages = new Array();
   logger.logbox.innerHTML = "";
   console.clear();
-}
+};
 
 logger.push = function (msg) {
   if (msg) {
@@ -26,34 +26,48 @@ logger.rewrite = function (msg) {
     logger.messages[0] = msg;
     logger.logbox.innerHTML = logger.messages.join("<br />");
   }
-}
+};
 
 logger.log = function (msg) {
   if (msg) {
-    logger.push(msg);
+    if (typeof msg === 'string') logger.push(msg);
+    console.log(msg);
+  }
+};
+
+logger.debug = function (msg) {
+  if (msg && logger.debugMode) {
+    if (typeof msg === 'string') {
+      msgHTML = '<span style="color: #909090;">DEBUG: ' + msg + '</span>';
+      logger.push(msgHTML);
+    }
     console.log(msg);
   }
 };
 
 logger.warn = function (msg) {
   if (msg) {
-    msgHTML = '<span style="color: orange;">WARN: ' + msg + '</span>';
-    logger.push(msgHTML);
+    if (typeof msg === 'string') {
+      msgHTML = '<span style="color: orange;">WARN: ' + msg + '</span>';
+      logger.push(msgHTML);
+    }
     console.warn(msg);
   }
 };
 
 logger.error = function (msg) {
   if (msg) {
-    msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
-    logger.push(msgHTML);
+    if (typeof msg === 'string') {
+      msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
+      logger.push(msgHTML);
+    }
     console.error(msg);
   }
 };
 
 // Uncaught throws will typically be logged in console by the window
 logger.boxError = function (msg) {
-  if (msg) {
+  if (typeof msg === 'string') {
     msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
     logger.push(msgHTML);
   }
