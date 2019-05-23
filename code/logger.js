@@ -38,7 +38,7 @@ logger.log = function (msg) {
 logger.debug = function (msg) {
   if (msg && logger.debugMode) {
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: #909090;">DEBUG: ' + msg + '</span>';
+      msgHTML = '<span style="color: #909090;">[DBG] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.log(msg);
@@ -48,7 +48,7 @@ logger.debug = function (msg) {
 logger.warn = function (msg) {
   if (msg) {
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: orange;">WARN: ' + msg + '</span>';
+      msgHTML = '<span style="color: orange;">[WARN] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.warn(msg);
@@ -58,7 +58,7 @@ logger.warn = function (msg) {
 logger.error = function (msg) {
   if (msg) {
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
+      msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.error(msg);
@@ -68,7 +68,7 @@ logger.error = function (msg) {
 // Uncaught throws will typically be logged in console by the window
 logger.boxError = function (msg) {
   if (typeof msg === 'string') {
-    msgHTML = '<span style="color: red;">ERROR: ' + msg + '</span>';
+    msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
     logger.push(msgHTML);
   }
 };
