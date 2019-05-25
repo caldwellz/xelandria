@@ -8,17 +8,27 @@ if (typeof PIXI === 'undefined') { throw "xel.js: PIXI not loaded!"; }
 var xel = xel || {};
 // ***
 
+xel.initialized = false;
+
 xel.initialize = function () {
-	xel.app = new PIXI.Application({resizeTo: document.body});
-  document.body.removeChild(logger.logbox); // Move it after the canvas element
-  document.body.appendChild(xel.app.view);
-  document.body.appendChild(logger.logbox);
+  if (!xel.initialized) {
+    xel.app = new PIXI.Application({resizeTo: document.body});
+    document.body.removeChild(logger.logbox); // Move it after the canvas element
+    document.body.appendChild(xel.app.view);
+    document.body.appendChild(logger.logbox);
+    xel.initialized = true;
+  }
 };
 
 xel.destroy = function () {
-  document.body.removeChild(xel.app.view);
-  xel.app.destroy(false, true);
-  logger.clear();
+  if (xel.initialized) {
+    document.body.removeChild(xel.app.view);
+    xel.app.destroy(false, true);
+    delete xel.app;
+    if (!logger.testMode)
+      logger.clear();
+    xel.initialized = false;
+  }
 };
 
 xel.reload = function () {
