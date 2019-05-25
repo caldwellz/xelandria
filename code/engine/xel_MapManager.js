@@ -16,34 +16,37 @@ xel.MapManager.clear = function () {
 };
 
 xel.MapManager._cacheCallback = function (resource, next) {
+  logger.module = "xel.MapManager.progressCallback";
   if (resource.name in xel.MapManager._mapCache) {
-    logger.debug("xel.MapManager.cacheCallback: Map '" + resource.name + "' was cached, not loading again");
+    logger.debug("Map '" + resource.name + "' was cached, not loading again");
     return;
   } else
     next();
 };
 
 xel.MapManager._progressCallback = function (loader, resource) {
+  logger.module = "xel.MapManager.progressCallback";
   if ((resource.error !== null) || (resource.data === null)) {
-    logger.error("xel.MapManager.progressCallback: Failed to load map file");
+    logger.error("Failed to load map file");
     logger.debug(resource.url);
     return;
   }
 
   if (resource.data.type !== "map") {
-    logger.error("xel.MapManager.progressCallback: Loaded file isn't a Tiled JSON map");
+    logger.error("Loaded file isn't a Tiled JSON map");
     logger.debug(resource.url);
     return;
   }
 
   var map = new xel.Map(resource.data);
   if (map) {
-    logger.debug("xel.MapManager.progressCallback: Loaded and caching map '" + resource.name + "'");
+    logger.debug("Loaded and caching map '" + resource.name + "'");
     xel.MapManager._mapCache[resource.name] = map;
   }
 };
 
 xel.MapManager.load = function (maps, onProgressMiddleware) {
+  logger.module = "xel.MapManager.load";
   var mapLoader = new PIXI.Loader();
   if (typeof maps === 'object') {
     for (var prop in maps) {
@@ -51,14 +54,14 @@ xel.MapManager.load = function (maps, onProgressMiddleware) {
         if ((typeof prop === 'string') && (typeof maps[prop] === 'string')) {
           mapLoader.add(prop, maps[prop]);
         } else {
-          logger.error("xel.MapManager.load: maps name or URL is not a string");
+          logger.error("maps name or URL is not a string");
           logger.debug(maps);
           return;
         }
       }
     }
   } else {
-    logger.error("xel.MapManager.load: maps arg is not an object");
+    logger.error("maps arg is not an object");
     logger.debug(maps);
     return;
   }

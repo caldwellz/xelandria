@@ -34,7 +34,7 @@ logger.rewrite = function (msg) {
 };
 
 logger.modulize = function (msg) {
-  if ((typeof msg === 'string') && (logger.module.length > 0))
+  if ((typeof msg === 'string') && (logger.module.length > 0) && (logger.debugMode || logger.testMode))
     return logger.module + ": " + msg;
   else
     return msg;
