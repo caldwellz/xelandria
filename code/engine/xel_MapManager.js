@@ -71,3 +71,36 @@ xel.MapManager.load = function (maps, onProgressMiddleware) {
     mapLoader.onProgress.add(onProgressMiddleware);
   mapLoader.load();
 };
+
+xel.MapManager.get = function (mapName, mapURL) {
+  logger.module = "xel.MapManager.get";
+  if (typeof mapName !== 'string') {
+    logger.error("mapName not a string");
+    logger.debug(mapName);
+    return;
+  }
+
+  if (xel.MapManager._mapCache[mapName]) {
+    return xel.MapManager._mapCache[mapName];
+  } else {
+    if (typeof mapURL !== 'string') {
+      logger.error("map '" + mapName + "' not cached and mapURL not a string");
+      logger.debug(mapURL);
+      return;
+    }
+
+    xel.MapManager.load({mapName : mapURL});
+    return xel.MapManager._mapCache[mapName];
+  }
+};
+
+xel.MapManager.destroy = function (mapName) {
+  logger.module = "xel.MapManager.destroy";
+  if (typeof mapName !== 'string') {
+    logger.error("mapName not a string");
+    logger.debug(mapName);
+    return;
+  }
+
+  delete xel.MapManager._mapCache[mapName];
+};
