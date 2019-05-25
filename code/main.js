@@ -14,7 +14,7 @@ function main() {
   var maps = {
     "a0m0"  : "assets/maps/a0m0.json"
   };
-  xel.MapManager.loadMaps(maps);
+  xel.MapManager.load(maps);
 }
 
 main();

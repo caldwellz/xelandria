@@ -43,7 +43,7 @@ xel.MapManager._progressCallback = function (loader, resource) {
   }
 };
 
-xel.MapManager.loadMaps = function (maps, onProgressMiddleware) {
+xel.MapManager.load = function (maps, onProgressMiddleware) {
   var mapLoader = new PIXI.Loader();
   if (typeof maps === 'object') {
     for (var prop in maps) {
@@ -51,20 +51,19 @@ xel.MapManager.loadMaps = function (maps, onProgressMiddleware) {
         if ((typeof prop === 'string') && (typeof maps[prop] === 'string')) {
           mapLoader.add(prop, maps[prop]);
         } else {
-          logger.error("xel.MapManager.loadMaps: maps name or URL is not a string");
+          logger.error("xel.MapManager.load: maps name or URL is not a string");
           logger.debug(maps);
           return;
         }
       }
     }
   } else {
-    logger.error("xel.MapManager.loadMaps: maps arg is not an object");
+    logger.error("xel.MapManager.load: maps arg is not an object");
     logger.debug(maps);
     return;
   }
 
-  mapLoader.pre(xel.MapManager._cacheCallback)
-           .onProgress.add(xel.MapManager._progressCallback);
+  mapLoader.pre(xel.MapManager._cacheCallback).onProgress.add(xel.MapManager._progressCallback);
   if (onProgressMiddleware)
     mapLoader.onProgress.add(onProgressMiddleware);
   mapLoader.load();

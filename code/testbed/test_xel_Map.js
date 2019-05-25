@@ -19,12 +19,12 @@ async function test_xel_Map() {
     "a0m0" : "assets/maps/a0m0.json"
   };
 
-  xel.MapManager.loadMaps(maps);
+  xel.MapManager.load(maps);
   await testutils.sleep(1000);
   if (xel.MapManager._mapCache["a0m0"]) {
     logger.pass("Map a0m0 loaded into cache");
     xel.MapManager._mapCache["a0m0"].canary = true;
-    xel.MapManager.loadMaps(maps);
+    xel.MapManager.load(maps);
     await testutils.sleep(1000);
 
     if(xel.MapManager._mapCache["a0m0"].canary)
