@@ -11,8 +11,7 @@ function main() {
   logger.debugMode = true;
   xel.initialize();
 
-  var startMap = xel.MapManager.get("a0m0", "assets/maps/a0m0.json");
-  logger.log(startMap.tiledversion);
+  xel.MapManager.load("a0m0", "assets/maps/a0m0.json");
 }
 
 main();

@@ -45,8 +45,8 @@ xel.MapManager._progressCallback = function (loader, resource) {
   }
 };
 
-xel.MapManager.load = function (maps, onProgressMiddleware) {
-  logger.module = "xel.MapManager.load";
+xel.MapManager.cache = function (maps, onProgressMiddleware) {
+  logger.module = "xel.MapManager.cache";
   var mapLoader = new PIXI.Loader();
   if (typeof maps === 'object') {
     for (var prop in maps) {
@@ -82,3 +82,52 @@ xel.MapManager.uncache = function (mapName) {
 
   delete xel.MapManager._mapCache[mapName];
 };
+
+xel.MapManager._loadCached = function (mapName) {
+  logger.module = "xel.MapManager._loadCached";
+  if (typeof mapName !== 'string') {
+    logger.error("mapName not a string");
+    logger.debug(mapName);
+    return;
+  }
+
+  if (!(xel.MapManager._mapCache[mapName])) {
+    logger.error("mapName '" + mapName + "' not in cache");
+    return;
+  }
+
+  xel.MapManager._currentMap = xel.MapManager._mapCache[mapName];
+
+  // TODO: Actually swap out and display the map
+  // Ideally should be as simple as swapping stage child
+
+  logger.log(xel.MapManager._currentMap._orientation);
+  logger.debug("Map '" + mapName + "' loaded");
+}
+
+xel.MapManager.load = function (mapName, mapURL) {
+  logger.module = "xel.MapManager.load";
+  if (typeof mapName !== 'string') {
+    logger.error("mapName not a string");
+    logger.debug(mapName);
+    return;
+  }
+
+  if (xel.MapManager._mapCache[mapName]) {
+    xel.MapManager._loadCached(mapName);
+  } else {
+    if (typeof mapURL !== 'string') {
+      logger.error("map '" + mapName + "' not cached and mapURL not a string");
+      logger.debug(mapURL);
+      return;
+    }
+
+    var mapLoader = new PIXI.Loader();
+    mapLoader.add(mapName, mapURL);
+    mapLoader.pre(xel.MapManager._cacheCallback).onProgress.add(xel.MapManager._progressCallback);
+    mapLoader.load(function(loader, resources) {
+      xel.MapManager._loadCached(mapName);
+    });
+  }
+};
+

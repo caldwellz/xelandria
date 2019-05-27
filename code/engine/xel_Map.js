@@ -9,6 +9,6 @@ var xel = xel || {};
 // ***
 
 xel.Map = function (tiledMapData) {
-  logger.log(tiledMapData["tiledversion"]);
+  this._orientation = tiledMapData.orientation;
   return this;
 };
