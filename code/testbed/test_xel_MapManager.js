@@ -35,4 +35,19 @@ async function test_xel_MapManager() {
   else {
     logger.fail("Map a0m0 not loaded into cache");
   }
+
+  xel.MapManager.uncache("a0m0");
+  if (xel.MapManager._mapCache["a0m0"])
+    logger.fail("Map still cached after uncache()");
+  else
+    logger.pass("Map uncached successfully");
+
+  for (mapName in maps) {
+    xel.MapManager.load(mapName, maps[mapName]);
+    await testutils.sleep(1000);
+    if ((xel.MapManager._currentMap) && (xel.MapManager._currentMap.name === "a0m0"))
+      logger.pass("Map loaded as current map");
+    else
+      logger.fail("Map not loaded as current map");
+  }
 }

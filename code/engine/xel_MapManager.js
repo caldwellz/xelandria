@@ -41,6 +41,7 @@ xel.MapManager._progressCallback = function (loader, resource) {
   var map = new xel.Map(resource.data);
   if (map) {
     logger.debug("Loaded and caching map '" + resource.name + "'");
+    map.name = resource.name;
     xel.MapManager._mapCache[resource.name] = map;
   }
 };
@@ -101,7 +102,6 @@ xel.MapManager._loadCached = function (mapName) {
   // TODO: Actually swap out and display the map
   // Ideally should be as simple as swapping stage child
 
-  logger.log(xel.MapManager._currentMap._orientation);
   logger.debug("Map '" + mapName + "' loaded");
 }
 
