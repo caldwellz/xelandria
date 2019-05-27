@@ -10,8 +10,8 @@ if (typeof xel.Map === 'undefined') { throw "xel.Map does not exist!"; }
 if (typeof xel.MapManager === 'undefined') { throw "xel.MapManager does not exist!"; }
 // ***
 
-async function test_xel_Map() {
-  logger.module = "testbed/test_xel_Map";
+async function test_xel_MapManager() {
+  logger.module = "testbed/test_xel_MapManager";
   if (!xel.initialized)
     return;
 

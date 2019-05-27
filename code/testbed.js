@@ -15,8 +15,8 @@ async function testMain() {
   if (typeof test_xel === 'function')
     test_xel(); //xel.initialize(), etc.
 
-  if (typeof test_xel_Map === 'function')
-    test_xel_Map();
+  if (typeof test_xel_MapManager === 'function')
+    test_xel_MapManager();
 }
 
 testMain();
