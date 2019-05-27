@@ -16,7 +16,7 @@ xel.MapManager.clear = function () {
 };
 
 xel.MapManager._cacheCallback = function (resource, next) {
-  logger.module = "xel.MapManager.progressCallback";
+  logger.module = "xel.MapManager._cacheCallback";
   if (resource.name in xel.MapManager._mapCache) {
     logger.debug("Map '" + resource.name + "' was cached, not loading again");
     return;
@@ -25,7 +25,7 @@ xel.MapManager._cacheCallback = function (resource, next) {
 };
 
 xel.MapManager._progressCallback = function (loader, resource) {
-  logger.module = "xel.MapManager.progressCallback";
+  logger.module = "xel.MapManager._progressCallback";
   if ((resource.error !== null) || (resource.data === null)) {
     logger.error("Failed to load map file");
     logger.debug(resource.url);
@@ -72,30 +72,8 @@ xel.MapManager.load = function (maps, onProgressMiddleware) {
   mapLoader.load();
 };
 
-xel.MapManager.get = function (mapName, mapURL) {
-  logger.module = "xel.MapManager.get";
-  if (typeof mapName !== 'string') {
-    logger.error("mapName not a string");
-    logger.debug(mapName);
-    return;
-  }
-
-  if (xel.MapManager._mapCache[mapName]) {
-    return xel.MapManager._mapCache[mapName];
-  } else {
-    if (typeof mapURL !== 'string') {
-      logger.error("map '" + mapName + "' not cached and mapURL not a string");
-      logger.debug(mapURL);
-      return;
-    }
-
-    xel.MapManager.load({mapName : mapURL});
-    return xel.MapManager._mapCache[mapName];
-  }
-};
-
-xel.MapManager.destroy = function (mapName) {
-  logger.module = "xel.MapManager.destroy";
+xel.MapManager.uncache = function (mapName) {
+  logger.module = "xel.MapManager.uncache";
   if (typeof mapName !== 'string') {
     logger.error("mapName not a string");
     logger.debug(mapName);
