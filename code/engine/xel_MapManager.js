@@ -13,6 +13,7 @@ xel.MapManager._mapCache = {};
 
 xel.MapManager.clear = function () {
   xel.MapManager._mapCache = {};
+  delete xel.MapManager._currentMap;
 };
 
 xel.MapManager._cacheCallback = function (resource, next) {
