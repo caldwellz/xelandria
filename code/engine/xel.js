@@ -12,17 +12,16 @@ xel.initialized = false;
 
 xel.initialize = function () {
   if (!xel.initialized) {
-    xel.app = new PIXI.Application({resizeTo: document.body});
-    document.body.removeChild(logger.logbox); // Move it after the canvas element
-    document.body.appendChild(xel.app.view);
-    document.body.appendChild(logger.logbox);
+    var elem = document.getElementById("stage");
+    xel.app = new PIXI.Application({resizeTo: elem});
+    elem.appendChild(xel.app.view);
     xel.initialized = true;
   }
 };
 
 xel.destroy = function () {
   if (xel.initialized) {
-    document.body.removeChild(xel.app.view);
+    document.getElementById("stage").removeChild(xel.app.view);
     xel.app.destroy(false, true);
     delete xel.app;
     if (!logger.testMode)

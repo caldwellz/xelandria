@@ -10,25 +10,26 @@
       }
 
       body {
-        height: 1rem;
+        margin: 0;
+        overflow: hidden;
       }
 
-      canvas {
-        border: 1px solid black;
-        margin: 0 auto 0 auto;
+      #stage {
+        height: 1rem;
+        width: 100%;
       }
 
       #logbox {
         width: 100%;
-        height: calc(100vh - 2rem);
+        height: calc(100vh - 1rem);
         overflow: scroll;
         border: 2px solid black;
-        margin-top: 0.5rem;
         padding: 3px;
       }
     </style>
   </head>
   <body>
+    <div id="stage"></div>
     <script src="code/engine/logger.js"></script>
 	  <script src="lib/pixi.js"></script>
     <script src="code/engine/xel.js"></script>
