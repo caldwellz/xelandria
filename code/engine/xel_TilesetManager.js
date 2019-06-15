@@ -10,6 +10,7 @@ if ((typeof xel === 'undefined') || (typeof xel.Tileset === 'undefined')) { thro
 
 xel.TilesetManager = {};
 xel.TilesetManager._tilesetCache = {};
+xel.TilesetManager._tilesetLoading = {};
 
 xel.TilesetManager.clear = function () {
   xel.TilesetManager._tilesetCache = {};
@@ -40,7 +41,6 @@ xel.TilesetManager._progressCallback = function (loader, resource) {
 
   var tileset = new xel.Tileset(resource.data);
   if (tileset) {
-    logger.debug("Loaded and caching tileset '" + resource.name + "'");
     xel.TilesetManager._tilesetCache[resource.name] = tileset;
     if (resource.name !== resource.data.name)
       logger.debug("Resource cache name '" + resource.name + "' doesn't match tileset's internal name '" + resource.data.name + "'");
@@ -85,25 +85,7 @@ xel.TilesetManager.uncache = function (tilesetName) {
   delete xel.TilesetManager._tilesetCache[tilesetName];
 };
 
-xel.TilesetManager._loadCached = function (tilesetName) {
-  logger.module = "xel.TilesetManager._loadCached";
-  if (typeof tilesetName !== 'string') {
-    logger.error("tilesetName not a string");
-    logger.debug(tilesetName);
-    return;
-  }
-
-  if (!(xel.TilesetManager._tilesetCache[tilesetName])) {
-    logger.error("tilesetName '" + tilesetName + "' not in cache");
-    return;
-  }
-
-  // TODO: Actually use / display the tileset
-
-  logger.debug("Tileset '" + tilesetName + "' loaded");
-}
-
-xel.TilesetManager.load = function (tilesetName, tilesetURL) {
+xel.TilesetManager.load = function (tilesetName, tilesetURL, callback, cbOpts) {
   logger.module = "xel.TilesetManager.load";
   if (typeof tilesetName !== 'string') {
     logger.error("tilesetName not a string");
@@ -112,7 +94,8 @@ xel.TilesetManager.load = function (tilesetName, tilesetURL) {
   }
 
   if (xel.TilesetManager._tilesetCache[tilesetName]) {
-    xel.TilesetManager._loadCached(tilesetName);
+    if (typeof callback === "function")
+      callback(xel.TilesetManager._tilesetCache[tilesetName], cbOpts);
   } else {
     if (typeof tilesetURL !== 'string') {
       logger.error("tileset '" + tilesetName + "' not cached and tilesetURL not a string");
@@ -122,10 +105,13 @@ xel.TilesetManager.load = function (tilesetName, tilesetURL) {
 
     var tilesetLoader = new PIXI.Loader();
     tilesetLoader.add(tilesetName, tilesetURL);
+    // TODO: Check whether load still gets called even if cache callback bails out due to a previous asynchronous load finishing
     tilesetLoader.pre(xel.TilesetManager._cacheCallback).onProgress.add(xel.TilesetManager._progressCallback);
     tilesetLoader.load(function(loader, resources) {
-      xel.TilesetManager._loadCached(tilesetName);
+      if (resources[tilesetName].data) {
+        if (typeof callback === "function")
+          callback(resources[tilesetName].data, cbOpts);
+      }
     });
   }
 };
-

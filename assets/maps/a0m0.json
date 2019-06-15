@@ -92,71 +92,71 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"..\/graphics\/tilesets\/dungeon\/barrelsStacked.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/barrelsStacked.json"
         }, 
         {
          "firstgid":9,
-         "source":"..\/graphics\/tilesets\/dungeon\/stone.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stone.json"
         }, 
         {
          "firstgid":17,
-         "source":"..\/graphics\/tilesets\/dungeon\/stoneCorner.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stoneCorner.json"
         }, 
         {
          "firstgid":25,
-         "source":"..\/graphics\/tilesets\/dungeon\/stoneSide.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stoneSide.json"
         }, 
         {
          "firstgid":33,
-         "source":"..\/graphics\/tilesets\/dungeon\/stoneWall.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stoneWall.json"
         }, 
         {
          "firstgid":41,
-         "source":"..\/graphics\/tilesets\/dungeon\/stoneWallCorner.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stoneWallCorner.json"
         }, 
         {
          "firstgid":49,
-         "source":"..\/graphics\/tilesets\/dungeon\/stoneWallColumnIn.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stoneWallColumnIn.json"
         }, 
         {
          "firstgid":57,
-         "source":"..\/graphics\/tilesets\/dungeon\/stoneWallGateClosed.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/stoneWallGateClosed.json"
         }, 
         {
          "firstgid":65,
-         "source":"..\/graphics\/tilesets\/dungeon\/tableRoundChairs.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/tableRoundChairs.json"
         }, 
         {
          "firstgid":73,
-         "source":"..\/graphics\/tilesets\/dungeon\/tableRoundItemsChairs.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/tableRoundItemsChairs.json"
         }, 
         {
          "firstgid":81,
-         "source":"..\/graphics\/tilesets\/dungeon\/woodenCrates.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/woodenCrates.json"
         }, 
         {
          "firstgid":89,
-         "source":"..\/graphics\/tilesets\/dungeon\/woodenPile.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/woodenPile.json"
         }, 
         {
          "firstgid":97,
-         "source":"..\/graphics\/tilesets\/dungeon\/chestClosed.json"
+         "source":"\/assets\/graphics\/tilesets\/dungeon\/chestClosed.json"
         }, 
         {
          "firstgid":105,
-         "source":"..\/graphics\/tilesets\/library\/displayCaseSword.json"
+         "source":"\/assets\/graphics\/tilesets\/library\/displayCaseSword.json"
         }, 
         {
          "firstgid":113,
-         "source":"..\/graphics\/tilesets\/library\/floorCarpet.json"
+         "source":"\/assets\/graphics\/tilesets\/library\/floorCarpet.json"
         }, 
         {
          "firstgid":121,
-         "source":"..\/graphics\/tilesets\/library\/floorCarpetEnd.json"
+         "source":"\/assets\/graphics\/tilesets\/library\/floorCarpetEnd.json"
         }, 
         {
          "firstgid":129,
-         "source":"..\/graphics\/tilesets\/library\/longTableDecorated.json"
+         "source":"\/assets\/graphics\/tilesets\/library\/longTableDecorated.json"
         }],
  "tilewidth":256,
  "type":"map",
