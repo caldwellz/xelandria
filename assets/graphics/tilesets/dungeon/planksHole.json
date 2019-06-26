@@ -1,1 +1,50 @@
-{"columns":4,"image":"planksHole.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"planksHole","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"planksHole_0.png": {
+		"frame": {"x":0, "y":511, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_1.png": {
+		"frame": {"x":257, "y":321, "w":256, "h":189},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_2.png": {
+		"frame": {"x":257, "y":188, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_3.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":187},
+		"spriteSourceSize": {"x":0,"y":322,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_4.png": {
+		"frame": {"x":257, "y":511, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_5.png": {
+		"frame": {"x":0, "y":321, "w":256, "h":189},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_6.png": {
+		"frame": {"x":0, "y":188, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksHole_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":187},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "planksHole.png",
+	"size": {"w": 514, "h": 644},
+	"scale": "1"
+}
+}

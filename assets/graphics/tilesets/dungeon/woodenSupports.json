@@ -1,1 +1,50 @@
-{"columns":4,"image":"woodenSupports.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"woodenSupports","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"woodenSupports_0.png": {
+		"frame": {"x":257, "y":225, "w":141, "h":224},
+		"spriteSourceSize": {"x":0,"y":288,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_1.png": {
+		"frame": {"x":541, "y":0, "w":26, "h":357},
+		"spriteSourceSize": {"x":0,"y":155,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_2.png": {
+		"frame": {"x":399, "y":226, "w":141, "h":225},
+		"spriteSourceSize": {"x":0,"y":230,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_3.png": {
+		"frame": {"x":0, "y":195, "w":256, "h":195},
+		"spriteSourceSize": {"x":0,"y":155,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_4.png": {
+		"frame": {"x":399, "y":0, "w":141, "h":225},
+		"spriteSourceSize": {"x":115,"y":230,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_5.png": {
+		"frame": {"x":568, "y":0, "w":26, "h":357},
+		"spriteSourceSize": {"x":230,"y":155,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_6.png": {
+		"frame": {"x":257, "y":0, "w":141, "h":224},
+		"spriteSourceSize": {"x":115,"y":288,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenSupports_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":194},
+		"spriteSourceSize": {"x":0,"y":318,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "woodenSupports.png",
+	"size": {"w": 595, "h": 452},
+	"scale": "1"
+}
+}

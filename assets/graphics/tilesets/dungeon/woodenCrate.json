@@ -1,1 +1,50 @@
-{"columns":4,"image":"woodenCrate.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"woodenCrate","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"woodenCrate_0.png": {
+		"frame": {"x":176, "y":200, "w":87, "h":78},
+		"spriteSourceSize": {"x":76,"y":388,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_1.png": {
+		"frame": {"x":91, "y":100, "w":90, "h":99},
+		"spriteSourceSize": {"x":93,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_2.png": {
+		"frame": {"x":88, "y":200, "w":87, "h":78},
+		"spriteSourceSize": {"x":76,"y":388,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_3.png": {
+		"frame": {"x":91, "y":0, "w":90, "h":99},
+		"spriteSourceSize": {"x":93,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_4.png": {
+		"frame": {"x":182, "y":0, "w":87, "h":78},
+		"spriteSourceSize": {"x":76,"y":388,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_5.png": {
+		"frame": {"x":0, "y":100, "w":90, "h":99},
+		"spriteSourceSize": {"x":93,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_6.png": {
+		"frame": {"x":0, "y":200, "w":87, "h":78},
+		"spriteSourceSize": {"x":76,"y":388,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"woodenCrate_7.png": {
+		"frame": {"x":0, "y":0, "w":90, "h":99},
+		"spriteSourceSize": {"x":93,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "woodenCrate.png",
+	"size": {"w": 270, "h": 279},
+	"scale": "1"
+}
+}

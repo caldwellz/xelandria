@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneWallDoorClosed.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneWallDoorClosed","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneWallDoorClosed_0.png": {
+		"frame": {"x":162, "y":459, "w":161, "h":237},
+		"spriteSourceSize": {"x":0,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_1.png": {
+		"frame": {"x":486, "y":0, "w":64, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_2.png": {
+		"frame": {"x":324, "y":238, "w":161, "h":237},
+		"spriteSourceSize": {"x":0,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_3.png": {
+		"frame": {"x":0, "y":229, "w":256, "h":229},
+		"spriteSourceSize": {"x":0,"y":148,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_4.png": {
+		"frame": {"x":257, "y":0, "w":161, "h":237},
+		"spriteSourceSize": {"x":95,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_5.png": {
+		"frame": {"x":551, "y":0, "w":64, "h":362},
+		"spriteSourceSize": {"x":192,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_6.png": {
+		"frame": {"x":0, "y":459, "w":161, "h":237},
+		"spriteSourceSize": {"x":95,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallDoorClosed_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":228},
+		"spriteSourceSize": {"x":0,"y":284,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneWallDoorClosed.png",
+	"size": {"w": 616, "h": 697},
+	"scale": "1"
+}
+}

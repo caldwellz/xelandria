@@ -1,1 +1,50 @@
-{"columns":4,"image":"bookcaseWideBooksLadder.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"bookcaseWideBooksLadder","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"bookcaseWideBooksLadder_0.png": {
+		"frame": {"x":257, "y":223, "w":202, "h":222},
+		"spriteSourceSize": {"x":0,"y":274,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_1.png": {
+		"frame": {"x":460, "y":340, "w":145, "h":339},
+		"spriteSourceSize": {"x":66,"y":173,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_2.png": {
+		"frame": {"x":257, "y":0, "w":202, "h":222},
+		"spriteSourceSize": {"x":0,"y":263,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_3.png": {
+		"frame": {"x":0, "y":216, "w":256, "h":249},
+		"spriteSourceSize": {"x":0,"y":220,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_4.png": {
+		"frame": {"x":224, "y":466, "w":223, "h":222},
+		"spriteSourceSize": {"x":0,"y":263,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_5.png": {
+		"frame": {"x":460, "y":0, "w":196, "h":339},
+		"spriteSourceSize": {"x":58,"y":173,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_6.png": {
+		"frame": {"x":0, "y":466, "w":223, "h":222},
+		"spriteSourceSize": {"x":0,"y":274,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseWideBooksLadder_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":215},
+		"spriteSourceSize": {"x":0,"y":251,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "bookcaseWideBooksLadder.png",
+	"size": {"w": 657, "h": 689},
+	"scale": "1"
+}
+}

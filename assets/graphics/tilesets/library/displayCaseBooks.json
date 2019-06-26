@@ -1,1 +1,50 @@
-{"columns":4,"image":"displayCaseBooks.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"displayCaseBooks","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"displayCaseBooks_0.png": {
+		"frame": {"x":0, "y":418, "w":170, "h":139},
+		"spriteSourceSize": {"x":19,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_1.png": {
+		"frame": {"x":342, "y":148, "w":111, "h":231},
+		"spriteSourceSize": {"x":66,"y":264,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_2.png": {
+		"frame": {"x":232, "y":0, "w":170, "h":147},
+		"spriteSourceSize": {"x":19,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_3.png": {
+		"frame": {"x":0, "y":135, "w":231, "h":142},
+		"spriteSourceSize": {"x":25,"y":293,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_4.png": {
+		"frame": {"x":171, "y":278, "w":170, "h":147},
+		"spriteSourceSize": {"x":41,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_5.png": {
+		"frame": {"x":454, "y":0, "w":110, "h":231},
+		"spriteSourceSize": {"x":110,"y":264,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_6.png": {
+		"frame": {"x":0, "y":278, "w":170, "h":139},
+		"spriteSourceSize": {"x":41,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"displayCaseBooks_7.png": {
+		"frame": {"x":0, "y":0, "w":231, "h":134},
+		"spriteSourceSize": {"x":25,"y":332,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "displayCaseBooks.png",
+	"size": {"w": 565, "h": 558},
+	"scale": "1"
+}
+}

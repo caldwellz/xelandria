@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneWallAgedRight.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneWallAgedRight","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneWallAgedRight_0.png": {
+		"frame": {"x":0, "y":449, "w":161, "h":211},
+		"spriteSourceSize": {"x":0,"y":301,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_1.png": {
+		"frame": {"x":419, "y":216, "w":64, "h":302},
+		"spriteSourceSize": {"x":0,"y":210,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_2.png": {
+		"frame": {"x":419, "y":0, "w":161, "h":215},
+		"spriteSourceSize": {"x":0,"y":249,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_3.png": {
+		"frame": {"x":0, "y":224, "w":256, "h":224},
+		"spriteSourceSize": {"x":0,"y":153,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_4.png": {
+		"frame": {"x":257, "y":238, "w":161, "h":237},
+		"spriteSourceSize": {"x":95,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_5.png": {
+		"frame": {"x":484, "y":216, "w":64, "h":362},
+		"spriteSourceSize": {"x":192,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_6.png": {
+		"frame": {"x":257, "y":0, "w":161, "h":237},
+		"spriteSourceSize": {"x":95,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallAgedRight_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":223},
+		"spriteSourceSize": {"x":0,"y":289,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneWallAgedRight.png",
+	"size": {"w": 581, "h": 661},
+	"scale": "1"
+}
+}

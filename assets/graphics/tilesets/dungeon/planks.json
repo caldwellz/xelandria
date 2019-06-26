@@ -1,1 +1,50 @@
-{"columns":4,"image":"planks.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"planks","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"planks_0.png": {
+		"frame": {"x":0, "y":510, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_1.png": {
+		"frame": {"x":257, "y":320, "w":256, "h":189},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_2.png": {
+		"frame": {"x":257, "y":187, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_3.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":186},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_4.png": {
+		"frame": {"x":257, "y":510, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_5.png": {
+		"frame": {"x":0, "y":320, "w":256, "h":189},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_6.png": {
+		"frame": {"x":0, "y":187, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planks_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":186},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "planks.png",
+	"size": {"w": 514, "h": 643},
+	"scale": "1"
+}
+}

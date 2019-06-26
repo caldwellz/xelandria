@@ -1,1 +1,50 @@
-{"columns":4,"image":"bookcaseEmptyLadder.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"bookcaseEmptyLadder","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"bookcaseEmptyLadder_0.png": {
+		"frame": {"x":201, "y":261, "w":179, "h":194},
+		"spriteSourceSize": {"x":5,"y":288,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_1.png": {
+		"frame": {"x":397, "y":0, "w":145, "h":260},
+		"spriteSourceSize": {"x":66,"y":213,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_2.png": {
+		"frame": {"x":370, "y":456, "w":168, "h":198},
+		"spriteSourceSize": {"x":5,"y":277,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_3.png": {
+		"frame": {"x":0, "y":216, "w":200, "h":250},
+		"spriteSourceSize": {"x":56,"y":220,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_4.png": {
+		"frame": {"x":381, "y":261, "w":168, "h":194},
+		"spriteSourceSize": {"x":27,"y":277,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_5.png": {
+		"frame": {"x":201, "y":0, "w":195, "h":260},
+		"spriteSourceSize": {"x":59,"y":213,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_6.png": {
+		"frame": {"x":201, "y":456, "w":168, "h":194},
+		"spriteSourceSize": {"x":27,"y":288,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseEmptyLadder_7.png": {
+		"frame": {"x":0, "y":0, "w":200, "h":215},
+		"spriteSourceSize": {"x":56,"y":251,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "bookcaseEmptyLadder.png",
+	"size": {"w": 550, "h": 655},
+	"scale": "1"
+}
+}

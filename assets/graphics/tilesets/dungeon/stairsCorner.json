@@ -1,1 +1,50 @@
-{"columns":4,"image":"stairsCorner.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stairsCorner","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stairsCorner_0.png": {
+		"frame": {"x":0, "y":559, "w":256, "h":159},
+		"spriteSourceSize": {"x":0,"y":353,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_1.png": {
+		"frame": {"x":257, "y":481, "w":256, "h":272},
+		"spriteSourceSize": {"x":0,"y":240,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_2.png": {
+		"frame": {"x":257, "y":273, "w":256, "h":207},
+		"spriteSourceSize": {"x":0,"y":305,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_3.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":272},
+		"spriteSourceSize": {"x":0,"y":240,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_4.png": {
+		"frame": {"x":514, "y":0, "w":256, "h":159},
+		"spriteSourceSize": {"x":0,"y":353,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_5.png": {
+		"frame": {"x":0, "y":354, "w":256, "h":204},
+		"spriteSourceSize": {"x":0,"y":308,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_6.png": {
+		"frame": {"x":0, "y":205, "w":256, "h":148},
+		"spriteSourceSize": {"x":0,"y":364,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsCorner_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":204},
+		"spriteSourceSize": {"x":0,"y":308,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stairsCorner.png",
+	"size": {"w": 771, "h": 754},
+	"scale": "1"
+}
+}

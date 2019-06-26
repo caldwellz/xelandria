@@ -1,1 +1,50 @@
-{"columns":4,"image":"bookcaseHalfBooks.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"bookcaseHalfBooks","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"bookcaseHalfBooks_0.png": {
+		"frame": {"x":181, "y":135, "w":143, "h":134},
+		"spriteSourceSize": {"x":30,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_1.png": {
+		"frame": {"x":325, "y":0, "w":117, "h":192},
+		"spriteSourceSize": {"x":66,"y":282,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_2.png": {
+		"frame": {"x":181, "y":0, "w":143, "h":134},
+		"spriteSourceSize": {"x":30,"y":337,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_3.png": {
+		"frame": {"x":0, "y":147, "w":180, "h":146},
+		"spriteSourceSize": {"x":56,"y":289,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_4.png": {
+		"frame": {"x":145, "y":294, "w":144, "h":134},
+		"spriteSourceSize": {"x":51,"y":337,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_5.png": {
+		"frame": {"x":325, "y":193, "w":116, "h":191},
+		"spriteSourceSize": {"x":110,"y":282,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_6.png": {
+		"frame": {"x":0, "y":294, "w":144, "h":134},
+		"spriteSourceSize": {"x":51,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bookcaseHalfBooks_7.png": {
+		"frame": {"x":0, "y":0, "w":180, "h":146},
+		"spriteSourceSize": {"x":56,"y":320,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "bookcaseHalfBooks.png",
+	"size": {"w": 443, "h": 429},
+	"scale": "1"
+}
+}

@@ -1,1 +1,50 @@
-{"columns":4,"image":"tableShortChairs.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"tableShortChairs","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"tableShortChairs_0.png": {
+		"frame": {"x":323, "y":0, "w":121, "h":104},
+		"spriteSourceSize": {"x":56,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_1.png": {
+		"frame": {"x":0, "y":0, "w":198, "h":137},
+		"spriteSourceSize": {"x":41,"y":321,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_2.png": {
+		"frame": {"x":199, "y":0, "w":123, "h":104},
+		"spriteSourceSize": {"x":56,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_3.png": {
+		"frame": {"x":0, "y":279, "w":161, "h":178},
+		"spriteSourceSize": {"x":60,"y":299,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_4.png": {
+		"frame": {"x":198, "y":138, "w":123, "h":105},
+		"spriteSourceSize": {"x":57,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_5.png": {
+		"frame": {"x":0, "y":138, "w":197, "h":140},
+		"spriteSourceSize": {"x":42,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_6.png": {
+		"frame": {"x":322, "y":105, "w":121, "h":104},
+		"spriteSourceSize": {"x":57,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableShortChairs_7.png": {
+		"frame": {"x":162, "y":279, "w":161, "h":178},
+		"spriteSourceSize": {"x":54,"y":299,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "tableShortChairs.png",
+	"size": {"w": 445, "h": 458},
+	"scale": "1"
+}
+}

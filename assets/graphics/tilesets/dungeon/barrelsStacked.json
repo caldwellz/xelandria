@@ -1,14 +1,50 @@
-{ "columns":4,
- "image":"barrelsStacked.png",
- "imageheight":1024,
- "imagewidth":1024,
- "margin":0,
- "name":"barrelsStacked",
- "spacing":0,
- "tilecount":8,
- "tiledversion":"1.2.3",
- "tileheight":512,
- "tilewidth":256,
- "type":"tileset",
- "version":1.2
+{
+"frames": {
+	"barrelsStacked_0.png": {
+		"frame": {"x":180, "y":324, "w":177, "h":146},
+		"spriteSourceSize": {"x":33,"y":336,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_1.png": {
+		"frame": {"x":358, "y":294, "w":135, "h":222},
+		"spriteSourceSize": {"x":81,"y":273,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_2.png": {
+		"frame": {"x":0, "y":324, "w":179, "h":146},
+		"spriteSourceSize": {"x":32,"y":336,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_3.png": {
+		"frame": {"x":0, "y":162, "w":254, "h":161},
+		"spriteSourceSize": {"x":2,"y":288,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_4.png": {
+		"frame": {"x":255, "y":147, "w":177, "h":146},
+		"spriteSourceSize": {"x":33,"y":336,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_5.png": {
+		"frame": {"x":433, "y":0, "w":135, "h":222},
+		"spriteSourceSize": {"x":81,"y":273,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_6.png": {
+		"frame": {"x":255, "y":0, "w":177, "h":146},
+		"spriteSourceSize": {"x":33,"y":336,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"barrelsStacked_7.png": {
+		"frame": {"x":0, "y":0, "w":254, "h":161},
+		"spriteSourceSize": {"x":2,"y":288,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "barrelsStacked.png",
+	"size": {"w": 569, "h": 517},
+	"scale": "1"
+}
 }

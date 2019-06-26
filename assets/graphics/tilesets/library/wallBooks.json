@@ -1,1 +1,50 @@
-{"columns":4,"image":"wallBooks.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"wallBooks","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"wallBooks_0.png": {
+		"frame": {"x":257, "y":238, "w":161, "h":237},
+		"spriteSourceSize": {"x":0,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_1.png": {
+		"frame": {"x":419, "y":238, "w":96, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_2.png": {
+		"frame": {"x":419, "y":0, "w":161, "h":237},
+		"spriteSourceSize": {"x":0,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_3.png": {
+		"frame": {"x":0, "y":229, "w":256, "h":251},
+		"spriteSourceSize": {"x":0,"y":148,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_4.png": {
+		"frame": {"x":257, "y":476, "w":161, "h":237},
+		"spriteSourceSize": {"x":95,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_5.png": {
+		"frame": {"x":516, "y":238, "w":96, "h":362},
+		"spriteSourceSize": {"x":160,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_6.png": {
+		"frame": {"x":257, "y":0, "w":161, "h":237},
+		"spriteSourceSize": {"x":95,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"wallBooks_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":228},
+		"spriteSourceSize": {"x":0,"y":284,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "wallBooks.png",
+	"size": {"w": 613, "h": 714},
+	"scale": "1"
+}
+}

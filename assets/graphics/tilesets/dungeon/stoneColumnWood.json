@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneColumnWood.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneColumnWood","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneColumnWood_0.png": {
+		"frame": {"x":65, "y":189, "w":64, "h":188},
+		"spriteSourceSize": {"x":96,"y":276,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_1.png": {
+		"frame": {"x":325, "y":0, "w":64, "h":225},
+		"spriteSourceSize": {"x":96,"y":220,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_2.png": {
+		"frame": {"x":260, "y":0, "w":64, "h":188},
+		"spriteSourceSize": {"x":96,"y":276,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_3.png": {
+		"frame": {"x":195, "y":0, "w":64, "h":225},
+		"spriteSourceSize": {"x":96,"y":220,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_4.png": {
+		"frame": {"x":260, "y":189, "w":64, "h":188},
+		"spriteSourceSize": {"x":96,"y":276,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_5.png": {
+		"frame": {"x":130, "y":0, "w":64, "h":225},
+		"spriteSourceSize": {"x":96,"y":220,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_6.png": {
+		"frame": {"x":65, "y":0, "w":64, "h":188},
+		"spriteSourceSize": {"x":96,"y":276,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneColumnWood_7.png": {
+		"frame": {"x":0, "y":0, "w":64, "h":225},
+		"spriteSourceSize": {"x":96,"y":220,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneColumnWood.png",
+	"size": {"w": 390, "h": 378},
+	"scale": "1"
+}
+}

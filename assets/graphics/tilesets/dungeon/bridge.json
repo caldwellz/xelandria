@@ -1,14 +1,50 @@
-{ "columns":4,
- "image":"bridge.png",
- "imageheight":1024,
- "imagewidth":1024,
- "margin":0,
- "name":"bridge",
- "spacing":0,
- "tilecount":8,
- "tiledversion":"1.2.3",
- "tileheight":512,
- "tilewidth":256,
- "type":"tileset",
- "version":1.2
+{
+"frames": {
+	"bridge_0.png": {
+		"frame": {"x":0, "y":309, "w":190, "h":101},
+		"spriteSourceSize": {"x":33,"y":402,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_1.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":103},
+		"spriteSourceSize": {"x":0,"y":374,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_2.png": {
+		"frame": {"x":0, "y":411, "w":190, "h":102},
+		"spriteSourceSize": {"x":33,"y":400,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_3.png": {
+		"frame": {"x":257, "y":0, "w":134, "h":182},
+		"spriteSourceSize": {"x":61,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_4.png": {
+		"frame": {"x":191, "y":208, "w":190, "h":103},
+		"spriteSourceSize": {"x":33,"y":400,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_5.png": {
+		"frame": {"x":0, "y":104, "w":256, "h":103},
+		"spriteSourceSize": {"x":0,"y":374,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_6.png": {
+		"frame": {"x":0, "y":208, "w":190, "h":100},
+		"spriteSourceSize": {"x":33,"y":402,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridge_7.png": {
+		"frame": {"x":191, "y":312, "w":134, "h":182},
+		"spriteSourceSize": {"x":61,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "bridge.png",
+	"size": {"w": 392, "h": 514},
+	"scale": "1"
+}
 }

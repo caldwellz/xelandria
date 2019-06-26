@@ -5,7 +5,6 @@
 // *** imports
 if (typeof logger === 'undefined') { throw "xel_Map.js: Logger not loaded!"; }
 if (typeof PIXI === 'undefined') { throw "xel_Map.js: PIXI not loaded!"; }
-if ((typeof xel === 'undefined') || (typeof xel.TilesetManager === 'undefined')) { throw "xel_Map.js: TilesetManager not loaded!"; }
 // ***
 
 xel.Map = function (tiledData) {
@@ -19,18 +18,23 @@ xel.Map = function (tiledData) {
   this.height = tiledData.height;
   this.tileWidth = tiledData.tilewidth;
   this.tileHeight = tiledData.tileheight;
+  this.pixelWidth = this.width * this.tileWidth;
+  this.pixelHeight = this.height * this.tileHeight;
   this.orientation = tiledData.orientation;
   this.sprites = new PIXI.Container();
+  this.sprites.sortableChildren = true;
   this.layers = []; // Replace .sprites with layer containers, for visibility and other properties
   this._spriteTiles = [];
 
+  var z = 1;
   for (var l in tiledData.layers) {
     var layer = tiledData.layers[l];
     if (layer.type === "tilelayer") {
       for (var i = 0; i < layer.data.length; ++i) {
         var spr = new PIXI.Sprite();
-        spr.x = (i * this.tileWidth) % this.width;
-        spr.y = ((i * this.tileWidth) - spr.x) / this.width;
+        spr.zIndex = z;
+        spr.x = (i * this.tileWidth) % this.pixelWidth;
+        spr.y = ((i * this.tileWidth) - spr.x) / this.pixelWidth;
         var gid = layer.data[i];
         if (!this._spriteTiles[gid])
           this._spriteTiles[gid] = [];
@@ -38,27 +42,40 @@ xel.Map = function (tiledData) {
         this.sprites.addChild(spr);
       }
     }
+    ++z;
   }
+  this.sprites.sortChildren();
 
   var a = document.createElement('a');
+  var ld = new PIXI.Loader();
+  var ctx = this;
   for (var t in tiledData.tilesets) {
     // Convert to absolute URL for use as a normalized name
     a.href = tiledData.tilesets[t].source;
-    var ctx = this;
-    xel.TilesetManager.load(a.href, a.href, function(tileset, firstgid) {
-      logger.debug(ctx._spriteTiles);
-      if (tileset) {
-        for (var gid = firstgid; gid < (firstgid + tileset.tileCount); ++gid) {
+    ld.add(a.href, a.href);
+  }
+  ld.load(function (loader, resources) {
+    for (var t in tiledData.tilesets) {
+      a.href = tiledData.tilesets[t].source;
+      if (resources[a.href]) {
+        var firstgid = tiledData.tilesets[t].firstgid;
+        var sheet = resources[a.href].spritesheet;
+        console.debug(sheet);
+        // TODO: Un-hardcode if we ever have other than 8 images per spritesheet
+        for (var gid = firstgid; gid < (firstgid + 8); ++gid) {
           if (ctx._spriteTiles[gid]) {
-            for (var n = 0; n < ctx._spriteTiles[gid].length; ++i) {
-              ctx._spriteTiles[gid][n].texture = tileset.tiles[gid - firstgid];
-              logger.debug(ctx._spriteTiles[gid][n].texture);
+            for (var n = 0; n < ctx._spriteTiles[gid].length; ++n) {
+              var texName = sheet._frameKeys[gid - firstgid];
+              ctx._spriteTiles[gid][n].texture = sheet.textures[texName];
             }
           }
         }
       }
-    }, tiledData.tilesets[t].firstgid);
-  }
+      else {
+        logger.error("Could not load tileset: " + t);
+      }
+    }
+  });
 
   return this;
 };

@@ -1,1 +1,50 @@
-{"columns":4,"image":"stairsSpiral.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stairsSpiral","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stairsSpiral_0.png": {
+		"frame": {"x":0, "y":438, "w":195, "h":170},
+		"spriteSourceSize": {"x":0,"y":296,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_1.png": {
+		"frame": {"x":0, "y":0, "w":232, "h":218},
+		"spriteSourceSize": {"x":0,"y":233,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_2.png": {
+		"frame": {"x":426, "y":0, "w":185, "h":223},
+		"spriteSourceSize": {"x":0,"y":259,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_3.png": {
+		"frame": {"x":426, "y":224, "w":169, "h":338},
+		"spriteSourceSize": {"x":87,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_4.png": {
+		"frame": {"x":233, "y":0, "w":160, "h":218},
+		"spriteSourceSize": {"x":45,"y":248,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_5.png": {
+		"frame": {"x":0, "y":219, "w":221, "h":218},
+		"spriteSourceSize": {"x":35,"y":212,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_6.png": {
+		"frame": {"x":196, "y":438, "w":167, "h":170},
+		"spriteSourceSize": {"x":46,"y":281,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stairsSpiral_7.png": {
+		"frame": {"x":222, "y":219, "w":203, "h":203},
+		"spriteSourceSize": {"x":40,"y":243,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stairsSpiral.png",
+	"size": {"w": 612, "h": 609},
+	"scale": "1"
+}
+}

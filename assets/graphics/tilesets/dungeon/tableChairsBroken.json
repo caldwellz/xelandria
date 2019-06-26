@@ -1,1 +1,50 @@
-{"columns":4,"image":"tableChairsBroken.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"tableChairsBroken","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"tableChairsBroken_0.png": {
+		"frame": {"x":342, "y":0, "w":129, "h":106},
+		"spriteSourceSize": {"x":62,"y":367,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_1.png": {
+		"frame": {"x":0, "y":331, "w":199, "h":177},
+		"spriteSourceSize": {"x":23,"y":304,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_2.png": {
+		"frame": {"x":337, "y":347, "w":130, "h":100},
+		"spriteSourceSize": {"x":61,"y":379,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_3.png": {
+		"frame": {"x":0, "y":168, "w":201, "h":162},
+		"spriteSourceSize": {"x":42,"y":313,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_4.png": {
+		"frame": {"x":208, "y":0, "w":133, "h":88},
+		"spriteSourceSize": {"x":49,"y":391,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_5.png": {
+		"frame": {"x":202, "y":168, "w":195, "h":178},
+		"spriteSourceSize": {"x":51,"y":317,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_6.png": {
+		"frame": {"x":200, "y":347, "w":136, "h":96},
+		"spriteSourceSize": {"x":50,"y":378,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"tableChairsBroken_7.png": {
+		"frame": {"x":0, "y":0, "w":207, "h":167},
+		"spriteSourceSize": {"x":25,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "tableChairsBroken.png",
+	"size": {"w": 472, "h": 509},
+	"scale": "1"
+}
+}

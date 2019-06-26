@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneWallRoundBroken.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneWallRoundBroken","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneWallRoundBroken_0.png": {
+		"frame": {"x":514, "y":363, "w":88, "h":285},
+		"spriteSourceSize": {"x":74,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_1.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":359},
+		"spriteSourceSize": {"x":0,"y":153,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_2.png": {
+		"frame": {"x":0, "y":564, "w":256, "h":200},
+		"spriteSourceSize": {"x":0,"y":265,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_3.png": {
+		"frame": {"x":257, "y":360, "w":256, "h":359},
+		"spriteSourceSize": {"x":0,"y":153,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_4.png": {
+		"frame": {"x":603, "y":363, "w":88, "h":285},
+		"spriteSourceSize": {"x":94,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_5.png": {
+		"frame": {"x":514, "y":0, "w":256, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_6.png": {
+		"frame": {"x":0, "y":363, "w":256, "h":200},
+		"spriteSourceSize": {"x":0,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallRoundBroken_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneWallRoundBroken.png",
+	"size": {"w": 771, "h": 765},
+	"scale": "1"
+}
+}

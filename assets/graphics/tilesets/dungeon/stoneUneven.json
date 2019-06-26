@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneUneven.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneUneven","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneUneven_0.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":152},
+		"spriteSourceSize": {"x":0,"y":360,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_1.png": {
+		"frame": {"x":257, "y":358, "w":256, "h":208},
+		"spriteSourceSize": {"x":0,"y":304,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_2.png": {
+		"frame": {"x":0, "y":564, "w":256, "h":145},
+		"spriteSourceSize": {"x":0,"y":367,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_3.png": {
+		"frame": {"x":257, "y":153, "w":256, "h":204},
+		"spriteSourceSize": {"x":0,"y":308,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_4.png": {
+		"frame": {"x":257, "y":567, "w":256, "h":148},
+		"spriteSourceSize": {"x":0,"y":364,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_5.png": {
+		"frame": {"x":0, "y":355, "w":256, "h":208},
+		"spriteSourceSize": {"x":0,"y":304,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_6.png": {
+		"frame": {"x":0, "y":209, "w":256, "h":145},
+		"spriteSourceSize": {"x":0,"y":367,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneUneven_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":208},
+		"spriteSourceSize": {"x":0,"y":304,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneUneven.png",
+	"size": {"w": 514, "h": 716},
+	"scale": "1"
+}
+}

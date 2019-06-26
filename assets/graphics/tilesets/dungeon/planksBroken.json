@@ -1,1 +1,50 @@
-{"columns":4,"image":"planksBroken.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"planksBroken","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"planksBroken_0.png": {
+		"frame": {"x":0, "y":511, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_1.png": {
+		"frame": {"x":257, "y":322, "w":256, "h":189},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_2.png": {
+		"frame": {"x":257, "y":188, "w":256, "h":133},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_3.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":187},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_4.png": {
+		"frame": {"x":257, "y":512, "w":256, "h":133},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_5.png": {
+		"frame": {"x":0, "y":321, "w":256, "h":189},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_6.png": {
+		"frame": {"x":0, "y":188, "w":256, "h":132},
+		"spriteSourceSize": {"x":0,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"planksBroken_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":187},
+		"spriteSourceSize": {"x":0,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "planksBroken.png",
+	"size": {"w": 514, "h": 646},
+	"scale": "1"
+}
+}

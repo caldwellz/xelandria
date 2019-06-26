@@ -1,14 +1,50 @@
-{ "columns":4,
- "image":"bridgeBroken.png",
- "imageheight":1024,
- "imagewidth":1024,
- "margin":0,
- "name":"bridgeBroken",
- "spacing":0,
- "tilecount":8,
- "tiledversion":"1.2.3",
- "tileheight":512,
- "tilewidth":256,
- "type":"tileset",
- "version":1.2
+{
+"frames": {
+	"bridgeBroken_0.png": {
+		"frame": {"x":0, "y":305, "w":190, "h":101},
+		"spriteSourceSize": {"x":33,"y":402,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_1.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":101},
+		"spriteSourceSize": {"x":0,"y":376,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_2.png": {
+		"frame": {"x":0, "y":407, "w":190, "h":102},
+		"spriteSourceSize": {"x":33,"y":400,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_3.png": {
+		"frame": {"x":257, "y":0, "w":134, "h":182},
+		"spriteSourceSize": {"x":61,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_4.png": {
+		"frame": {"x":191, "y":204, "w":190, "h":103},
+		"spriteSourceSize": {"x":33,"y":400,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_5.png": {
+		"frame": {"x":0, "y":102, "w":256, "h":101},
+		"spriteSourceSize": {"x":0,"y":376,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_6.png": {
+		"frame": {"x":0, "y":204, "w":190, "h":100},
+		"spriteSourceSize": {"x":33,"y":402,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"bridgeBroken_7.png": {
+		"frame": {"x":191, "y":308, "w":134, "h":182},
+		"spriteSourceSize": {"x":61,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "bridgeBroken.png",
+	"size": {"w": 392, "h": 510},
+	"scale": "1"
+}
 }

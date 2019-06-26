@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneWallStructure.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneWallStructure","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneWallStructure_0.png": {
+		"frame": {"x":0, "y":641, "w":256, "h":282},
+		"spriteSourceSize": {"x":0,"y":230,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_1.png": {
+		"frame": {"x":514, "y":286, "w":256, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_2.png": {
+		"frame": {"x":514, "y":0, "w":256, "h":285},
+		"spriteSourceSize": {"x":0,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_3.png": {
+		"frame": {"x":257, "y":363, "w":256, "h":364},
+		"spriteSourceSize": {"x":0,"y":148,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_4.png": {
+		"frame": {"x":514, "y":649, "w":256, "h":285},
+		"spriteSourceSize": {"x":0,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_5.png": {
+		"frame": {"x":257, "y":0, "w":256, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_6.png": {
+		"frame": {"x":0, "y":358, "w":256, "h":282},
+		"spriteSourceSize": {"x":0,"y":230,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallStructure_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":357},
+		"spriteSourceSize": {"x":0,"y":155,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneWallStructure.png",
+	"size": {"w": 771, "h": 935},
+	"scale": "1"
+}
+}

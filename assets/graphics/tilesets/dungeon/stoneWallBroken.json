@@ -1,1 +1,50 @@
-{"columns":4,"image":"stoneWallBroken.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"stoneWallBroken","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"stoneWallBroken_0.png": {
+		"frame": {"x":257, "y":479, "w":166, "h":237},
+		"spriteSourceSize": {"x":0,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_1.png": {
+		"frame": {"x":427, "y":0, "w":150, "h":362},
+		"spriteSourceSize": {"x":0,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_2.png": {
+		"frame": {"x":257, "y":238, "w":169, "h":240},
+		"spriteSourceSize": {"x":0,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_3.png": {
+		"frame": {"x":0, "y":224, "w":256, "h":284},
+		"spriteSourceSize": {"x":0,"y":153,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_4.png": {
+		"frame": {"x":424, "y":479, "w":166, "h":242},
+		"spriteSourceSize": {"x":90,"y":227,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_5.png": {
+		"frame": {"x":578, "y":0, "w":150, "h":362},
+		"spriteSourceSize": {"x":106,"y":150,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_6.png": {
+		"frame": {"x":257, "y":0, "w":169, "h":237},
+		"spriteSourceSize": {"x":87,"y":275,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"stoneWallBroken_7.png": {
+		"frame": {"x":0, "y":0, "w":256, "h":223},
+		"spriteSourceSize": {"x":0,"y":289,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "stoneWallBroken.png",
+	"size": {"w": 729, "h": 722},
+	"scale": "1"
+}
+}

@@ -1,14 +1,50 @@
-{ "columns":4,
- "image":"chestOpen.png",
- "imageheight":1024,
- "imagewidth":1024,
- "margin":0,
- "name":"chestOpen",
- "spacing":0,
- "tilecount":8,
- "tiledversion":"1.2.3",
- "tileheight":512,
- "tilewidth":256,
- "type":"tileset",
- "version":1.2
+{
+"frames": {
+	"chestOpen_0.png": {
+		"frame": {"x":0, "y":177, "w":97, "h":78},
+		"spriteSourceSize": {"x":65,"y":387,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_1.png": {
+		"frame": {"x":217, "y":0, "w":77, "h":131},
+		"spriteSourceSize": {"x":88,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_2.png": {
+		"frame": {"x":98, "y":177, "w":97, "h":95},
+		"spriteSourceSize": {"x":65,"y":370,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_3.png": {
+		"frame": {"x":0, "y":69, "w":123, "h":107},
+		"spriteSourceSize": {"x":77,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_4.png": {
+		"frame": {"x":196, "y":132, "w":88, "h":95},
+		"spriteSourceSize": {"x":81,"y":370,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_5.png": {
+		"frame": {"x":124, "y":0, "w":92, "h":131},
+		"spriteSourceSize": {"x":102,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_6.png": {
+		"frame": {"x":196, "y":228, "w":87, "h":78},
+		"spriteSourceSize": {"x":82,"y":387,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"chestOpen_7.png": {
+		"frame": {"x":0, "y":0, "w":123, "h":68},
+		"spriteSourceSize": {"x":77,"y":370,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "chestOpen.png",
+	"size": {"w": 295, "h": 307},
+	"scale": "1"
+}
 }

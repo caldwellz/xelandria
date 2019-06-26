@@ -1,1 +1,50 @@
-{"columns":4,"image":"candleStandDouble.png","imageheight":1024,"imagewidth":1024,"margin":0,"name":"candleStandDouble","spacing":0,"tilecount":8,"tiledversion":"1.2.3","tileheight":512,"tilewidth":256,"type":"tileset","version":1.2} 
+{
+"frames": {
+	"candleStandDouble_0.png": {
+		"frame": {"x":181, "y":104, "w":72, "h":102},
+		"spriteSourceSize": {"x":76,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_1.png": {
+		"frame": {"x":254, "y":0, "w":64, "h":132},
+		"spriteSourceSize": {"x":115,"y":299,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_2.png": {
+		"frame": {"x":108, "y":0, "w":73, "h":103},
+		"spriteSourceSize": {"x":75,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_3.png": {
+		"frame": {"x":0, "y":123, "w":106, "h":122},
+		"spriteSourceSize": {"x":93,"y":308,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_4.png": {
+		"frame": {"x":181, "y":207, "w":72, "h":103},
+		"spriteSourceSize": {"x":76,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_5.png": {
+		"frame": {"x":254, "y":133, "w":64, "h":132},
+		"spriteSourceSize": {"x":115,"y":299,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_6.png": {
+		"frame": {"x":107, "y":123, "w":73, "h":102},
+		"spriteSourceSize": {"x":75,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"candleStandDouble_7.png": {
+		"frame": {"x":0, "y":0, "w":107, "h":122},
+		"spriteSourceSize": {"x":92,"y":308,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"meta": {
+	"image": "candleStandDouble.png",
+	"size": {"w": 319, "h": 311},
+	"scale": "1"
+}
+}
