@@ -31,15 +31,19 @@ xel.Map = function (tiledData) {
     var layer = tiledData.layers[l];
     if (layer.type === "tilelayer") {
       for (var i = 0; i < layer.data.length; ++i) {
-        var spr = new PIXI.Sprite();
-        spr.zIndex = z;
-        spr.x = (i * this.tileWidth) % this.pixelWidth;
-        spr.y = ((i * this.tileWidth) - spr.x) / this.pixelWidth;
         var gid = layer.data[i];
-        if (!this._spriteTiles[gid])
-          this._spriteTiles[gid] = [];
-        this._spriteTiles[gid].push(spr);
-        this.sprites.addChild(spr);
+        if (gid > 0) {
+          var spr = new PIXI.Sprite();
+          spr.zIndex = z;
+          spr.x = (i * this.tileWidth) % this.pixelWidth;
+          spr.y = ((i - (i % this.width)) / this.width) * this.tileHeight;
+          if (spr.y > this.pixelHeight)
+            logger.warn("Sprite position exceeds height of map '" + this.name + "'");
+          if (!this._spriteTiles[gid])
+            this._spriteTiles[gid] = [];
+          this._spriteTiles[gid].push(spr);
+          this.sprites.addChild(spr);
+        }
       }
     }
     ++z;
@@ -60,7 +64,6 @@ xel.Map = function (tiledData) {
       if (resources[a.href]) {
         var firstgid = tiledData.tilesets[t].firstgid;
         var sheet = resources[a.href].spritesheet;
-        console.debug(sheet);
         // TODO: Un-hardcode if we ever have other than 8 images per spritesheet
         for (var gid = firstgid; gid < (firstgid + 8); ++gid) {
           if (ctx._spriteTiles[gid]) {
