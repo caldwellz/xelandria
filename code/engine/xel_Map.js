@@ -21,17 +21,20 @@ xel.Map = function (tiledData) {
   this.pixelWidth = this.width * this.tileWidth;
   this.pixelHeight = this.height * this.tileHeight;
   this.orientation = tiledData.orientation;
-  this.sprites = new PIXI.Container();
-  this.sprites.sortableChildren = true;
-  this.layers = []; // Replace .sprites with layer containers, for visibility and other properties
+  this.layers = new PIXI.Container();
   this._spriteTiles = [];
 
   var z = 1;
   for (var l in tiledData.layers) {
-    var layer = tiledData.layers[l];
+    var layerData = tiledData.layers[l];
+    var layer = new PIXI.Container();
+    layer.sortableChildren = true;
+    layer.name = layerData.name;
+    layer.type = layerData.type;
+    layer.visible = (layerData.visible || false);
     if (layer.type === "tilelayer") {
-      for (var i = 0; i < layer.data.length; ++i) {
-        var gid = layer.data[i];
+      for (var i = 0; i < layerData.data.length; ++i) {
+        var gid = layerData.data[i];
         if (gid > 0) {
           var spr = new PIXI.Sprite();
           spr.zIndex = z;
@@ -42,13 +45,14 @@ xel.Map = function (tiledData) {
           if (!this._spriteTiles[gid])
             this._spriteTiles[gid] = [];
           this._spriteTiles[gid].push(spr);
-          this.sprites.addChild(spr);
+          layer.addChild(spr);
         }
       }
     }
+    layer.sortChildren();
+    this.layers.addChild(layer);
     ++z;
   }
-  this.sprites.sortChildren();
 
   var a = document.createElement('a');
   var ld = new PIXI.Loader();

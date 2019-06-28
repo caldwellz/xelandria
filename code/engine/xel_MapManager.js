@@ -119,6 +119,6 @@ xel.MapManager.activate = function (mapName, mapURL) {
     xel.MapManager._currentMap = map;
     // TODO: Maybe use visibility instead of add/remove
     xel.app.stage.removeChildren();
-    xel.app.stage.addChild(map.sprites);
+    xel.app.stage.addChild(map.layers);
   });
 };
