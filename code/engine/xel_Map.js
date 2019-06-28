@@ -50,6 +50,11 @@ xel.Map = function (tiledData) {
         }
       }
     }
+    if (layerData.properties) {
+      for (prop in layerData.properties) {
+        layer[layerData.properties[prop].name] = layerData.properties[prop].value;
+      }
+    }
     layer.sortChildren();
     obj.layers.addChild(layer);
     ++z;
