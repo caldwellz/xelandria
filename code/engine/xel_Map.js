@@ -30,6 +30,13 @@ xel.Map = function (tiledData) {
   obj.layers = new PIXI.Container();
   obj._spriteTiles = [];
 
+  if (tiledData.properties) {
+    for (prop in tiledData.properties) {
+      obj[tiledData.properties[prop].name] = tiledData.properties[prop].value;
+    }
+  }
+  obj.angle = obj.angle || 0;
+
   var z = 1;
   for (var l in tiledData.layers) {
     var layerData = tiledData.layers[l];
