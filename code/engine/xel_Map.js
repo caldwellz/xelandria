@@ -15,12 +15,12 @@ xel.Map = function (tiledData) {
     return null;
   }
 
-  obj.width = tiledData.width;
-  obj.height = tiledData.height;
-  obj.tileWidth = tiledData.tilewidth;
-  obj.tileHeight = tiledData.tileheight;
-  obj.pixelWidth = obj.width * obj.tileWidth;
-  obj.pixelHeight = obj.height * obj.tileHeight;
+  obj.tilesWidth = tiledData.width;
+  obj.tilesHeight = tiledData.height;
+  obj.tilePixWidth = tiledData.tilewidth;
+  obj.tilePixHeight = tiledData.tileheight;
+  obj.mapPixWidth = obj.tilesWidth * obj.tilePixWidth;
+  obj.mapPixHeight = obj.tilesHeight * obj.tilePixHeight;
   obj.orientation = tiledData.orientation;
   obj.layers = new PIXI.Container();
   obj._spriteTiles = [];
@@ -39,9 +39,9 @@ xel.Map = function (tiledData) {
         if (gid > 0) {
           var spr = new PIXI.Sprite();
           spr.zIndex = z;
-          spr.x = (i * obj.tileWidth) % obj.pixelWidth;
-          spr.y = ((i - (i % obj.width)) / obj.width) * obj.tileHeight;
-          if (spr.y > obj.pixelHeight)
+          spr.x = (i * obj.tilePixWidth) % obj.mapPixWidth;
+          spr.y = ((i - (i % obj.tilesWidth)) / obj.tilesWidth) * obj.tilePixHeight;
+          if (spr.y > obj.mapPixHeight)
             logger.warn("Sprite position exceeds height of map '" + obj.name + "'");
           if (!obj._spriteTiles[gid])
             obj._spriteTiles[gid] = [];
