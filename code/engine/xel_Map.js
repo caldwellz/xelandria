@@ -5,10 +5,15 @@
 // *** imports
 if (typeof logger === 'undefined') { throw "xel_Map.js: Logger not loaded!"; }
 if (typeof PIXI === 'undefined') { throw "xel_Map.js: PIXI not loaded!"; }
+xel = xel || {};
+xel.settings = xel.settings || {};
+xel.settings.maps = xel.settings.maps || {};
+// *** settings
+xel.settings.maps.tilesetAngles = xel.settings.maps.tilesetAngles || 8;
 // ***
 
 xel.Map = function (tiledData) {
-  var obj = {};
+  var obj = Object.create(xel.Map.prototype);
   if (!tiledData.width || !tiledData.height || !tiledData.tilewidth || !tiledData.tileheight || !tiledData.orientation) {
     logger.error("Invalid map parameter(s)");
     logger.debug(tiledData);
@@ -73,8 +78,7 @@ xel.Map = function (tiledData) {
       if (resources[a.href]) {
         var firstgid = tiledData.tilesets[t].firstgid;
         var sheet = resources[a.href].spritesheet;
-        // TODO: Un-hardcode if we ever have other than 8 images per spritesheet
-        for (var gid = firstgid; gid < (firstgid + 8); ++gid) {
+        for (var gid = firstgid; gid < (firstgid + xel.settings.maps.tilesetAngles); ++gid) {
           if (obj._spriteTiles[gid]) {
             for (var n = 0; n < obj._spriteTiles[gid].length; ++n) {
               var texName = sheet._frameKeys[gid - firstgid];
