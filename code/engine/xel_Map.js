@@ -27,8 +27,10 @@ xel.Map = function (tiledData) {
   obj.mapPixWidth = obj.tilesWidth * obj.tilePixWidth;
   obj.mapPixHeight = obj.tilesHeight * obj.tilePixHeight;
   obj.orientation = tiledData.orientation;
+  obj.tilesets = tiledData.tilesets;
   obj.layers = new PIXI.Container();
-  obj._spriteTiles = [];
+  obj._tileUpdates = [];
+  obj._spritesByGid = [];
 
   if (tiledData.properties) {
     for (prop in tiledData.properties) {
@@ -45,19 +47,32 @@ xel.Map = function (tiledData) {
     layer.name = layerData.name;
     layer.type = layerData.type;
     layer.visible = (layerData.visible || false);
+
+    layer.grid = new Array(obj.tilesWidth);
+    for (var x = 0; x < layer.grid.length; ++x)
+      layer.grid[x] = new Array(obj.tilesHeight);
+
+    var gidData = layerData.data;
     if (layer.type === "tilelayer") {
-      for (var i = 0; i < layerData.data.length; ++i) {
-        var gid = layerData.data[i];
+      for (var i = 0; i < gidData.length; ++i) {
+        var gid = gidData[i];
         if (gid > 0) {
+          var gridX = i % obj.tilesWidth;
+          var gridY = (i - gridX) / obj.tilesWidth;
           var spr = new PIXI.Sprite();
           spr.zIndex = z;
-          spr.x = (i * obj.tilePixWidth) % obj.mapPixWidth;
-          spr.y = ((i - (i % obj.tilesWidth)) / obj.tilesWidth) * obj.tilePixHeight;
-          if (spr.y > obj.mapPixHeight)
+          spr.gridX = gridX;
+          spr.gridY = gridY;
+          spr.x = gridX * obj.tilePixWidth;
+          spr.y = gridY * obj.tilePixHeight;
+          if (gridY > obj.tilesHeight)
             logger.warn("Sprite position exceeds height of map '" + obj.name + "'");
-          if (!obj._spriteTiles[gid])
-            obj._spriteTiles[gid] = [];
-          obj._spriteTiles[gid].push(spr);
+          else
+            layer.grid[gridX][gridY] = spr;
+          if (!obj._spritesByGid[gid])
+            obj._spritesByGid[gid] = [];
+          obj._spritesByGid[gid].push(spr);
+          obj._tileUpdates.push(spr);
           layer.addChild(spr);
         }
       }
@@ -72,33 +87,82 @@ xel.Map = function (tiledData) {
     ++z;
   }
 
-  var a = document.createElement('a');
-  var ld = new PIXI.Loader();
-  for (var t in tiledData.tilesets) {
-    // Convert to absolute URL for use as a normalized name
-    a.href = tiledData.tilesets[t].source;
-    ld.add(a.href, a.href);
-  }
-  ld.load(function (loader, resources) {
-    for (var t in tiledData.tilesets) {
-      a.href = tiledData.tilesets[t].source;
-      if (resources[a.href]) {
-        var firstgid = tiledData.tilesets[t].firstgid;
-        var sheet = resources[a.href].spritesheet;
-        for (var gid = firstgid; gid < (firstgid + xel.settings.maps.tilesetAngles); ++gid) {
-          if (obj._spriteTiles[gid]) {
-            for (var n = 0; n < obj._spriteTiles[gid].length; ++n) {
-              var texName = sheet._frameKeys[gid - firstgid];
-              obj._spriteTiles[gid][n].texture = sheet.textures[texName];
-            }
-          }
+  obj._sheetURLs = [];
+  for (var t = 0; t < obj.tilesets.length; ++t) {
+    var a = document.createElement('a');
+    a.href = obj.tilesets[t].source;
+    obj._sheetURLs.push(a.href);
+    var firstgid = obj.tilesets[t].firstgid;
+    if (t == obj.tilesets.length - 1)
+      var nextfirstgid = firstgid + xel.settings.maps.tilesetAngles;
+    else
+      var nextfirstgid = obj.tilesets[t + 1].firstgid;
+    for (var gid = firstgid; gid < nextfirstgid; ++gid) {
+      if (obj._spritesByGid[gid]) {
+        for (var n = 0; n < obj._spritesByGid[gid].length; ++n) {
+          obj._spritesByGid[gid][n].sheetIndex = gid - firstgid;
+          obj._spritesByGid[gid][n].spritesheetURL = a.href;
         }
       }
+    }
+  }
+  delete obj._spritesByGid;
+  obj._updateTiles();
+
+  return obj;
+};
+
+xel.Map.cacheSpritesheets = function (urls, callback) {
+  xel.Map.spritesheetCache = xel.Map.spritesheetCache || {};
+  if (typeof urls === "string")
+    urls = [urls];
+  if (typeof urls !== "object") {
+    logger.error("xel.Map.cacheSpritesheets: URLs arg is not a string or object");
+    return;
+  }
+
+  var a = document.createElement('a');
+  var ld = new PIXI.Loader();
+  for (var u in urls) {
+    // Convert to absolute URL for use as a normalized name
+    a.href = urls[u];
+    if (!(a.href in xel.Map.spritesheetCache))
+      ld.add(a.href, a.href);
+  }
+
+  ld.load(function (loader, resources) {
+    for (var res in resources) {
+      if (!resources[res].data) {
+        logger.error("xel.Map.prototype.updateSpriteSheets: No data found at URL: '" + resources[res].url + "'");
+        continue;
+      }
+      if (!resources[res].spritesheet) {
+        logger.error("xel.Map.prototype.updateSpriteSheets: Could not parse spritesheet data at URL: '" + resources[res].url + "'");
+        continue;
+      }
+      a.href = resources[res].url;
+      xel.Map.spritesheetCache[a.href] = resources[res].spritesheet;
+      xel.Map.spritesheetCache[resources[res].data["meta"]["image"]] = resources[res].spritesheet;
+    }
+    if (typeof callback === "function")
+      callback();
+  });
+}
+
+xel.Map.prototype._updateTiles = function() {
+  var ctx = this;
+  xel.Map.cacheSpritesheets(ctx._sheetURLs, function() {
+    for (var t in ctx._tileUpdates) {
+      var tile = ctx._tileUpdates[t];
+      var sheet = xel.Map.spritesheetCache[tile.spritesheetURL];
+      if (sheet) {
+        var texName = sheet._frameKeys[tile.sheetIndex];
+        tile.texture = sheet.textures[texName];
+      }
       else {
-        logger.error("Could not load tileset: " + t);
+        logger.debug("xel.Map.prototype._updateTiles: Missing spritesheet at map '" + ctx.name + "' grid index [" + tile.gridX.toString() + "][" + tile.gridY.toString() + "]");
+        continue;
       }
     }
   });
-
-  return obj;
 };
