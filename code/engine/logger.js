@@ -19,12 +19,14 @@ logger.clear = function () {
   console.clear();
 };
 
+
 logger.push = function (msg) {
   if (msg) {
     logger.messages.unshift(msg);
     logger.logbox.innerHTML = logger.messages.join("<br />");
   }
 };
+
 
 logger.rewrite = function (msg) {
   if (msg) {
@@ -33,12 +35,14 @@ logger.rewrite = function (msg) {
   }
 };
 
+
 logger.modulize = function (msg) {
   if ((typeof msg === 'string') && (logger.module.length > 0) && (logger.debugMode || logger.testMode))
     return logger.module + ": " + msg;
   else
     return msg;
 }
+
 
 logger.log = function (msg) {
   if (msg && !logger.testMode) {
@@ -48,6 +52,7 @@ logger.log = function (msg) {
     console.log(msg);
   }
 };
+
 
 logger.debug = function (msg) {
   if (msg && logger.debugMode && !logger.testMode) {
@@ -60,6 +65,7 @@ logger.debug = function (msg) {
   }
 };
 
+
 logger.warn = function (msg) {
   if (msg && !logger.testMode) {
     msg = logger.modulize(msg);
@@ -71,6 +77,7 @@ logger.warn = function (msg) {
   }
 };
 
+
 logger.error = function (msg) {
   if (msg && !logger.testMode) {
     msg = logger.modulize(msg);
@@ -81,6 +88,7 @@ logger.error = function (msg) {
     console.error(msg);
   }
 };
+
 
 logger.pass = function (msg) {
   logger.testsPassed++;
@@ -94,6 +102,7 @@ logger.pass = function (msg) {
   }
 };
 
+
 logger.fail = function (msg) {
   logger.testsFailed++;
   if (msg && logger.testMode) {
@@ -105,6 +114,7 @@ logger.fail = function (msg) {
     console.warn(msg);
   }
 };
+
 
 logger.logTestStats = function () {
   var msg = "Tests passed: " + String(logger.testsPassed);
@@ -118,10 +128,12 @@ logger.logTestStats = function () {
   console.log(msg)
 };
 
+
 logger.clearTestStats = function () {
   logger.testsFailed = 0;
   logger.testsPassed = 0;
 }
+
 
 // Uncaught throws will typically be logged in console by the window
 logger.boxError = function (msg) {
@@ -130,5 +142,4 @@ logger.boxError = function (msg) {
     logger.push(msgHTML);
   }
 };
-
 window.onerror = logger.boxError;

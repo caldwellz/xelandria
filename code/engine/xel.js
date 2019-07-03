@@ -12,6 +12,7 @@ xel.initialized = false;
 xel.intendedDisplaySize = [2048, 1536]; // 8x8 current map tiles + vertical padding
 xel.aspectRatio = xel.intendedDisplaySize[0] / xel.intendedDisplaySize[1];
 
+
 xel.initialize = function () {
   if (!xel.initialized) {
     var elem = document.getElementById("stage");
@@ -21,6 +22,7 @@ xel.initialize = function () {
     xel.initialized = true;
   }
 };
+
 
 xel.destroy = function () {
   if (xel.initialized) {
@@ -33,10 +35,12 @@ xel.destroy = function () {
   }
 };
 
+
 xel.reload = function () {
   xel.destroy();
   xel.initialize();
 };
+
 
 xel.scaleStage = function () {
   var w = window.innerWidth;
@@ -59,4 +63,3 @@ xel.scaleStage = function () {
   }
 };
 window.onresize = xel.scaleStage;
-

@@ -110,6 +110,7 @@ xel.Map = function (tiledData) {
   return obj;
 };
 
+
 xel.Map.cacheSpritesheets = function (urls, callback) {
   xel.Map.spritesheetCache = xel.Map.spritesheetCache || {};
   if (typeof urls === "string")
@@ -149,6 +150,7 @@ xel.Map.cacheSpritesheets = function (urls, callback) {
   });
 }
 
+
 xel.Map.prototype._updateTiles = function() {
   var ctx = this;
   xel.Map.cacheSpritesheets(ctx._sheetURLs, function() {
@@ -171,6 +173,7 @@ xel.Map.prototype._updateTiles = function() {
     ctx._tileUpdates = [];
   });
 };
+
 
 xel.Map.prototype._rotate90 = function() {
   for (l in this.layers.children) {

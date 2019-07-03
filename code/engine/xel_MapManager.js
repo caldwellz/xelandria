@@ -16,6 +16,7 @@ xel.MapManager.clear = function () {
   delete xel.MapManager._currentMap;
 };
 
+
 xel.MapManager._cacheCallback = function (resource, next) {
   logger.module = "xel.MapManager._cacheCallback";
   if (resource.name in xel.MapManager._mapCache) {
@@ -24,6 +25,7 @@ xel.MapManager._cacheCallback = function (resource, next) {
   } else
     next();
 };
+
 
 xel.MapManager._progressCallback = function (loader, resource) {
   logger.module = "xel.MapManager._progressCallback";
@@ -46,6 +48,7 @@ xel.MapManager._progressCallback = function (loader, resource) {
     xel.MapManager._mapCache[resource.name] = map;
   }
 };
+
 
 xel.MapManager.cache = function (maps, onProgressMiddleware) {
   logger.module = "xel.MapManager.cache";
@@ -74,6 +77,7 @@ xel.MapManager.cache = function (maps, onProgressMiddleware) {
   mapLoader.load();
 };
 
+
 xel.MapManager.uncache = function (mapName) {
   logger.module = "xel.MapManager.uncache";
   if (typeof mapName !== 'string') {
@@ -84,6 +88,7 @@ xel.MapManager.uncache = function (mapName) {
 
   delete xel.MapManager._mapCache[mapName];
 };
+
 
 xel.MapManager.load = function (mapName, mapURL, callback) {
   logger.module = "xel.MapManager.load";
@@ -113,6 +118,7 @@ xel.MapManager.load = function (mapName, mapURL, callback) {
     });
   }
 };
+
 
 xel.MapManager.activate = function (mapName, mapURL) {
   xel.MapManager.load(mapName, mapURL, function(map) {
