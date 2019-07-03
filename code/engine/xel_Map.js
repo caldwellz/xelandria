@@ -48,10 +48,6 @@ xel.Map = function (tiledData) {
     layer.type = layerData.type;
     layer.visible = (layerData.visible || false);
 
-    layer.grid = new Array(obj.tilesWidth);
-    for (var x = 0; x < layer.grid.length; ++x)
-      layer.grid[x] = new Array(obj.tilesHeight);
-
     var gidData = layerData.data;
     if (layer.type === "tilelayer") {
       for (var i = 0; i < gidData.length; ++i) {
@@ -63,12 +59,6 @@ xel.Map = function (tiledData) {
           spr.zIndex = z;
           spr.gridX = gridX;
           spr.gridY = gridY;
-          spr.x = gridX * obj.tilePixWidth;
-          spr.y = gridY * obj.tilePixHeight;
-          if (gridY > obj.tilesHeight)
-            logger.warn("Sprite position exceeds height of map '" + obj.name + "'");
-          else
-            layer.grid[gridX][gridY] = spr;
           if (!obj._spritesByGid[gid])
             obj._spritesByGid[gid] = [];
           obj._spritesByGid[gid].push(spr);
@@ -133,11 +123,13 @@ xel.Map.cacheSpritesheets = function (urls, callback) {
   ld.load(function (loader, resources) {
     for (var res in resources) {
       if (!resources[res].data) {
-        logger.error("xel.Map.prototype.updateSpriteSheets: No data found at URL: '" + resources[res].url + "'");
+        logger.error("xel.Map.prototype.cacheSpritesheets: No data found at URL: '" + resources[res].url + "'");
         continue;
       }
+      if (resources[res].type === PIXI.Loader.Resource.TYPE.IMAGE)
+        continue; // Spritesheet middleware adds the images to the loader
       if (!resources[res].spritesheet) {
-        logger.error("xel.Map.prototype.updateSpriteSheets: Could not parse spritesheet data at URL: '" + resources[res].url + "'");
+        logger.error("xel.Map.prototype.cacheSpritesheets: Could not parse spritesheet data at URL: '" + resources[res].url + "'");
         continue;
       }
       a.href = resources[res].url;
@@ -163,6 +155,11 @@ xel.Map.prototype._updateTiles = function() {
         logger.debug("xel.Map.prototype._updateTiles: Missing spritesheet at map '" + ctx.name + "' grid index [" + tile.gridX.toString() + "][" + tile.gridY.toString() + "]");
         continue;
       }
+      tile.x = tile.gridX * ctx.tilePixWidth;
+      tile.y = tile.gridY * ctx.tilePixHeight;
+      if (tile.gridY > ctx.tilesHeight)
+        logger.warn("Sprite position exceeds height of map '" + ctx.name + "'");
     }
+    ctx._tileUpdates = [];
   });
 };
