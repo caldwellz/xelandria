@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
+"use strict";
 // *** imports
 if (typeof logger === 'undefined') { throw "xel_Map.js: Logger not loaded!"; }
 if (typeof PIXI === 'undefined') { throw "xel_Map.js: PIXI not loaded!"; }
@@ -33,7 +34,7 @@ xel.Map = function (tiledData) {
   obj._spritesByGid = [];
 
   if (tiledData.properties) {
-    for (prop in tiledData.properties) {
+    for (var prop in tiledData.properties) {
       obj[tiledData.properties[prop].name] = tiledData.properties[prop].value;
     }
   }

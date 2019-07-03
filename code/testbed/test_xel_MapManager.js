@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
+"use strict";
 // *** imports
 if (typeof logger === 'undefined') { throw "Logger not loaded!"; }
 if (typeof testutils === 'undefined') { throw "Testbed utils not loaded!"; }
@@ -42,7 +43,7 @@ async function test_xel_MapManager() {
   else
     logger.pass("Map uncached successfully");
 
-  for (mapName in maps) {
+  for (var mapName in maps) {
     xel.MapManager.load(mapName, maps[mapName]);
     await testutils.sleep(1000);
     if ((xel.MapManager._currentMap) && (xel.MapManager._currentMap.name === "a0m0"))

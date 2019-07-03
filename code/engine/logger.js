@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
+"use strict";
 var logger = {};
 logger.module = "";
 logger.messages = new Array();
@@ -58,7 +59,7 @@ logger.debug = function (msg) {
   if (msg && logger.debugMode && !logger.testMode) {
     msg = logger.modulize(msg);
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: #909090;">[DBG] ' + msg + '</span>';
+      var msgHTML = '<span style="color: #909090;">[DBG] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.debug(msg);
@@ -70,7 +71,7 @@ logger.warn = function (msg) {
   if (msg && !logger.testMode) {
     msg = logger.modulize(msg);
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: orange;">[WARN] ' + msg + '</span>';
+      var msgHTML = '<span style="color: orange;">[WARN] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.warn(msg);
@@ -82,7 +83,7 @@ logger.error = function (msg) {
   if (msg && !logger.testMode) {
     msg = logger.modulize(msg);
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
+      var msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.error(msg);
@@ -95,7 +96,7 @@ logger.pass = function (msg) {
   if (msg && logger.testMode) {
     msg = logger.modulize(msg);
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: green;">[PASS] ' + msg + '</span>';
+      var msgHTML = '<span style="color: green;">[PASS] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.log(msg);
@@ -108,7 +109,7 @@ logger.fail = function (msg) {
   if (msg && logger.testMode) {
     msg = logger.modulize(msg);
     if (typeof msg === 'string') {
-      msgHTML = '<span style="color: red;">[FAIL] ' + msg + '</span>';
+      var msgHTML = '<span style="color: red;">[FAIL] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.warn(msg);
@@ -138,7 +139,7 @@ logger.clearTestStats = function () {
 // Uncaught throws will typically be logged in console by the window
 logger.boxError = function (msg) {
   if (typeof msg === 'string') {
-    msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
+    var msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
     logger.push(msgHTML);
   }
 };

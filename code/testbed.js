@@ -2,6 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
+"use strict";
 // *** imports
 if (typeof logger === 'undefined') { throw "main.js: Logger not loaded!"; }
 if (typeof xel === 'undefined') { throw "main.js: xel engine does not exist!"; }
