@@ -114,7 +114,7 @@
         {
          "name":"angle",
          "type":"int",
-         "value":0
+         "value":1
         }],
  "renderorder":"right-down",
  "tiledversion":"1.2.3",
