@@ -11,16 +11,27 @@ xel.settings = xel.settings || {};
 xel.settings.maps = xel.settings.maps || {};
 // *** settings
 xel.settings.maps.tilesetAngles = xel.settings.maps.tilesetAngles || 8;
+xel.settings.maps.basePath = xel.settings.maps.basePath || "assets/maps/";
 // ***
 
-xel.Map = function (tiledData) {
-  var obj = Object.create(xel.Map.prototype);
+xel.Map = {};
+xel.Map.prototype = {};
+xel.Map.cache = {};
+
+xel.Map.fromTiledMapData = function (tiledData) {
+  if ((!tiledData) || (tiledData.type !== "map")) {
+    logger.error("Loaded file isn't a Tiled JSON map");
+    logger.debug(resource.url);
+    return null;
+  }
+
   if (!tiledData.width || !tiledData.height || !tiledData.tilewidth || !tiledData.tileheight || !tiledData.orientation) {
     logger.error("Invalid map parameter(s)");
     logger.debug(tiledData);
     return null;
   }
 
+  var obj = Object.create(xel.Map.prototype);
   obj.tilesWidth = tiledData.width;
   obj.tilesHeight = tiledData.height;
   obj.tilePixWidth = tiledData.tilewidth;
@@ -103,12 +114,59 @@ xel.Map = function (tiledData) {
   // Temporary test for rotation
   var btn = document.createElement("button");
   btn.innerText = "Rotate Clockwise";
-  btn.onclick = function () {xel.MapManager._mapCache.a0m0._rotate90();};
+  btn.onclick = function () {xel.Map.cache.a0m0._rotate90();};
   btn.style.position = "absolute";
   btn.style.top = "2px";
   document.body.appendChild(btn);
 
   return obj;
+};
+
+
+xel.Map.loadTiledMap = function (mapName, options) {
+  if (typeof mapName !== 'string') {
+    logger.error("xel.Map.loadTiledMap: mapName not a string");
+    logger.debug(mapName);
+    return;
+  }
+
+  options = options || {};
+  var basePath = options.basePath || xel.settings.maps.basePath;
+  var mapURL = options.url || (basePath + mapName + ".json");
+  var map = xel.Map.cache[mapName] || xel.Map.cache[mapURL];
+
+  if (map) {
+    if (options.activate)
+      map.activate();
+    if (typeof options.callback === "function")
+      callback(map);
+  } else {
+    var mapLoader = new PIXI.Loader();
+    if (options.loaderPreCallback)
+      mapLoader.pre(options.loaderPreCallback);
+    if (options.loaderProgressCallback)
+      mapLoader.onProgress.add(options.loaderProgressCallback);
+    mapLoader.add(mapName, mapURL);
+    mapLoader.load(function(loader, resources) {
+      var map;
+      for (var res in resources) {
+        if ((resources[res].data) && (resources[res].type === PIXI.Loader.Resource.TYPE.JSON))
+          map = xel.Map.fromTiledMapData(resources[res].data);
+      }
+      if (map) {
+        xel.Map.cache[mapName] = xel.Map.cache[mapURL] = map;
+        logger.debug("Map '" + mapName + "' loaded");
+        if (options.activate)
+          map.activate();
+        if (typeof callback === "function")
+          callback(map);
+      }
+      else {
+        logger.error("Failed to load map '" + mapName + "'");
+        logger.debug(mapURL);
+      }
+    });
+  }
 };
 
 
@@ -150,6 +208,22 @@ xel.Map.cacheSpritesheets = function (urls, callback) {
       callback();
   });
 }
+
+
+xel.Map.clearAll = function () {
+  xel.app.stage.removeChildren();
+  xel.Map._currentMap = null;
+  for (var map in xel.Map.cache)
+    delete xel.Map.cache[map];
+}
+
+
+xel.Map.prototype.activate = function () {
+  xel.Map._currentMap = this;
+  // TODO: Maybe use visibility instead of add/remove
+  xel.app.stage.removeChildren();
+  xel.app.stage.addChild(this.layers);
+};
 
 
 xel.Map.prototype._updateTiles = function() {

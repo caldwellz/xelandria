@@ -11,7 +11,7 @@ if (typeof xel === 'undefined') { throw "main.js: xel engine does not exist!"; }
 function main() {
   logger.debugMode = true;
   xel.initialize();
-  xel.MapManager.activate("a0m0", "assets/maps/a0m0.json");
+  xel.Map.loadTiledMap("a0m0", {activate: true});
 }
 
 main();

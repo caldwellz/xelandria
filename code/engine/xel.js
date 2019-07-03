@@ -27,6 +27,7 @@ xel.initialize = function () {
 
 xel.destroy = function () {
   if (xel.initialized) {
+    xel.Map.clearAll();
     document.getElementById("stage").removeChild(xel.app.view);
     xel.app.destroy(false, true);
     delete xel.app;
