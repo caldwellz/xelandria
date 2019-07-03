@@ -177,7 +177,7 @@ xel.Map.prototype._updateTiles = function() {
 
 
 xel.Map.prototype._rotate90 = function() {
-  for (l in this.layers.children) {
+  for (var l in this.layers.children) {
     var layer = this.layers.children[l];
     if (layer.type === "tilelayer") {
       for (var t in layer.children) {

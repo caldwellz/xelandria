@@ -8,7 +8,7 @@ logger.module = "";
 logger.messages = new Array();
 logger.logbox = document.createElement("div");
 logger.logbox.id = "logbox";
-document.body.append(logger.logbox);
+document.body.appendChild(logger.logbox);
 
 logger.testsPassed = 0;
 logger.testsFailed = 0;
