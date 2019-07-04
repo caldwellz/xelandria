@@ -8,10 +8,25 @@ if (typeof logger === 'undefined') { throw "main.js: Logger not loaded!"; }
 if (typeof xel === 'undefined') { throw "main.js: xel engine does not exist!"; }
 // ***
 
+function setup() {
+  xel.Map.loadTiledMap("a0m0", {activate: true});
+
+  return true;
+}
+
+
+function update() {
+  
+}
+
+
 function main() {
   logger.debugMode = true;
   xel.initialize();
-  xel.Map.loadTiledMap("a0m0", {activate: true});
+  if (xel.initialized) {
+    if (setup())
+      xel.app.ticker.add(update);
+  }
 }
 
 main();
