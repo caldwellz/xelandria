@@ -20,13 +20,13 @@ xel.Map.cache = {};
 
 xel.Map.fromTiledMapData = function (tiledData) {
   if ((!tiledData) || (tiledData.type !== "map")) {
-    logger.error("Loaded file isn't a Tiled JSON map");
+    logger.error("xel.Map.fromTiledMapData: Loaded file isn't a Tiled JSON map");
     logger.debug(resource.url);
     return null;
   }
 
   if (!tiledData.width || !tiledData.height || !tiledData.tilewidth || !tiledData.tileheight || !tiledData.orientation) {
-    logger.error("Invalid map parameter(s)");
+    logger.error("xel.Map.fromTiledMapData: Invalid map parameter(s)");
     logger.debug(tiledData);
     return null;
   }
@@ -162,7 +162,7 @@ xel.Map.loadTiledMap = function (mapName, options) {
           callback(map);
       }
       else {
-        logger.error("Failed to load map '" + mapName + "'");
+        logger.error("xel.Map.loadTiledMap: Failed to load map '" + mapName + "'");
         logger.debug(mapURL);
       }
     });
@@ -191,13 +191,13 @@ xel.Map.cacheSpritesheets = function (urls, callback) {
   ld.load(function (loader, resources) {
     for (var res in resources) {
       if (!resources[res].data) {
-        logger.error("xel.Map.prototype.cacheSpritesheets: No data found at URL: '" + resources[res].url + "'");
+        logger.error("xel.Map.cacheSpritesheets: No data found at URL: '" + resources[res].url + "'");
         continue;
       }
       if (resources[res].type === PIXI.Loader.Resource.TYPE.IMAGE)
         continue; // Spritesheet middleware adds the images to the loader
       if (!resources[res].spritesheet) {
-        logger.error("xel.Map.prototype.cacheSpritesheets: Could not parse spritesheet data at URL: '" + resources[res].url + "'");
+        logger.error("xel.Map.cacheSpritesheets: Could not parse spritesheet data at URL: '" + resources[res].url + "'");
         continue;
       }
       a.href = resources[res].url;
@@ -243,7 +243,7 @@ xel.Map.prototype._updateTiles = function() {
       tile.x = tile.gridX * ctx.tilePixWidth;
       tile.y = tile.gridY * ctx.tilePixHeight;
       if (tile.gridY > ctx.tilesHeight)
-        logger.warn("Sprite position exceeds height of map '" + ctx.name + "'");
+        logger.warn("xel.Map.prototype._updateTiles: Sprite position exceeds height of map '" + ctx.name + "'");
     }
     ctx._tileUpdates = [];
   });

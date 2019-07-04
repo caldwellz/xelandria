@@ -4,7 +4,6 @@
 
 "use strict";
 var logger = {};
-logger.module = "";
 logger.messages = new Array();
 logger.logbox = document.createElement("div");
 logger.logbox.id = "logbox";
@@ -14,7 +13,6 @@ logger.testsPassed = 0;
 logger.testsFailed = 0;
 
 logger.clear = function () {
-  logger.module = "";
   logger.messages = new Array();
   logger.logbox.innerHTML = "";
   console.clear();
@@ -37,17 +35,8 @@ logger.rewrite = function (msg) {
 };
 
 
-logger.modulize = function (msg) {
-  if ((typeof msg === 'string') && (logger.module.length > 0) && (logger.debugMode || logger.testMode))
-    return logger.module + ": " + msg;
-  else
-    return msg;
-}
-
-
 logger.log = function (msg) {
   if (msg && !logger.testMode) {
-    msg = logger.modulize(msg);
     if (typeof msg === 'string')
       logger.push(msg);
     console.log(msg);
@@ -57,7 +46,6 @@ logger.log = function (msg) {
 
 logger.debug = function (msg) {
   if (msg && logger.debugMode && !logger.testMode) {
-    msg = logger.modulize(msg);
     if (typeof msg === 'string') {
       var msgHTML = '<span style="color: #909090;">[DBG] ' + msg + '</span>';
       logger.push(msgHTML);
@@ -69,7 +57,6 @@ logger.debug = function (msg) {
 
 logger.warn = function (msg) {
   if (msg && !logger.testMode) {
-    msg = logger.modulize(msg);
     if (typeof msg === 'string') {
       var msgHTML = '<span style="color: orange;">[WARN] ' + msg + '</span>';
       logger.push(msgHTML);
@@ -81,7 +68,6 @@ logger.warn = function (msg) {
 
 logger.error = function (msg) {
   if (msg && !logger.testMode) {
-    msg = logger.modulize(msg);
     if (typeof msg === 'string') {
       var msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
       logger.push(msgHTML);
@@ -94,7 +80,6 @@ logger.error = function (msg) {
 logger.pass = function (msg) {
   logger.testsPassed++;
   if (msg && logger.testMode) {
-    msg = logger.modulize(msg);
     if (typeof msg === 'string') {
       var msgHTML = '<span style="color: green;">[PASS] ' + msg + '</span>';
       logger.push(msgHTML);
@@ -107,7 +92,6 @@ logger.pass = function (msg) {
 logger.fail = function (msg) {
   logger.testsFailed++;
   if (msg && logger.testMode) {
-    msg = logger.modulize(msg);
     if (typeof msg === 'string') {
       var msgHTML = '<span style="color: red;">[FAIL] ' + msg + '</span>';
       logger.push(msgHTML);

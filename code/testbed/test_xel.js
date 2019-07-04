@@ -10,25 +10,24 @@ if ((typeof xel === 'undefined') || (typeof xel.initialize === 'undefined')) { t
 // ***
 
 function test_xel() {
-  logger.module = "testbed/test_xel";
   xel.initialize()
   if (!xel.initialized) {
-    logger.fail("Could not initialize xel engine");
+    logger.fail("testbed/test_xel: Could not initialize xel engine");
     return;
   }
-  logger.pass("xel initialized");
+  logger.pass("testbed/test_xel: xel initialized");
 
   xel.destroy();
   if (xel.initialized) {
-    logger.fail("xel engine not destroyed properly (xel.initialized is true still)");
+    logger.fail("testbed/test_xel: xel engine not destroyed properly (xel.initialized is true still)");
     return;
   }
-  logger.pass("xel destroyed");
+  logger.pass("testbed/test_xel: xel destroyed");
 
   xel.reload()
   if (!xel.initialized) {
-    logger.fail("Could not reload xel engine");
+    logger.fail("testbed/test_xel: Could not reload xel engine");
     return;
   }
-  logger.pass("xel reloaded");
+  logger.pass("testbed/test_xel: xel reloaded");
 }
