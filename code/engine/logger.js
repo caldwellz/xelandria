@@ -81,7 +81,7 @@ logger.pass = function (msg) {
   logger.testsPassed++;
   if (msg && logger.testMode) {
     if (typeof msg === 'string') {
-      var msgHTML = '<span style="color: green;">[PASS] ' + msg + '</span>';
+      var msgHTML = '<span style="color: green;">[PASSED] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.log(msg);
@@ -93,12 +93,30 @@ logger.fail = function (msg) {
   logger.testsFailed++;
   if (msg && logger.testMode) {
     if (typeof msg === 'string') {
-      var msgHTML = '<span style="color: red;">[FAIL] ' + msg + '</span>';
+      var msgHTML = '<span style="color: red;">[FAILED] ' + msg + '</span>';
       logger.push(msgHTML);
     }
     console.warn(msg);
   }
 };
+
+
+logger.assert = function (condition, msg) {
+  if (condition)
+    logger.pass(msg);
+  else
+    logger.fail(msg);
+}
+
+
+logger.beginTest = function (testName) {
+  if ((typeof testName === 'string') && logger.testMode) {
+    var msg = "*** Beginning test 'testbed/" + testName + "' ***";
+    var msgHTML = '<span style="color: blue;">' + msg + '</span>';
+    logger.push(msgHTML);
+    console.log(msg);
+  }
+}
 
 
 logger.logTestStats = function () {

@@ -8,14 +8,14 @@ if (typeof logger === 'undefined') { throw "testbed.js: Logger not loaded!"; }
 if (typeof xel === 'undefined') { throw "testbed.js: xel engine does not exist!"; }
 // ***
 
-async function testMain() {
+function testMain() {
   logger.testMode = true;
 
   if (typeof test_xel === 'function')
-    test_xel(); //xel.initialize(), etc.
+    test_xel(); //takes care of xel.initialize(), etc.
 
-  if (typeof test_xel_MapManager === 'function')
-    test_xel_MapManager();
+  if (typeof test_xel_Map === 'function')
+    test_xel_Map();
 }
 
 testMain();

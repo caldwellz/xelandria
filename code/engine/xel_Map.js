@@ -139,7 +139,7 @@ xel.Map.loadTiledMap = function (mapName, options) {
     if (options.activate)
       map.activate();
     if (typeof options.callback === "function")
-      callback(map);
+      options.callback(map);
   } else {
     var mapLoader = new PIXI.Loader();
     if (options.loaderPreCallback)
@@ -154,12 +154,14 @@ xel.Map.loadTiledMap = function (mapName, options) {
           map = xel.Map.fromTiledMapData(resources[res].data);
       }
       if (map) {
+        map.name = mapName;
+        map.url = mapURL;
         xel.Map.cache[mapName] = xel.Map.cache[mapURL] = map;
         logger.debug("Map '" + mapName + "' loaded");
         if (options.activate)
           map.activate();
-        if (typeof callback === "function")
-          callback(map);
+        if (typeof options.callback === "function")
+          options.callback(map);
       }
       else {
         logger.error("xel.Map.loadTiledMap: Failed to load map '" + mapName + "'");
