@@ -7,19 +7,23 @@
 if (typeof logger === 'undefined') { throw "xel.js: Logger not loaded!"; }
 if (typeof PIXI === 'undefined') { throw "xel.js: PIXI not loaded!"; }
 var xel = xel || {};
+xel.settings = xel.settings || {};
+xel.settings.display = xel.settings.display || {};
+// *** settings
+xel.settings.display.intendedResolution = xel.settings.display.intendedResolution || [2048, 1408]; // 8x8 test map tiles + vertical padding
+xel.settings.display.aspectRatio = xel.settings.display.aspectRatio || (xel.settings.display.intendedResolution[0] / xel.settings.display.intendedResolution[1]);
 // ***
 
 xel.initialized = false;
-xel.intendedDisplaySize = [2048, 1536]; // 8x8 current map tiles + vertical padding
-xel.aspectRatio = xel.intendedDisplaySize[0] / xel.intendedDisplaySize[1];
-
 
 xel.initialize = function () {
   if (!xel.initialized) {
     var elem = document.getElementById("stage");
     xel.app = new PIXI.Application({resizeTo: elem});
     elem.appendChild(xel.app.view);
-    xel.scaleStage();
+    // Takes a bit for the stage to set up its width and such;
+    // scale / position it once it finally does
+    xel.app.ticker.add(_scaleTicker);
     xel.initialized = true;
   }
 };
@@ -44,23 +48,33 @@ xel.reload = function () {
 };
 
 
+var _scaleTick = 0;
+function _scaleTicker() {
+  // Wait until the stage resizes itself
+  if (xel.app.stage.width > 1) {
+    logger.debug("Updating stage view at tick " + _scaleTick.toString());
+    xel.scaleStage();
+    xel.app.ticker.remove(_scaleTicker);
+  }
+  else {
+    ++_scaleTick;
+  }
+}
+
+
 xel.scaleStage = function () {
-  var w = window.innerWidth;
-  var h = window.innerHeight;
+  var w = document.getElementById("stage").offsetWidth;
+  var h = document.getElementById("stage").offsetHeight;
   if (xel.app) {
     if (w >= h) {
-      xel.app.stage.scale.set(h / xel.intendedDisplaySize[1]);
-      if (xel.app.stage.width > 0) {
-        xel.app.stage.x = (w - xel.app.stage.width) / 2;
-        xel.app.stage.y = 0;
-      }
+      xel.app.stage.scale.set(h / xel.settings.display.intendedResolution[1]);
+      xel.app.stage.x = (w - xel.app.stage.width) / 2;
+      xel.app.stage.y = 0;
     }
     else {
-      xel.app.stage.scale.set(w / xel.intendedDisplaySize[0]);
-      if (xel.app.stage.height > 0) {
-        xel.app.stage.x = 0;
-        xel.app.stage.y = (h - xel.app.stage.height) / 2;
-      }
+      xel.app.stage.scale.set(w / xel.settings.display.intendedResolution[0]);
+      xel.app.stage.x = 0;
+      xel.app.stage.y = (h - xel.app.stage.height) / 2;
     }
   }
 };
