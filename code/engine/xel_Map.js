@@ -55,10 +55,10 @@ xel.Map.fromTiledMapData = function (tiledData) {
   for (var l in tiledData.layers) {
     var layerData = tiledData.layers[l];
     var layer = new PIXI.Container();
-    layer.sortableChildren = true;
     layer.name = layerData.name;
     layer.type = layerData.type;
     layer.visible = (layerData.visible || false);
+    layer.zIndex = z;
 
     var gidData = layerData.data;
     if (layer.type === "tilelayer") {
@@ -68,7 +68,6 @@ xel.Map.fromTiledMapData = function (tiledData) {
           var gridX = i % obj.tilesWidth;
           var gridY = (i - gridX) / obj.tilesWidth;
           var spr = new PIXI.Sprite();
-          spr.zIndex = z;
           spr.gridX = gridX;
           spr.gridY = gridY;
           if (!obj._spritesByGid[gid])
@@ -84,10 +83,11 @@ xel.Map.fromTiledMapData = function (tiledData) {
         layer[layerData.properties[prop].name] = layerData.properties[prop].value;
       }
     }
-    layer.sortChildren();
     obj.layers.addChild(layer);
     ++z;
   }
+  obj.layers.sortableChildren = true;
+  obj.layers.sortChildren();
 
   obj._sheetURLs = [];
   for (var t = 0; t < obj.tilesets.length; ++t) {
