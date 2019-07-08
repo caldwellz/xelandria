@@ -21,16 +21,17 @@ logger.clear = function () {
 
 logger.push = function (msg) {
   if (msg) {
-    logger.messages.unshift(msg);
+    logger.messages.push(msg);
     logger.logbox.innerHTML = logger.messages.join("<br />");
+    logger.logbox.scrollTop = logger.logbox.scrollHeight;
   }
 };
 
 
 logger.rewrite = function (msg) {
   if (msg) {
-    logger.messages[0] = msg;
-    logger.logbox.innerHTML = logger.messages.join("<br />");
+    logger.messages.pop();
+    logger.push(msg);
   }
 };
 
