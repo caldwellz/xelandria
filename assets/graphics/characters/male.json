@@ -1,0 +1,1068 @@
+{
+"frames": {
+	"Male_0_Idle0.png": {
+		"frame": {"x":1094, "y":997, "w":45, "h":133},
+		"spriteSourceSize": {"x":106,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup0.png": {
+		"frame": {"x":1095, "y":270, "w":45, "h":134},
+		"spriteSourceSize": {"x":106,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup1.png": {
+		"frame": {"x":944, "y":0, "w":51, "h":115},
+		"spriteSourceSize": {"x":113,"y":343,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup2.png": {
+		"frame": {"x":433, "y":0, "w":62, "h":77},
+		"spriteSourceSize": {"x":110,"y":381,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup3.png": {
+		"frame": {"x":645, "y":589, "w":61, "h":75},
+		"spriteSourceSize": {"x":110,"y":383,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup4.png": {
+		"frame": {"x":503, "y":1089, "w":61, "h":78},
+		"spriteSourceSize": {"x":110,"y":380,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup5.png": {
+		"frame": {"x":886, "y":916, "w":56, "h":101},
+		"spriteSourceSize": {"x":114,"y":357,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup6.png": {
+		"frame": {"x":1046, "y":605, "w":48, "h":120},
+		"spriteSourceSize": {"x":113,"y":338,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup7.png": {
+		"frame": {"x":1095, "y":532, "w":44, "h":128},
+		"spriteSourceSize": {"x":107,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup8.png": {
+		"frame": {"x":996, "y":808, "w":51, "h":132},
+		"spriteSourceSize": {"x":100,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Pickup9.png": {
+		"frame": {"x":996, "y":216, "w":52, "h":134},
+		"spriteSourceSize": {"x":98,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run0.png": {
+		"frame": {"x":708, "y":369, "w":59, "h":132},
+		"spriteSourceSize": {"x":98,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run1.png": {
+		"frame": {"x":351, "y":998, "w":77, "h":135},
+		"spriteSourceSize": {"x":84,"y":317,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run2.png": {
+		"frame": {"x":196, "y":422, "w":83, "h":128},
+		"spriteSourceSize": {"x":80,"y":314,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run3.png": {
+		"frame": {"x":506, "y":233, "w":70, "h":118},
+		"spriteSourceSize": {"x":92,"y":322,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run4.png": {
+		"frame": {"x":642, "y":123, "w":64, "h":123},
+		"spriteSourceSize": {"x":102,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run5.png": {
+		"frame": {"x":643, "y":920, "w":62, "h":135},
+		"spriteSourceSize": {"x":105,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run6.png": {
+		"frame": {"x":358, "y":394, "w":74, "h":138},
+		"spriteSourceSize": {"x":92,"y":314,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run7.png": {
+		"frame": {"x":271, "y":1033, "w":79, "h":128},
+		"spriteSourceSize": {"x":85,"y":315,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run8.png": {
+		"frame": {"x":576, "y":352, "w":66, "h":114},
+		"spriteSourceSize": {"x":97,"y":322,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_0_Run9.png": {
+		"frame": {"x":887, "y":0, "w":56, "h":118},
+		"spriteSourceSize": {"x":106,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Idle0.png": {
+		"frame": {"x":1141, "y":0, "w":26, "h":136},
+		"spriteSourceSize": {"x":116,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup0.png": {
+		"frame": {"x":1140, "y":933, "w":26, "h":136},
+		"spriteSourceSize": {"x":116,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup1.png": {
+		"frame": {"x":577, "y":221, "w":64, "h":105},
+		"spriteSourceSize": {"x":105,"y":355,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup2.png": {
+		"frame": {"x":112, "y":120, "w":79, "h":74},
+		"spriteSourceSize": {"x":92,"y":387,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup3.png": {
+		"frame": {"x":197, "y":236, "w":78, "h":72},
+		"spriteSourceSize": {"x":93,"y":389,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup4.png": {
+		"frame": {"x":276, "y":236, "w":77, "h":75},
+		"spriteSourceSize": {"x":95,"y":386,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup5.png": {
+		"frame": {"x":355, "y":881, "w":74, "h":93},
+		"spriteSourceSize": {"x":96,"y":368,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup6.png": {
+		"frame": {"x":643, "y":354, "w":63, "h":114},
+		"spriteSourceSize": {"x":96,"y":347,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup7.png": {
+		"frame": {"x":997, "y":617, "w":48, "h":127},
+		"spriteSourceSize": {"x":102,"y":334,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup8.png": {
+		"frame": {"x":1096, "y":661, "w":37, "h":133},
+		"spriteSourceSize": {"x":106,"y":328,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Pickup9.png": {
+		"frame": {"x":1134, "y":796, "w":28, "h":136},
+		"spriteSourceSize": {"x":113,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run0.png": {
+		"frame": {"x":429, "y":975, "w":74, "h":113},
+		"spriteSourceSize": {"x":95,"y":335,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run1.png": {
+		"frame": {"x":0, "y":414, "w":104, "h":111},
+		"spriteSourceSize": {"x":72,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run2.png": {
+		"frame": {"x":0, "y":102, "w":111, "h":102},
+		"spriteSourceSize": {"x":67,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run3.png": {
+		"frame": {"x":0, "y":865, "w":94, "h":119},
+		"spriteSourceSize": {"x":83,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run4.png": {
+		"frame": {"x":506, "y":117, "w":70, "h":115},
+		"spriteSourceSize": {"x":98,"y":339,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run5.png": {
+		"frame": {"x":355, "y":758, "w":76, "h":122},
+		"spriteSourceSize": {"x":97,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run6.png": {
+		"frame": {"x":0, "y":643, "w":102, "h":114},
+		"spriteSourceSize": {"x":73,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run7.png": {
+		"frame": {"x":0, "y":205, "w":106, "h":102},
+		"spriteSourceSize": {"x":66,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run8.png": {
+		"frame": {"x":107, "y":205, "w":89, "h":113},
+		"spriteSourceSize": {"x":82,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_1_Run9.png": {
+		"frame": {"x":507, "y":568, "w":68, "h":108},
+		"spriteSourceSize": {"x":96,"y":340,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Idle0.png": {
+		"frame": {"x":1047, "y":0, "w":47, "h":135},
+		"spriteSourceSize": {"x":105,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup0.png": {
+		"frame": {"x":1048, "y":861, "w":47, "h":135},
+		"spriteSourceSize": {"x":105,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup1.png": {
+		"frame": {"x":202, "y":0, "w":79, "h":96},
+		"spriteSourceSize": {"x":86,"y":364,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup2.png": {
+		"frame": {"x":103, "y":643, "w":92, "h":73},
+		"spriteSourceSize": {"x":75,"y":389,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup3.png": {
+		"frame": {"x":0, "y":985, "w":93, "h":69},
+		"spriteSourceSize": {"x":74,"y":392,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup4.png": {
+		"frame": {"x":94, "y":1068, "w":92, "h":72},
+		"spriteSourceSize": {"x":75,"y":389,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup5.png": {
+		"frame": {"x":105, "y":414, "w":90, "h":89},
+		"spriteSourceSize": {"x":77,"y":372,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup6.png": {
+		"frame": {"x":280, "y":439, "w":77, "h":108},
+		"spriteSourceSize": {"x":82,"y":353,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup7.png": {
+		"frame": {"x":768, "y":911, "w":59, "h":124},
+		"spriteSourceSize": {"x":92,"y":337,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup8.png": {
+		"frame": {"x":997, "y":351, "w":49, "h":132},
+		"spriteSourceSize": {"x":99,"y":329,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Pickup9.png": {
+		"frame": {"x":1048, "y":997, "w":45, "h":136},
+		"spriteSourceSize": {"x":102,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run0.png": {
+		"frame": {"x":707, "y":684, "w":61, "h":100},
+		"spriteSourceSize": {"x":103,"y":344,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run1.png": {
+		"frame": {"x":282, "y":0, "w":76, "h":87},
+		"spriteSourceSize": {"x":91,"y":335,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run2.png": {
+		"frame": {"x":196, "y":319, "w":83, "h":102},
+		"spriteSourceSize": {"x":85,"y":332,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run3.png": {
+		"frame": {"x":433, "y":303, "w":72, "h":119},
+		"spriteSourceSize": {"x":97,"y":341,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run4.png": {
+		"frame": {"x":643, "y":1056, "w":62, "h":108},
+		"spriteSourceSize": {"x":107,"y":349,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run5.png": {
+		"frame": {"x":707, "y":785, "w":60, "h":105},
+		"spriteSourceSize": {"x":101,"y":342,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run6.png": {
+		"frame": {"x":276, "y":816, "w":78, "h":88},
+		"spriteSourceSize": {"x":84,"y":333,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run7.png": {
+		"frame": {"x":188, "y":803, "w":87, "h":105},
+		"spriteSourceSize": {"x":77,"y":333,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run8.png": {
+		"frame": {"x":432, "y":185, "w":73, "h":117},
+		"spriteSourceSize": {"x":90,"y":340,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_2_Run9.png": {
+		"frame": {"x":577, "y":115, "w":64, "h":105},
+		"spriteSourceSize": {"x":99,"y":349,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Idle0.png": {
+		"frame": {"x":828, "y":797, "w":57, "h":130},
+		"spriteSourceSize": {"x":100,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup0.png": {
+		"frame": {"x":886, "y":532, "w":57, "h":129},
+		"spriteSourceSize": {"x":100,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup1.png": {
+		"frame": {"x":507, "y":470, "w":69, "h":97},
+		"spriteSourceSize": {"x":88,"y":364,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup2.png": {
+		"frame": {"x":504, "y":998, "w":71, "h":83},
+		"spriteSourceSize": {"x":87,"y":380,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup3.png": {
+		"frame": {"x":429, "y":1089, "w":73, "h":81},
+		"spriteSourceSize": {"x":85,"y":382,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup4.png": {
+		"frame": {"x":358, "y":310, "w":74, "h":83},
+		"spriteSourceSize": {"x":84,"y":380,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup5.png": {
+		"frame": {"x":358, "y":533, "w":73, "h":97},
+		"spriteSourceSize": {"x":85,"y":366,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup6.png": {
+		"frame": {"x":577, "y":682, "w":66, "h":110},
+		"spriteSourceSize": {"x":91,"y":350,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup7.png": {
+		"frame": {"x":769, "y":106, "w":58, "h":119},
+		"spriteSourceSize": {"x":99,"y":337,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup8.png": {
+		"frame": {"x":828, "y":404, "w":58, "h":127},
+		"spriteSourceSize": {"x":102,"y":329,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Pickup9.png": {
+		"frame": {"x":769, "y":579, "w":58, "h":130},
+		"spriteSourceSize": {"x":101,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run0.png": {
+		"frame": {"x":943, "y":119, "w":53, "h":96},
+		"spriteSourceSize": {"x":103,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run1.png": {
+		"frame": {"x":577, "y":914, "w":52, "h":80},
+		"spriteSourceSize": {"x":102,"y":338,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run2.png": {
+		"frame": {"x":943, "y":808, "w":52, "h":101},
+		"spriteSourceSize": {"x":101,"y":336,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run3.png": {
+		"frame": {"x":887, "y":356, "w":54, "h":118},
+		"spriteSourceSize": {"x":100,"y":346,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run4.png": {
+		"frame": {"x":828, "y":928, "w":57, "h":104},
+		"spriteSourceSize": {"x":100,"y":354,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run5.png": {
+		"frame": {"x":887, "y":259, "w":55, "h":96},
+		"spriteSourceSize": {"x":100,"y":347,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run6.png": {
+		"frame": {"x":507, "y":677, "w":56, "h":83},
+		"spriteSourceSize": {"x":101,"y":339,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run7.png": {
+		"frame": {"x":768, "y":0, "w":58, "h":105},
+		"spriteSourceSize": {"x":100,"y":339,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run8.png": {
+		"frame": {"x":708, "y":249, "w":60, "h":119},
+		"spriteSourceSize": {"x":98,"y":345,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_3_Run9.png": {
+		"frame": {"x":768, "y":369, "w":59, "h":103},
+		"spriteSourceSize": {"x":98,"y":354,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Idle0.png": {
+		"frame": {"x":1095, "y":135, "w":45, "h":134},
+		"spriteSourceSize": {"x":105,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup0.png": {
+		"frame": {"x":1049, "y":136, "w":45, "h":133},
+		"spriteSourceSize": {"x":105,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup1.png": {
+		"frame": {"x":943, "y":1053, "w":51, "h":108},
+		"spriteSourceSize": {"x":92,"y":358,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup2.png": {
+		"frame": {"x":577, "y":467, "w":62, "h":96},
+		"spriteSourceSize": {"x":84,"y":372,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup3.png": {
+		"frame": {"x":707, "y":589, "w":61, "h":94},
+		"spriteSourceSize": {"x":85,"y":374,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup4.png": {
+		"frame": {"x":706, "y":1060, "w":61, "h":95},
+		"spriteSourceSize": {"x":85,"y":373,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup5.png": {
+		"frame": {"x":886, "y":1018, "w":56, "h":110},
+		"spriteSourceSize": {"x":86,"y":358,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup6.png": {
+		"frame": {"x":1046, "y":484, "w":48, "h":120},
+		"spriteSourceSize": {"x":95,"y":344,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup7.png": {
+		"frame": {"x":1095, "y":405, "w":44, "h":126},
+		"spriteSourceSize": {"x":105,"y":333,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup8.png": {
+		"frame": {"x":996, "y":941, "w":51, "h":132},
+		"spriteSourceSize": {"x":105,"y":327,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Pickup9.png": {
+		"frame": {"x":943, "y":216, "w":52, "h":134},
+		"spriteSourceSize": {"x":106,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run0.png": {
+		"frame": {"x":768, "y":473, "w":59, "h":105},
+		"spriteSourceSize": {"x":99,"y":343,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run1.png": {
+		"frame": {"x":277, "y":97, "w":77, "h":92},
+		"spriteSourceSize": {"x":95,"y":333,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run2.png": {
+		"frame": {"x":187, "y":1068, "w":83, "h":100},
+		"spriteSourceSize": {"x":93,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run3.png": {
+		"frame": {"x":506, "y":0, "w":70, "h":116},
+		"spriteSourceSize": {"x":94,"y":342,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run4.png": {
+		"frame": {"x":643, "y":247, "w":64, "h":106},
+		"spriteSourceSize": {"x":90,"y":349,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run5.png": {
+		"frame": {"x":644, "y":682, "w":62, "h":100},
+		"spriteSourceSize": {"x":89,"y":344,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run6.png": {
+		"frame": {"x":430, "y":884, "w":73, "h":87},
+		"spriteSourceSize": {"x":91,"y":336,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run7.png": {
+		"frame": {"x":196, "y":682, "w":79, "h":106},
+		"spriteSourceSize": {"x":92,"y":335,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run8.png": {
+		"frame": {"x":577, "y":793, "w":65, "h":120},
+		"spriteSourceSize": {"x":93,"y":341,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_4_Run9.png": {
+		"frame": {"x":886, "y":662, "w":56, "h":106},
+		"spriteSourceSize": {"x":94,"y":351,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Idle0.png": {
+		"frame": {"x":1141, "y":137, "w":26, "h":134},
+		"spriteSourceSize": {"x":114,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup0.png": {
+		"frame": {"x":1140, "y":405, "w":26, "h":134},
+		"spriteSourceSize": {"x":114,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup1.png": {
+		"frame": {"x":577, "y":0, "w":64, "h":114},
+		"spriteSourceSize": {"x":87,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup2.png": {
+		"frame": {"x":107, "y":319, "w":79, "h":94},
+		"spriteSourceSize": {"x":85,"y":368,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup3.png": {
+		"frame": {"x":276, "y":905, "w":78, "h":92},
+		"spriteSourceSize": {"x":85,"y":371,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup4.png": {
+		"frame": {"x":280, "y":548, "w":77, "h":93},
+		"spriteSourceSize": {"x":84,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup5.png": {
+		"frame": {"x":432, "y":656, "w":74, "h":108},
+		"spriteSourceSize": {"x":86,"y":355,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup6.png": {
+		"frame": {"x":643, "y":793, "w":63, "h":126},
+		"spriteSourceSize": {"x":97,"y":335,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup7.png": {
+		"frame": {"x":997, "y":484, "w":48, "h":132},
+		"spriteSourceSize": {"x":106,"y":327,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup8.png": {
+		"frame": {"x":1096, "y":795, "w":37, "h":134},
+		"spriteSourceSize": {"x":113,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Pickup9.png": {
+		"frame": {"x":1134, "y":661, "w":28, "h":134},
+		"spriteSourceSize": {"x":115,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run0.png": {
+		"frame": {"x":432, "y":533, "w":74, "h":122},
+		"spriteSourceSize": {"x":87,"y":333,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run1.png": {
+		"frame": {"x":0, "y":526, "w":104, "h":116},
+		"spriteSourceSize": {"x":80,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run2.png": {
+		"frame": {"x":0, "y":0, "w":111, "h":101},
+		"spriteSourceSize": {"x":78,"y":322,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run3.png": {
+		"frame": {"x":0, "y":1055, "w":93, "h":112},
+		"spriteSourceSize": {"x":80,"y":332,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run4.png": {
+		"frame": {"x":506, "y":765, "w":70, "h":111},
+		"spriteSourceSize": {"x":88,"y":339,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run5.png": {
+		"frame": {"x":355, "y":642, "w":76, "h":115},
+		"spriteSourceSize": {"x":83,"y":334,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run6.png": {
+		"frame": {"x":0, "y":758, "w":102, "h":106},
+		"spriteSourceSize": {"x":81,"y":327,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run7.png": {
+		"frame": {"x":0, "y":308, "w":106, "h":105},
+		"spriteSourceSize": {"x":84,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run8.png": {
+		"frame": {"x":112, "y":0, "w":89, "h":119},
+		"spriteSourceSize": {"x":85,"y":332,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_5_Run9.png": {
+		"frame": {"x":576, "y":568, "w":68, "h":113},
+		"spriteSourceSize": {"x":92,"y":342,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Idle0.png": {
+		"frame": {"x":1047, "y":351, "w":47, "h":132},
+		"spriteSourceSize": {"x":104,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup0.png": {
+		"frame": {"x":1048, "y":726, "w":47, "h":134},
+		"spriteSourceSize": {"x":104,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup1.png": {
+		"frame": {"x":197, "y":120, "w":79, "h":115},
+		"spriteSourceSize": {"x":91,"y":339,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup2.png": {
+		"frame": {"x":95, "y":865, "w":92, "h":85},
+		"spriteSourceSize": {"x":89,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup3.png": {
+		"frame": {"x":94, "y":985, "w":93, "h":82},
+		"spriteSourceSize": {"x":89,"y":372,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup4.png": {
+		"frame": {"x":103, "y":717, "w":92, "h":85},
+		"spriteSourceSize": {"x":89,"y":369,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup5.png": {
+		"frame": {"x":105, "y":504, "w":90, "h":107},
+		"spriteSourceSize": {"x":89,"y":347,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup6.png": {
+		"frame": {"x":280, "y":312, "w":77, "h":126},
+		"spriteSourceSize": {"x":97,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup7.png": {
+		"frame": {"x":768, "y":1036, "w":59, "h":133},
+		"spriteSourceSize": {"x":105,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup8.png": {
+		"frame": {"x":997, "y":0, "w":49, "h":134},
+		"spriteSourceSize": {"x":108,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Pickup9.png": {
+		"frame": {"x":1095, "y":0, "w":45, "h":134},
+		"spriteSourceSize": {"x":109,"y":324,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run0.png": {
+		"frame": {"x":706, "y":920, "w":61, "h":139},
+		"spriteSourceSize": {"x":92,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run1.png": {
+		"frame": {"x":355, "y":88, "w":76, "h":139},
+		"spriteSourceSize": {"x":89,"y":315,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run2.png": {
+		"frame": {"x":196, "y":551, "w":83, "h":130},
+		"spriteSourceSize": {"x":88,"y":313,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run3.png": {
+		"frame": {"x":504, "y":884, "w":72, "h":113},
+		"spriteSourceSize": {"x":87,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run4.png": {
+		"frame": {"x":645, "y":469, "w":62, "h":119},
+		"spriteSourceSize": {"x":87,"y":330,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run5.png": {
+		"frame": {"x":707, "y":0, "w":60, "h":130},
+		"spriteSourceSize": {"x":95,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run6.png": {
+		"frame": {"x":276, "y":682, "w":78, "h":133},
+		"spriteSourceSize": {"x":94,"y":317,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run7.png": {
+		"frame": {"x":188, "y":909, "w":87, "h":123},
+		"spriteSourceSize": {"x":92,"y":317,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run8.png": {
+		"frame": {"x":432, "y":765, "w":73, "h":118},
+		"spriteSourceSize": {"x":93,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_6_Run9.png": {
+		"frame": {"x":642, "y":0, "w":64, "h":122},
+		"spriteSourceSize": {"x":93,"y":333,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Idle0.png": {
+		"frame": {"x":828, "y":532, "w":57, "h":131},
+		"spriteSourceSize": {"x":99,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup0.png": {
+		"frame": {"x":828, "y":664, "w":57, "h":132},
+		"spriteSourceSize": {"x":99,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup1.png": {
+		"frame": {"x":506, "y":352, "w":69, "h":117},
+		"spriteSourceSize": {"x":99,"y":337,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup2.png": {
+		"frame": {"x":433, "y":423, "w":71, "h":81},
+		"spriteSourceSize": {"x":98,"y":373,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup3.png": {
+		"frame": {"x":359, "y":0, "w":73, "h":77},
+		"spriteSourceSize": {"x":98,"y":377,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup4.png": {
+		"frame": {"x":354, "y":228, "w":74, "h":81},
+		"spriteSourceSize": {"x":98,"y":372,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup5.png": {
+		"frame": {"x":432, "y":78, "w":73, "h":106},
+		"spriteSourceSize": {"x":98,"y":348,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup6.png": {
+		"frame": {"x":576, "y":998, "w":66, "h":123},
+		"spriteSourceSize": {"x":99,"y":331,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup7.png": {
+		"frame": {"x":828, "y":133, "w":58, "h":130},
+		"spriteSourceSize": {"x":99,"y":325,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup8.png": {
+		"frame": {"x":769, "y":226, "w":58, "h":132},
+		"spriteSourceSize": {"x":96,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Pickup9.png": {
+		"frame": {"x":828, "y":0, "w":58, "h":132},
+		"spriteSourceSize": {"x":97,"y":323,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run0.png": {
+		"frame": {"x":943, "y":662, "w":53, "h":145},
+		"spriteSourceSize": {"x":100,"y":321,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run1.png": {
+		"frame": {"x":944, "y":477, "w":52, "h":146},
+		"spriteSourceSize": {"x":102,"y":312,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run2.png": {
+		"frame": {"x":943, "y":910, "w":52, "h":142},
+		"spriteSourceSize": {"x":103,"y":309,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run3.png": {
+		"frame": {"x":942, "y":356, "w":54, "h":120},
+		"spriteSourceSize": {"x":102,"y":318,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run4.png": {
+		"frame": {"x":828, "y":1033, "w":57, "h":126},
+		"spriteSourceSize": {"x":99,"y":326,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run5.png": {
+		"frame": {"x":887, "y":119, "w":55, "h":139},
+		"spriteSourceSize": {"x":101,"y":319,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run6.png": {
+		"frame": {"x":886, "y":769, "w":56, "h":146},
+		"spriteSourceSize": {"x":99,"y":311,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run7.png": {
+		"frame": {"x":828, "y":264, "w":58, "h":139},
+		"spriteSourceSize": {"x":98,"y":311,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run8.png": {
+		"frame": {"x":708, "y":131, "w":60, "h":117},
+		"spriteSourceSize": {"x":98,"y":318,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	},
+	"Male_7_Run9.png": {
+		"frame": {"x":768, "y":785, "w":59, "h":125},
+		"spriteSourceSize": {"x":99,"y":328,"w":256,"h":512},
+		"sourceSize": {"w":256,"h":512}
+	}
+
+},
+"animations": {
+  "Male_Idle_0": [
+  "Male_0_Idle0.png"
+  ],
+  "Male_Idle_1": [
+  "Male_1_Idle0.png"
+  ],
+  "Male_Idle_2": [
+  "Male_2_Idle0.png"
+  ],
+  "Male_Idle_3": [
+  "Male_3_Idle0.png"
+  ],
+  "Male_Idle_4": [
+  "Male_4_Idle0.png"
+  ],
+  "Male_Idle_5": [
+  "Male_5_Idle0.png"
+  ],
+  "Male_Idle_6": [
+  "Male_6_Idle0.png"
+  ],
+  "Male_Idle_7": [
+  "Male_7_Idle0.png"
+  ],
+  "Male_Run_0": [
+  "Male_0_Run0.png",
+  "Male_0_Run1.png",
+  "Male_0_Run2.png",
+  "Male_0_Run3.png",
+  "Male_0_Run4.png",
+  "Male_0_Run5.png",
+  "Male_0_Run6.png",
+  "Male_0_Run7.png",
+  "Male_0_Run8.png",
+  "Male_0_Run9.png"
+  ],
+  "Male_Run_1": [
+  "Male_1_Run0.png",
+  "Male_1_Run1.png",
+  "Male_1_Run2.png",
+  "Male_1_Run3.png",
+  "Male_1_Run4.png",
+  "Male_1_Run5.png",
+  "Male_1_Run6.png",
+  "Male_1_Run7.png",
+  "Male_1_Run8.png",
+  "Male_1_Run9.png"
+  ],
+  "Male_Run_2": [
+  "Male_2_Run0.png",
+  "Male_2_Run1.png",
+  "Male_2_Run2.png",
+  "Male_2_Run3.png",
+  "Male_2_Run4.png",
+  "Male_2_Run5.png",
+  "Male_2_Run6.png",
+  "Male_2_Run7.png",
+  "Male_2_Run8.png",
+  "Male_2_Run9.png"
+  ],
+  "Male_Run_3": [
+  "Male_3_Run0.png",
+  "Male_3_Run1.png",
+  "Male_3_Run2.png",
+  "Male_3_Run3.png",
+  "Male_3_Run4.png",
+  "Male_3_Run5.png",
+  "Male_3_Run6.png",
+  "Male_3_Run7.png",
+  "Male_3_Run8.png",
+  "Male_3_Run9.png"
+  ],
+  "Male_Run_4": [
+  "Male_4_Run0.png",
+  "Male_4_Run1.png",
+  "Male_4_Run2.png",
+  "Male_4_Run3.png",
+  "Male_4_Run4.png",
+  "Male_4_Run5.png",
+  "Male_4_Run6.png",
+  "Male_4_Run7.png",
+  "Male_4_Run8.png",
+  "Male_4_Run9.png"
+  ],
+  "Male_Run_5": [
+  "Male_5_Run0.png",
+  "Male_5_Run1.png",
+  "Male_5_Run2.png",
+  "Male_5_Run3.png",
+  "Male_5_Run4.png",
+  "Male_5_Run5.png",
+  "Male_5_Run6.png",
+  "Male_5_Run7.png",
+  "Male_5_Run8.png",
+  "Male_5_Run9.png"
+  ],
+  "Male_Run_6": [
+  "Male_6_Run0.png",
+  "Male_6_Run1.png",
+  "Male_6_Run2.png",
+  "Male_6_Run3.png",
+  "Male_6_Run4.png",
+  "Male_6_Run5.png",
+  "Male_6_Run6.png",
+  "Male_6_Run7.png",
+  "Male_6_Run8.png",
+  "Male_6_Run9.png"
+  ],
+  "Male_Run_7": [
+  "Male_7_Run0.png",
+  "Male_7_Run1.png",
+  "Male_7_Run2.png",
+  "Male_7_Run3.png",
+  "Male_7_Run4.png",
+  "Male_7_Run5.png",
+  "Male_7_Run6.png",
+  "Male_7_Run7.png",
+  "Male_7_Run8.png",
+  "Male_7_Run9.png"
+  ],
+  "Male_Pickup_0": [
+  "Male_0_Pickup0.png",
+  "Male_0_Pickup1.png",
+  "Male_0_Pickup2.png",
+  "Male_0_Pickup3.png",
+  "Male_0_Pickup4.png",
+  "Male_0_Pickup5.png",
+  "Male_0_Pickup6.png",
+  "Male_0_Pickup7.png",
+  "Male_0_Pickup8.png",
+  "Male_0_Pickup9.png"
+  ],
+  "Male_Pickup_1": [
+  "Male_1_Pickup0.png",
+  "Male_1_Pickup1.png",
+  "Male_1_Pickup2.png",
+  "Male_1_Pickup3.png",
+  "Male_1_Pickup4.png",
+  "Male_1_Pickup5.png",
+  "Male_1_Pickup6.png",
+  "Male_1_Pickup7.png",
+  "Male_1_Pickup8.png",
+  "Male_1_Pickup9.png"
+  ],
+  "Male_Pickup_2": [
+  "Male_2_Pickup0.png",
+  "Male_2_Pickup1.png",
+  "Male_2_Pickup2.png",
+  "Male_2_Pickup3.png",
+  "Male_2_Pickup4.png",
+  "Male_2_Pickup5.png",
+  "Male_2_Pickup6.png",
+  "Male_2_Pickup7.png",
+  "Male_2_Pickup8.png",
+  "Male_2_Pickup9.png"
+  ],
+  "Male_Pickup_3": [
+  "Male_3_Pickup0.png",
+  "Male_3_Pickup1.png",
+  "Male_3_Pickup2.png",
+  "Male_3_Pickup3.png",
+  "Male_3_Pickup4.png",
+  "Male_3_Pickup5.png",
+  "Male_3_Pickup6.png",
+  "Male_3_Pickup7.png",
+  "Male_3_Pickup8.png",
+  "Male_3_Pickup9.png"
+  ],
+  "Male_Pickup_4": [
+  "Male_4_Pickup0.png",
+  "Male_4_Pickup1.png",
+  "Male_4_Pickup2.png",
+  "Male_4_Pickup3.png",
+  "Male_4_Pickup4.png",
+  "Male_4_Pickup5.png",
+  "Male_4_Pickup6.png",
+  "Male_4_Pickup7.png",
+  "Male_4_Pickup8.png",
+  "Male_4_Pickup9.png"
+  ],
+  "Male_Pickup_5": [
+  "Male_5_Pickup0.png",
+  "Male_5_Pickup1.png",
+  "Male_5_Pickup2.png",
+  "Male_5_Pickup3.png",
+  "Male_5_Pickup4.png",
+  "Male_5_Pickup5.png",
+  "Male_5_Pickup6.png",
+  "Male_5_Pickup7.png",
+  "Male_5_Pickup8.png",
+  "Male_5_Pickup9.png"
+  ],
+  "Male_Pickup_6": [
+  "Male_6_Pickup0.png",
+  "Male_6_Pickup1.png",
+  "Male_6_Pickup2.png",
+  "Male_6_Pickup3.png",
+  "Male_6_Pickup4.png",
+  "Male_6_Pickup5.png",
+  "Male_6_Pickup6.png",
+  "Male_6_Pickup7.png",
+  "Male_6_Pickup8.png",
+  "Male_6_Pickup9.png"
+  ],
+  "Male_Pickup_7": [
+  "Male_7_Pickup0.png",
+  "Male_7_Pickup1.png",
+  "Male_7_Pickup2.png",
+  "Male_7_Pickup3.png",
+  "Male_7_Pickup4.png",
+  "Male_7_Pickup5.png",
+  "Male_7_Pickup6.png",
+  "Male_7_Pickup7.png",
+  "Male_7_Pickup8.png",
+  "Male_7_Pickup9.png"
+  ]
+},
+"meta": {
+	"image": "male.png",
+	"size": {"w": 1168, "h": 1171},
+	"scale": "1"
+}
+}
