@@ -9,7 +9,7 @@ if (typeof xel === 'undefined') { throw "main.js: xel engine does not exist!"; }
 // ***
 
 function setup() {
-  xel.Map.loadTiledMap("a0m0", {activate: true});
+  xel.Map.loadTiledMap("a0m0-iso", {activate: true});
 
   return true;
 }

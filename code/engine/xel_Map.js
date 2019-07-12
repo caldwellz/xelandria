@@ -31,6 +31,12 @@ xel.Map.fromTiledMapData = function (tiledData) {
     return null;
   }
 
+  if (!(tiledData.orientation === "isometric" || tiledData.orientation === "orthogonal")) {
+    logger.error("Map has unsupported orientation");
+    logger.debug(tiledData.orientation);
+    return null;
+  }
+
   var obj = Object.create(xel.Map.prototype);
   obj.tilesWidth = tiledData.width;
   obj.tilesHeight = tiledData.height;
@@ -49,7 +55,15 @@ xel.Map.fromTiledMapData = function (tiledData) {
       obj[tiledData.properties[prop].name] = tiledData.properties[prop].value;
     }
   }
-  obj.angle = obj.angle || 0;
+
+  // If angle isn't set in the custom map properties,
+  // assume it's the first angle of the given orientation
+  if (!obj.hasOwnProperty("angle")) {
+    if (obj.orientation === "isometric")
+      obj.angle = 0;
+    else
+      obj.angle = 1;
+  }
 
   var z = 1;
   for (var l in tiledData.layers) {
@@ -78,6 +92,7 @@ xel.Map.fromTiledMapData = function (tiledData) {
         }
       }
     }
+
     if (layerData.properties) {
       for (prop in layerData.properties) {
         layer[layerData.properties[prop].name] = layerData.properties[prop].value;
@@ -114,7 +129,7 @@ xel.Map.fromTiledMapData = function (tiledData) {
   // Temporary test for rotation
   var btn = document.createElement("button");
   btn.innerText = "Rotate Clockwise";
-  btn.onclick = function () {xel.Map.cache.a0m0._rotate90();};
+  btn.onclick = function () {xel.Map.cache["a0m0-iso"]._rotate90();};
   btn.style.position = "absolute";
   btn.style.top = "2px";
   document.body.appendChild(btn);
@@ -231,6 +246,11 @@ xel.Map.prototype.activate = function () {
 xel.Map.prototype._updateTiles = function() {
   var ctx = this;
   xel.Map.cacheSpritesheets(ctx._sheetURLs, function() {
+    // Isometric variables
+    var baseWidth = ctx.tilePixWidth / 2;
+    var baseHeight = ctx.tilePixHeight / 2;
+    var xMid = ctx.tilesHeight * baseWidth;
+
     for (var t in ctx._tileUpdates) {
       var tile = ctx._tileUpdates[t];
       var sheet = xel.Map.spritesheetCache[tile.spritesheetURL];
@@ -242,8 +262,16 @@ xel.Map.prototype._updateTiles = function() {
         logger.debug("xel.Map.prototype._updateTiles: Missing spritesheet at map '" + ctx.name + "' grid index [" + tile.gridX.toString() + "][" + tile.gridY.toString() + "]");
         continue;
       }
-      tile.x = tile.gridX * ctx.tilePixWidth;
-      tile.y = tile.gridY * ctx.tilePixHeight;
+
+      if (ctx.angle % 2 === 0) { // See if map is in iso mode
+        tile.x = xMid + ((tile.gridX - tile.gridY) * baseWidth);
+        tile.y = (tile.gridX + tile.gridY) * baseHeight;
+      }
+      else { // Ortho
+        tile.x = tile.gridX * ctx.tilePixWidth;
+        tile.y = tile.gridY * ctx.tilePixHeight;
+      }
+
       if (tile.gridY > ctx.tilesHeight)
         logger.warn("xel.Map.prototype._updateTiles: Sprite position exceeds height of map '" + ctx.name + "'");
     }
