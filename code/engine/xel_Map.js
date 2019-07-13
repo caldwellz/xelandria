@@ -129,7 +129,7 @@ xel.Map.fromTiledMapData = function (tiledData) {
   // Temporary test for rotation
   var btn = document.createElement("button");
   btn.innerText = "Rotate Clockwise";
-  btn.onclick = function () {xel.Map.cache["a0m0-iso"]._rotate90();};
+  btn.onclick = function () {xel.Map.cache["a0m0-iso"]._rotate45();};
   btn.style.position = "absolute";
   btn.style.top = "2px";
   document.body.appendChild(btn);
@@ -280,21 +280,49 @@ xel.Map.prototype._updateTiles = function() {
 };
 
 
-xel.Map.prototype._rotate90 = function() {
+xel.Map.prototype._gridRotate = function(sheetInc, updateGrid) {
   for (var l in this.layers.children) {
     var layer = this.layers.children[l];
     if (layer.type === "tilelayer") {
       for (var t in layer.children) {
         var tile = layer.children[t];
-        // Simple grid matrix rotation; _updateTiles sets the actual x/y coordinates
-        var oldY = tile.gridY;
-        tile.gridY = tile.gridX;
-        tile.gridX = this.tilesHeight - oldY - 1; // tilesHeight starts at 1, grid at 0
-        // TODO: May need to un-hardcode angle adjustments and spritesheet size
-        tile.sheetIndex = (tile.sheetIndex + 2) % xel.settings.maps.tilesetAngles;
+        if (updateGrid) {
+          if (sheetInc >= 0) { // Clockwise
+            // _updateTiles sets the actual x/y coordinates
+            var oldY = tile.gridY;
+            tile.gridY = tile.gridX;
+            tile.gridX = this.tilesHeight - oldY - 1; // tilesHeight starts at 1, grid at 0
+          }
+          else { // Counter-clockwise
+            var oldX = tile.gridX;
+            tile.gridX = tile.gridY;
+            tile.gridY = this.tilesHeight - oldX - 1;
+          }
+        }
+        // TODO: May need to un-hardcode spritesheet size
+        tile.sheetIndex = (tile.sheetIndex + sheetInc) % xel.settings.maps.tilesetAngles;
         this._tileUpdates.push(tile);
       }
     }
   }
+}
+
+
+xel.Map.prototype._rotate45 = function() {
+  this.angle = (this.angle + 1) % xel.settings.maps.tilesetAngles;
+  if (this.angle % 2 === 0) { // Is map now in iso mode?
+    // If so, just increment tiles; iso uses the grid of the ortho before it
+    this._gridRotate(1, false);
+  }
+  else { // Otherwise, rotate the grid too
+    this._gridRotate(1, true);
+  }
+  this._updateTiles();
+};
+
+
+xel.Map.prototype._rotate90 = function() {
+  this.angle = (this.angle + 2) % xel.settings.maps.tilesetAngles;
+  this._gridRotate(2, true);
   this._updateTiles();
 };
