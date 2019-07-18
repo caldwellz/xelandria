@@ -72,6 +72,7 @@ xel.Map.fromTiledMapData = function (tiledData) {
     layer.name = layerData.name;
     layer.type = layerData.type;
     layer.visible = (layerData.visible || false);
+    layer.sortableChildren = true;
     layer.zIndex = z;
 
     var gidData = layerData.data;
@@ -84,6 +85,7 @@ xel.Map.fromTiledMapData = function (tiledData) {
           var spr = new PIXI.Sprite();
           spr.gridX = gridX;
           spr.gridY = gridY;
+          spr.zIndex = gridX + gridY;
           if (!obj._spritesByGid[gid])
             obj._spritesByGid[gid] = [];
           obj._spritesByGid[gid].push(spr);
@@ -91,6 +93,7 @@ xel.Map.fromTiledMapData = function (tiledData) {
           layer.addChild(spr);
         }
       }
+      layer.sortChildren();
     }
 
     if (layerData.properties) {
@@ -298,11 +301,14 @@ xel.Map.prototype._gridRotate = function(sheetInc, updateGrid) {
             tile.gridX = tile.gridY;
             tile.gridY = this.tilesHeight - oldX - 1;
           }
+          tile.zIndex = tile.gridX + tile.gridY;
         }
         // TODO: May need to un-hardcode spritesheet size
         tile.sheetIndex = (tile.sheetIndex + sheetInc) % xel.settings.maps.tilesetAngles;
         this._tileUpdates.push(tile);
       }
+      if (updateGrid)
+        layer.sortChildren();
     }
   }
 }
