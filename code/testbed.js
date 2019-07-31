@@ -3,19 +3,31 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 "use strict";
-// *** imports
-if (typeof logger === 'undefined') { throw "testbed.js: Logger not loaded!"; }
-if (typeof xel === 'undefined') { throw "testbed.js: xel engine does not exist!"; }
-// ***
 
-function testMain() {
-  logger.testMode = true;
+requirejs.config({
+    paths: {
+        PIXI: 'lib/pixi5-legacy',
+        pixi5: 'lib/pixi5-legacy'
+    },
+    shim: {
+      'PIXI': {
+        exports: 'PIXI'
+      },
+      'pixi5': {
+        exports: 'PIXI'
+      }
+    }
+});
 
-  if (typeof test_xel === 'function')
-    test_xel(); //takes care of xel.initialize(), etc.
+requirejs(["logger",
+           "tests/xel",
+           "tests/xel_Map"],
+  function (logger, test_xel, test_xel_Map) {
+    logger.testMode = true;
 
-  if (typeof test_xel_Map === 'function')
-    test_xel_Map();
-}
+    if (typeof test_xel === 'function')
+      test_xel(); //takes care of xel.initialize(), etc.
 
-testMain();
+    if (typeof test_xel_Map === 'function')
+      test_xel_Map();
+});

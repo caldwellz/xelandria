@@ -113,7 +113,7 @@ logger.assert = function (condition, msg) {
 
 logger.beginTest = function (testName) {
   if ((typeof testName === 'string') && logger.testMode) {
-    var msg = "*** Beginning test 'testbed/" + testName + "' ***";
+    var msg = "*** Beginning test 'tests/" + testName + "' ***";
     var msgHTML = '<span style="color: blue;">' + msg + '</span>';
     logger.push(msgHTML);
     console.log(msg);
