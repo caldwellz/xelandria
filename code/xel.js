@@ -6,12 +6,15 @@
 
 define(["logger", "pixi5", "xel/Config", "xel/Map"], function (logger, PIXI, Config, Map) {
   var xel = {};
+  xel.initialized = false;
 
   // Copy submodules in
   xel.Config = Config;
   xel.Map = Map;
 
-  xel.initialized = false;
+  // Hoist to window so we can manipulate with browser console
+  //if (logger.debugMode)
+    window.xel = xel;
 
   xel.initialize = function () {
     if (!xel.initialized) {
