@@ -3,6 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 "use strict";
+
 var logger = {};
 logger.messages = new Array();
 logger.logbox = document.createElement("div");
@@ -112,7 +113,7 @@ logger.assert = function (condition, msg) {
 
 logger.beginTest = function (testName) {
   if ((typeof testName === 'string') && logger.testMode) {
-    var msg = "*** Beginning test 'testbed/" + testName + "' ***";
+    var msg = "*** Beginning test 'tests/" + testName + "' ***";
     var msgHTML = '<span style="color: blue;">' + msg + '</span>';
     logger.push(msgHTML);
     console.log(msg);
@@ -147,3 +148,8 @@ logger.boxError = function (msg) {
   }
 };
 window.onerror = logger.boxError;
+
+
+//RequireJS export
+if (requirejs)
+  define(logger);
