@@ -4,14 +4,11 @@
 
 "use strict";
 
-define(["logger", "pixi5", "xel/Map"], function (logger, PIXI, Map) {
+define(["logger", "pixi5", "xel/Config", "xel/Map"], function (logger, PIXI, Config, Map) {
   var xel = {};
-  xel.settings = xel.settings || {};
-  xel.settings.display = xel.settings.display || {};
-  // *** settings
-  xel.settings.display.intendedResolution = xel.settings.display.intendedResolution || [2048, 1408]; // 8x8 test map tiles + vertical padding
-  xel.settings.display.aspectRatio = xel.settings.display.aspectRatio || (xel.settings.display.intendedResolution[0] / xel.settings.display.intendedResolution[1]);
+
   // Copy submodules in
+  xel.Config = Config;
   xel.Map = Map;
 
   xel.initialized = false;
@@ -67,12 +64,12 @@ define(["logger", "pixi5", "xel/Map"], function (logger, PIXI, Map) {
     var h = document.getElementById("stage").offsetHeight;
     if (xel.app) {
       if (w >= h) {
-        xel.app.stage.scale.set(h / xel.settings.display.intendedResolution[1]);
+        xel.app.stage.scale.set(h / xel.Config.display.intendedResolution[1]);
         xel.app.stage.x = (w - xel.app.stage.width) / 2;
         xel.app.stage.y = 0;
       }
       else {
-        xel.app.stage.scale.set(w / xel.settings.display.intendedResolution[0]);
+        xel.app.stage.scale.set(w / xel.Config.display.intendedResolution[0]);
         xel.app.stage.x = 0;
         xel.app.stage.y = (h - xel.app.stage.height) / 2;
       }

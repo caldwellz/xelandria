@@ -4,16 +4,11 @@
 
 "use strict";
 
-define(["require", "logger", "pixi5"], function (require, logger, PIXI) {
+define(["require", "logger", "pixi5", "xel/Config"], function (require, logger, PIXI, Config) {
   var xel_Map = {};
   xel_Map.prototype = {};
   xel_Map.cache = {};
 
-  // *** settings
-  xel_Map.settings = {};
-  xel_Map.settings.tilesetAngles = xel_Map.settings.tilesetAngles || 8;
-  xel_Map.settings.basePath = xel_Map.settings.basePath || "assets/maps/";
-  // ***
 
   xel_Map.fromTiledMapData = function (tiledData) {
     if ((!tiledData) || (tiledData.type !== "map")) {
@@ -111,7 +106,7 @@ define(["require", "logger", "pixi5"], function (require, logger, PIXI) {
       obj._sheetURLs.push(a.href);
       var firstgid = obj.tilesets[t].firstgid;
       if (t == obj.tilesets.length - 1)
-        var nextfirstgid = firstgid + xel_Map.settings.tilesetAngles;
+        var nextfirstgid = firstgid + Config.maps.tilesetAngles;
       else
         var nextfirstgid = obj.tilesets[t + 1].firstgid;
       for (var gid = firstgid; gid < nextfirstgid; ++gid) {
@@ -146,7 +141,7 @@ define(["require", "logger", "pixi5"], function (require, logger, PIXI) {
     }
 
     options = options || {};
-    var basePath = options.basePath || xel_Map.settings.basePath;
+    var basePath = options.basePath || Config.maps.basePath;
     var mapURL = options.url || (basePath + mapName + ".json");
     var map = xel_Map.cache[mapName] || xel_Map.cache[mapURL];
 
@@ -303,7 +298,7 @@ define(["require", "logger", "pixi5"], function (require, logger, PIXI) {
             tile.zIndex = tile.gridX + tile.gridY;
           }
           // TODO: May need to un-hardcode spritesheet size
-          tile.sheetIndex = (tile.sheetIndex + sheetInc) % xel_Map.settings.tilesetAngles;
+          tile.sheetIndex = (tile.sheetIndex + sheetInc) % Config.maps.tilesetAngles;
           this._tileUpdates.push(tile);
         }
         if (updateGrid)
@@ -314,7 +309,7 @@ define(["require", "logger", "pixi5"], function (require, logger, PIXI) {
 
 
   xel_Map.prototype._rotate45 = function() {
-    this.angle = (this.angle + 1) % xel_Map.settings.tilesetAngles;
+    this.angle = (this.angle + 1) % Config.maps.tilesetAngles;
     if (this.angle % 2 === 0) { // Is map now in iso mode?
       // If so, just increment tiles; iso uses the grid of the ortho before it
       this._gridRotate(1, false);
@@ -327,7 +322,7 @@ define(["require", "logger", "pixi5"], function (require, logger, PIXI) {
 
 
   xel_Map.prototype._rotate90 = function() {
-    this.angle = (this.angle + 2) % xel_Map.settings.tilesetAngles;
+    this.angle = (this.angle + 2) % Config.maps.tilesetAngles;
     this._gridRotate(2, true);
     this._updateTiles();
   };
