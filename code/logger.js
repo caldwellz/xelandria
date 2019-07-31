@@ -3,6 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 "use strict";
+
 var logger = {};
 logger.messages = new Array();
 logger.logbox = document.createElement("div");
@@ -147,3 +148,8 @@ logger.boxError = function (msg) {
   }
 };
 window.onerror = logger.boxError;
+
+
+//RequireJS export
+if (requirejs)
+  define(logger);
