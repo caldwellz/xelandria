@@ -19,27 +19,12 @@ requirejs.config({
     }
 });
 
-requirejs(["logger", "xel"], function (logger, xel) {
-  function setup() {
-    xel.MapManager.activate("a0m0-iso");
-
-    return true;
+requirejs(["logger", "xel", "game"], function (logger, xel, game) {
+  // Initialize engine, then hand control over to the game
+  logger.debugMode = true;
+  xel.initialize();
+  if (xel.initialized) {
+    if (game.setup())
+      xel.app.ticker.add(game.update);
   }
-
-
-  function update() {
-    
-  }
-
-
-  function main() {
-    logger.debugMode = true;
-    xel.initialize();
-    if (xel.initialized) {
-      if (setup())
-        xel.app.ticker.add(update);
-    }
-  }
-
-  main();
 });
