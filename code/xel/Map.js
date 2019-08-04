@@ -4,7 +4,7 @@
 
 "use strict";
 
-define(["require", "logger", "pixi5", "xel/Config"], function (require, logger, PIXI, Config) {
+define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager"], function (require, logger, PIXI, Config, EntityManager) {
   var xel_Map = {};
   xel_Map.prototype = {};
 
@@ -143,8 +143,10 @@ define(["require", "logger", "pixi5", "xel/Config"], function (require, logger, 
         //Make sure we weren't passed a plain string or array, since we iterate through the properties
         if (typeof opts === "object") {
 
-          // Create sprite if needed and copy properties
+          // Create sprite / entity if needed and copy properties
           var sprite = opts.sprite || new PIXI.Sprite();
+          if (typeof sprite.entity !== "number")
+            sprite.entity = EntityManager.create({"sprite": sprite});
           spriteList.push(sprite);
           for (var o in opts)
             sprite[o] = opts[o];
