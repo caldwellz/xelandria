@@ -6,8 +6,8 @@
 
 requirejs.config({
     paths: {
-        PIXI: 'lib/pixi5-legacy',
-        pixi5: 'lib/pixi5-legacy'
+        PIXI: 'lib/pixi5-legacy.min',
+        pixi5: 'lib/pixi5-legacy.min'
     },
     shim: {
       'PIXI': {

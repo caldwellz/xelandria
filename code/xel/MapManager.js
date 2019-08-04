@@ -158,7 +158,7 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/Map"], function (requir
 
     mapLoader.load(function(loader, resources) {
       for (var res in resources) {
-        if ((resources[res].data) && (resources[res].type === PIXI.Loader.Resource.TYPE.JSON)) {
+        if ((resources[res].data) && (resources[res].type === PIXI.LoaderResource.TYPE.JSON)) {
           var map = xel_MapManager.createFromJSON(resources[res].data);
           if (map) {
             map.name = resources[res].name;
@@ -265,7 +265,7 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/Map"], function (requir
       for (var res in resources) {
         if (resources[res].data) {
           // Spritesheet middleware adds images to the loader
-          if (resources[res].type === PIXI.Loader.Resource.TYPE.IMAGE)
+          if (resources[res].type === PIXI.LoaderResource.TYPE.IMAGE)
             continue;
 
           var sheet = resources[res].spritesheet;
