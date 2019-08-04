@@ -4,7 +4,8 @@
 
 "use strict";
 
-define(["logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/MapManager", "xel/Map"], function (logger, PIXI, Config, EntityManager, MapManager, Map) {
+define(["logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/MapManager", "xel/Map", "xel/PersistentStorageManager"],
+function (logger, PIXI, Config, EntityManager, MapManager, Map, PersistentStorageManager) {
   var xel = {};
   xel.initialized = false;
 
@@ -13,6 +14,7 @@ define(["logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/MapManager", 
   xel.EntityManager = EntityManager;
   xel.MapManager = MapManager;
   xel.Map = Map;
+  xel.PersistentStorageManager = PersistentStorageManager;
 
   // Hoist to window so we can manipulate with browser console
   //if (logger.debugMode)

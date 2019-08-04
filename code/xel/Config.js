@@ -18,5 +18,8 @@ define(function () {
   xel_Config.spritesheets = {};
   xel_Config.spritesheets.basePath = "assets\/graphics\/tilesets\/";
 
+  xel_Config.storage = {};
+  xel_Config.storage.connectorNamePrefix = "StorageConnector_";
+
   return xel_Config;
 });
