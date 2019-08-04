@@ -21,7 +21,7 @@ requirejs.config({
 
 requirejs(["logger", "xel"], function (logger, xel) {
   function setup() {
-    xel.Map.loadTiledMap("a0m0-iso", {activate: true});
+    xel.MapManager.activate("a0m0-iso");
 
     return true;
   }

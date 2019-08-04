@@ -13,8 +13,10 @@ define(function () {
   xel_Config.display.aspectRatio = (xel_Config.display.intendedResolution[0] / xel_Config.display.intendedResolution[1]);
 
   xel_Config.maps = {};
-  xel_Config.maps.tilesetAngles = 8;
-  xel_Config.maps.basePath = "assets/maps/";
+  xel_Config.maps.basePath = "assets\/maps\/";
+
+  xel_Config.spritesheets = {};
+  xel_Config.spritesheets.basePath = "assets\/graphics\/tilesets\/";
 
   return xel_Config;
 });

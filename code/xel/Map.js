@@ -7,324 +7,193 @@
 define(["require", "logger", "pixi5", "xel/Config"], function (require, logger, PIXI, Config) {
   var xel_Map = {};
   xel_Map.prototype = {};
-  xel_Map.cache = {};
 
 
-  xel_Map.fromTiledMapData = function (tiledData) {
-    if ((!tiledData) || (tiledData.type !== "map")) {
-      logger.error("xel_Map.fromTiledMapData: Loaded file isn't a Tiled JSON map");
-      logger.debug(resource.url);
-      return null;
-    }
+  xel_Map.create = function (params) {
+    var map = Object.create(xel_Map.prototype);
 
-    if (!tiledData.width || !tiledData.height || !tiledData.tilewidth || !tiledData.tileheight || !tiledData.orientation) {
-      logger.error("xel_Map.fromTiledMapData: Invalid map parameter(s)");
-      logger.debug(tiledData);
-      return null;
-    }
-
-    if (!(tiledData.orientation === "isometric" || tiledData.orientation === "orthogonal")) {
-      logger.error("Map has unsupported orientation");
-      logger.debug(tiledData.orientation);
-      return null;
-    }
-
-    var obj = Object.create(xel_Map.prototype);
-    obj.tilesWidth = tiledData.width;
-    obj.tilesHeight = tiledData.height;
-    obj.tilePixWidth = tiledData.tilewidth;
-    obj.tilePixHeight = tiledData.tileheight;
-    obj.mapPixWidth = obj.tilesWidth * obj.tilePixWidth;
-    obj.mapPixHeight = obj.tilesHeight * obj.tilePixHeight;
-    obj.orientation = tiledData.orientation;
-    obj.tilesets = tiledData.tilesets;
-    obj.layers = new PIXI.Container();
-    obj._tileUpdates = [];
-    obj._spritesByGid = [];
-
-    if (tiledData.properties) {
-      for (var prop in tiledData.properties) {
-        obj[tiledData.properties[prop].name] = tiledData.properties[prop].value;
+    if (typeof params === "object") {
+      for (var prop in params) {
+        map[prop] = params[prop];
       }
     }
 
     // If angle isn't set in the custom map properties,
     // assume it's the first angle of the given orientation
-    if (!obj.hasOwnProperty("angle")) {
-      if (obj.orientation === "isometric")
-        obj.angle = 0;
+    if (!map.hasOwnProperty("angle") && map.orientation) {
+      if (map.orientation === "isometric")
+        map.angle = 0;
       else
-        obj.angle = 1;
+        map.angle = 1;
     }
 
-    var z = 1;
-    for (var l in tiledData.layers) {
-      var layerData = tiledData.layers[l];
-      var layer = new PIXI.Container();
-      layer.name = layerData.name;
-      layer.type = layerData.type;
-      layer.visible = (layerData.visible || false);
-      layer.sortableChildren = true;
-      layer.zIndex = z;
+    // Create list of map tilesets and firstgids
+    var firstGids = [];
+    var sources = [];
+    if (map.tilesets) {
+      for (var n = 0; n < map.tilesets.length; ++n) {
+        var ts = map.tilesets[n];
+        firstGids[n] = ts.firstgid;
+        sources[n] = ts.source;
+      }
 
-      var gidData = layerData.data;
-      if (layer.type === "tilelayer") {
-        for (var i = 0; i < gidData.length; ++i) {
-          var gid = gidData[i];
-          if (gid > 0) {
-            var gridX = i % obj.tilesWidth;
-            var gridY = (i - gridX) / obj.tilesWidth;
-            var spr = new PIXI.Sprite();
-            spr.gridX = gridX;
-            spr.gridY = gridY;
-            spr.zIndex = gridX + gridY;
-            if (!obj._spritesByGid[gid])
-              obj._spritesByGid[gid] = [];
-            obj._spritesByGid[gid].push(spr);
-            obj._tileUpdates.push(spr);
-            layer.addChild(spr);
+      // TODO: See whether it would be useful to retain or
+      // maintain a list of all tilesets in use by the map.
+      delete map.tilesets;
+    }
+
+    // If map has layer data, create sprite container and add it to the map / stage
+    if (map.layerData && map.layerData.length) {
+      map.layers = new PIXI.Container();
+      map.layers.sortableChildren = true;
+      require("xel").app.stage.addChild(map.layers);
+
+      // Iterate through layer data
+      var spriteList = [];
+      var z = 0;
+      for (var l = 0; l < map.layerData.length; ++l) {
+        var layer = map.layerData[l];
+        if (layer.type === "tilelayer") {
+
+          // Create and add new individual layer container
+          var container = new PIXI.Container();
+          container.sortableChildren = true;
+          container.zIndex = z;
+          map.layers.addChild(container);
+
+          // Copy properties
+          container.name = layer.name;
+          container.x = layer.x;
+          container.y = layer.y;
+          container.visible = layer.visible;
+          container.alpha = layer.opacity;
+
+          // Generate sprite creation list / options
+          for (var n = 0; n < layer.data.length; ++n) {
+            var gid = layer.data[n];
+            if (gid > 0) {
+              var spriteOpts = { "parent": container };
+
+              // Figure out the image index and tileset (spritesheet)
+              for (var i = firstGids.length - 1; i >= 0; --i) {
+                if (gid >= firstGids[i]) {
+                  spriteOpts.sheetIndex = gid - firstGids[i];
+                  spriteOpts.spritesheet = sources[i];
+                  break;
+                }
+              }
+
+              // Calculate grid position and zIndex
+              spriteOpts.gridX = n % layer.width;
+              spriteOpts.gridY = (n - spriteOpts.gridX) / layer.width;
+              spriteOpts.zIndex = spriteOpts.gridX + spriteOpts.gridY;
+
+              spriteList.push(spriteOpts);
+            }
           }
+          ++z;
         }
-        layer.sortChildren();
       }
+      map.layers.sortChildren();
+      map.addSprites(spriteList);
 
-      if (layerData.properties) {
-        for (prop in layerData.properties) {
-          layer[layerData.properties[prop].name] = layerData.properties[prop].value;
-        }
-      }
-      obj.layers.addChild(layer);
-      ++z;
+      // TODO: See if CSV layer data would be helpful to keep or
+      // maintain for the purpose of saving / restoring the map
+      delete map.layerData;
     }
-    obj.layers.sortableChildren = true;
-    obj.layers.sortChildren();
 
-    obj._sheetURLs = [];
-    for (var t = 0; t < obj.tilesets.length; ++t) {
-      var a = document.createElement('a');
-      a.href = obj.tilesets[t].source;
-      obj._sheetURLs.push(a.href);
-      var firstgid = obj.tilesets[t].firstgid;
-      if (t == obj.tilesets.length - 1)
-        var nextfirstgid = firstgid + Config.maps.tilesetAngles;
-      else
-        var nextfirstgid = obj.tilesets[t + 1].firstgid;
-      for (var gid = firstgid; gid < nextfirstgid; ++gid) {
-        if (obj._spritesByGid[gid]) {
-          for (var n = 0; n < obj._spritesByGid[gid].length; ++n) {
-            obj._spritesByGid[gid][n].sheetIndex = gid - firstgid;
-            obj._spritesByGid[gid][n].spritesheetURL = a.href;
-          }
-        }
-      }
-    }
-    delete obj._spritesByGid;
-    obj._updateTiles();
-
-    // Temporary test for rotation
-    var btn = document.createElement("button");
-    btn.innerText = "Rotate Clockwise";
-    btn.onclick = function () {xel_Map.cache["a0m0-iso"]._rotate45();};
-    btn.style.position = "absolute";
-    btn.style.top = "2px";
-    document.body.appendChild(btn);
-
-    return obj;
+    return map;
   };
 
 
-  xel_Map.loadTiledMap = function (mapName, options) {
-    if (typeof mapName !== 'string') {
-      logger.error("xel_Map.loadTiledMap: mapName not a string");
-      logger.debug(mapName);
-      return;
-    }
+  xel_Map.prototype.getPixelWidth = function () {
+    if ((typeof this.width === "number") && (typeof this.tilewidth === "number"))
+      return this.width * this.tilewidth;
+    else
+      return null;
+  };
 
-    options = options || {};
-    var basePath = options.basePath || Config.maps.basePath;
-    var mapURL = options.url || (basePath + mapName + ".json");
-    var map = xel_Map.cache[mapName] || xel_Map.cache[mapURL];
 
-    if (map) {
-      if (options.activate)
-        map.activate();
-      if (typeof options.callback === "function")
-        options.callback(map);
-    } else {
-      var mapLoader = new PIXI.Loader();
-      if (options.loaderPreCallback)
-        mapLoader.pre(options.loaderPreCallback);
-      if (options.loaderProgressCallback)
-        mapLoader.onProgress.add(options.loaderProgressCallback);
-      mapLoader.add(mapName, mapURL);
-      mapLoader.load(function(loader, resources) {
-        var map;
-        for (var res in resources) {
-          if ((resources[res].data) && (resources[res].type === PIXI.Loader.Resource.TYPE.JSON))
-            map = xel_Map.fromTiledMapData(resources[res].data);
-        }
-        if (map) {
-          map.name = mapName;
-          map.url = mapURL;
-          xel_Map.cache[mapName] = xel_Map.cache[mapURL] = map;
-          logger.debug("Map '" + mapName + "' loaded");
-          if (options.activate)
-            map.activate();
-          if (typeof options.callback === "function")
-            options.callback(map);
+  xel_Map.prototype.getPixelHeight = function () {
+    if ((typeof this.height === "number") && (typeof this.tileheight === "number"))
+      return this.height * this.tileheight;
+    else
+      return null;
+  };
+
+
+  xel_Map.prototype.addSprites = function (options) {
+    var map = this;
+    if (options) {
+      // Convert single item to array if needed
+      if (!options.length)
+        options = [options];
+
+      // Set some isometric parameters
+      var isoBaseWidth = map.tilewidth / 2;
+      var isoBaseHeight = map.tileheight / 2;
+      var isoXMid = map.height * isoBaseWidth;
+
+      // Loop through sprite creation options list
+      var sheets = {};
+      var spriteList = [];
+      for (var n = 0; n < options.length; ++n) {
+        var opts = options[n];
+
+        //Make sure we weren't passed a plain string or array, since we iterate through the properties
+        if (typeof opts === "object") {
+
+          // Create sprite if needed and copy properties
+          var sprite = opts.sprite || new PIXI.Sprite();
+          spriteList.push(sprite);
+          for (var o in opts)
+            sprite[o] = opts[o];
+
+          // Make sure the sprite is actually registered with the parent (e.g. the map layer)
+          if (sprite.parent)
+            sprite.parent.addChild(sprite);
+
+          // Check / calculate pixel coordinates from grid position
+          if ((typeof sprite.gridX === "number") && (typeof sprite.gridY === "number") && map.orientation) {
+            if (map.orientation === "isometric") {
+              sprite.x = isoXMid + ((sprite.gridX - sprite.gridY) * isoBaseWidth);
+              sprite.y = (sprite.gridX + sprite.gridY) * isoBaseHeight;
+            }
+            else { // Orthographic
+              sprite.x = sprite.gridX * map.tilewidth;
+              sprite.y = sprite.gridY * map.tileheight;
+            }
+          }
+
+          // Generate list of spritesheets for loading
+          if (opts.spritesheet)
+            sheets[opts.spritesheet] = null;
         }
         else {
-          logger.error("xel_Map.loadTiledMap: Failed to load map '" + mapName + "'");
-          logger.debug(mapURL);
+          logger.warn("xel.Map.prototype.addSprites(): Sprite creation parameters not an object");
+          logger.debug(opts);
+        }
+      }
+
+      // Load spritesheets and update textures
+      require("xel/MapManager").loadSpritesheets(sheets, function (loadedSheets) {
+        for (var n = 0; n < spriteList.length; ++n) {
+          var sprite = spriteList[n];
+          if (sprite.spritesheet) {
+            var sheet = loadedSheets[sprite.spritesheet];
+            if (sheet) {
+              var texName = sheet._frameKeys[sprite.sheetIndex];
+              sprite.texture = sheet.textures[texName];
+            }
+            else {
+              // A load error was probably logged somewhere, and there's likely
+              // many sprites using the sheet, so spam only the debug log
+              logger.debug("xel.Map.prototype.addSprites(): Missing sheet '" + sprite.spritesheet + "'");
+            }
+          }
         }
       });
     }
-  };
-
-
-  xel_Map.cacheSpritesheets = function (urls, callback) {
-    xel_Map.spritesheetCache = xel_Map.spritesheetCache || {};
-    if (typeof urls === "string")
-      urls = [urls];
-    if (typeof urls !== "object") {
-      logger.error("xel_Map.cacheSpritesheets: URLs arg is not a string or object");
-      return;
-    }
-
-    var a = document.createElement('a');
-    var ld = new PIXI.Loader();
-    for (var u in urls) {
-      // Convert to absolute URL for use as a normalized name
-      a.href = urls[u];
-      if (!(a.href in xel_Map.spritesheetCache))
-        ld.add(a.href, a.href);
-    }
-
-    ld.load(function (loader, resources) {
-      for (var res in resources) {
-        if (!resources[res].data) {
-          logger.error("xel_Map.cacheSpritesheets: No data found at URL: '" + resources[res].url + "'");
-          continue;
-        }
-        if (resources[res].type === PIXI.Loader.Resource.TYPE.IMAGE)
-          continue; // Spritesheet middleware adds the images to the loader
-        if (!resources[res].spritesheet) {
-          logger.error("xel_Map.cacheSpritesheets: Could not parse spritesheet data at URL: '" + resources[res].url + "'");
-          continue;
-        }
-        a.href = resources[res].url;
-        xel_Map.spritesheetCache[a.href] = resources[res].spritesheet;
-        xel_Map.spritesheetCache[resources[res].data["meta"]["image"]] = resources[res].spritesheet;
-      }
-      if (typeof callback === "function")
-        callback();
-    });
-  }
-
-
-  xel_Map.clearAll = function () {
-    var xel = require("xel");
-    xel.app.stage.removeChildren();
-    xel_Map._currentMap = null;
-    for (var map in xel_Map.cache)
-      delete xel_Map.cache[map];
-  }
-
-
-  xel_Map.prototype.activate = function () {
-    var xel = require("xel");
-    xel_Map._currentMap = this;
-    // TODO: Maybe use visibility instead of add/remove
-    xel.app.stage.removeChildren();
-    xel.app.stage.addChild(this.layers);
-  };
-
-
-  xel_Map.prototype._updateTiles = function() {
-    var ctx = this;
-    xel_Map.cacheSpritesheets(ctx._sheetURLs, function() {
-      // Isometric variables
-      var baseWidth = ctx.tilePixWidth / 2;
-      var baseHeight = ctx.tilePixHeight / 2;
-      var xMid = ctx.tilesHeight * baseWidth;
-
-      for (var t in ctx._tileUpdates) {
-        var tile = ctx._tileUpdates[t];
-        var sheet = xel_Map.spritesheetCache[tile.spritesheetURL];
-        if (sheet) {
-          var texName = sheet._frameKeys[tile.sheetIndex];
-          tile.texture = sheet.textures[texName];
-        }
-        else {
-          logger.debug("xel_Map.prototype._updateTiles: Missing spritesheet at map '" + ctx.name + "' grid index [" + tile.gridX.toString() + "][" + tile.gridY.toString() + "]");
-          continue;
-        }
-
-        if (ctx.angle % 2 === 0) { // See if map is in iso mode
-          tile.x = xMid + ((tile.gridX - tile.gridY) * baseWidth);
-          tile.y = (tile.gridX + tile.gridY) * baseHeight;
-        }
-        else { // Ortho
-          tile.x = tile.gridX * ctx.tilePixWidth;
-          tile.y = tile.gridY * ctx.tilePixHeight;
-        }
-
-        if (tile.gridY > ctx.tilesHeight)
-          logger.warn("xel_Map.prototype._updateTiles: Sprite position exceeds height of map '" + ctx.name + "'");
-      }
-      ctx._tileUpdates = [];
-    });
-  };
-
-
-  xel_Map.prototype._gridRotate = function(sheetInc, updateGrid) {
-    for (var l in this.layers.children) {
-      var layer = this.layers.children[l];
-      if (layer.type === "tilelayer") {
-        for (var t in layer.children) {
-          var tile = layer.children[t];
-          if (updateGrid) {
-            if (sheetInc >= 0) { // Clockwise
-              // _updateTiles sets the actual x/y coordinates
-              var oldY = tile.gridY;
-              tile.gridY = tile.gridX;
-              tile.gridX = this.tilesHeight - oldY - 1; // tilesHeight starts at 1, grid at 0
-            }
-            else { // Counter-clockwise
-              var oldX = tile.gridX;
-              tile.gridX = tile.gridY;
-              tile.gridY = this.tilesHeight - oldX - 1;
-            }
-            tile.zIndex = tile.gridX + tile.gridY;
-          }
-          // TODO: May need to un-hardcode spritesheet size
-          tile.sheetIndex = (tile.sheetIndex + sheetInc) % Config.maps.tilesetAngles;
-          this._tileUpdates.push(tile);
-        }
-        if (updateGrid)
-          layer.sortChildren();
-      }
-    }
-  }
-
-
-  xel_Map.prototype._rotate45 = function() {
-    this.angle = (this.angle + 1) % Config.maps.tilesetAngles;
-    if (this.angle % 2 === 0) { // Is map now in iso mode?
-      // If so, just increment tiles; iso uses the grid of the ortho before it
-      this._gridRotate(1, false);
-    }
-    else { // Otherwise, rotate the grid too
-      this._gridRotate(1, true);
-    }
-    this._updateTiles();
-  };
-
-
-  xel_Map.prototype._rotate90 = function() {
-    this.angle = (this.angle + 2) % Config.maps.tilesetAngles;
-    this._gridRotate(2, true);
-    this._updateTiles();
   };
 
   return xel_Map;
