@@ -5,8 +5,10 @@
 "use strict";
 
 // Set up default settings, which can be overridden at runtime
-define(function () {
+define(["logger"], function (logger) {
   var xel_Config = {};
+
+  logger.debugMode = true;
 
   xel_Config.display = {};
   xel_Config.display.intendedResolution = [2048, 1408]; // 8x8 test map tiles + vertical padding

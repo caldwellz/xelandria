@@ -19,9 +19,8 @@ requirejs.config({
     }
 });
 
-requirejs(["logger", "xel", "game"], function (logger, xel, game) {
+requirejs(["logger", "xel", "xel/Config", "game"], function (logger, xel, Config, game) {
   // Initialize engine, then hand control over to the game
-  logger.debugMode = true;
   xel.initialize();
   if (xel.initialized) {
     if (game.setup())
