@@ -52,6 +52,17 @@ function (logger, PIXI, Config, EntityManager, MapManager, Map, PersistentStorag
   };
 
 
+  xel.setCursor = function (style, imageName, isAbsolute) {
+    if (isAbsolute)
+      var imagePath = imageName;
+    else
+      var imagePath = Config.display.cursorBasePath + imageName;
+
+    var cursorCSS = "url('" + imagePath + "'),auto";
+    xel.app.renderer.plugins.interaction.cursorStyles[style] = cursorCSS;
+  };
+
+
   var _scaleTick = 0;
   function _scaleTicker() {
     // Wait until the stage resizes itself

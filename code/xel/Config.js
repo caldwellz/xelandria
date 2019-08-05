@@ -13,6 +13,7 @@ define(["logger"], function (logger) {
   xel_Config.display = {};
   xel_Config.display.intendedResolution = [2048, 1408]; // 8x8 test map tiles + vertical padding
   xel_Config.display.aspectRatio = (xel_Config.display.intendedResolution[0] / xel_Config.display.intendedResolution[1]);
+  xel_Config.display.cursorBasePath = "assets\/graphics\/gui\/cursors\/";
 
   xel_Config.maps = {};
   xel_Config.maps.basePath = "assets\/maps\/";

@@ -9,6 +9,8 @@ define(["logger", "xel"], function (logger, xel) {
 
 
   game.setup = function () {
+    xel.setCursor("default", "cursor-grey.png");
+    xel.setCursor("hover", "cursor-sepia.png");
     xel.MapManager.activate("a0m0-iso");
 
     return true;
