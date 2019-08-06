@@ -34,6 +34,14 @@ define(["logger"], function (logger) {
   };
 
 
+  xel_EntityManager.isValid = function (id) {
+    if ((typeof id === "number") && (xel_EntityManager._entities[id]))
+      return true;
+    else
+      return false;
+  }
+
+
   xel_EntityManager.setComponents = function (id, components) {
     var e = xel_EntityManager._entities[id];
     if (!e)
