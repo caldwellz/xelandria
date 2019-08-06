@@ -4,14 +4,15 @@
 
 "use strict";
 
-define(["logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/MapManager", "xel/Map", "xel/PersistentStorageManager"],
-function (logger, PIXI, Config, EntityManager, MapManager, Map, PersistentStorageManager) {
+define(["logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/InteractionGroups", "xel/MapManager", "xel/Map", "xel/PersistentStorageManager"],
+function (logger, PIXI, Config, EntityManager, InteractionGroups, MapManager, Map, PersistentStorageManager) {
   var xel = {};
   xel.initialized = false;
 
   // Copy submodules in
   xel.Config = Config;
   xel.EntityManager = EntityManager;
+  xel.InteractionGroups = InteractionGroups;
   xel.MapManager = MapManager;
   xel.Map = Map;
   xel.PersistentStorageManager = PersistentStorageManager;
