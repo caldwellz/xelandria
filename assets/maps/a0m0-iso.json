@@ -137,71 +137,71 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"dungeon\/barrelsStacked.json"
+         "source":"tilesets\/dungeon\/barrelsStacked.json"
         }, 
         {
          "firstgid":9,
-         "source":"dungeon\/stone.json"
+         "source":"tilesets\/dungeon\/stone.json"
         }, 
         {
          "firstgid":17,
-         "source":"dungeon\/stoneCorner.json"
+         "source":"tilesets\/dungeon\/stoneCorner.json"
         }, 
         {
          "firstgid":25,
-         "source":"dungeon\/stoneSide.json"
+         "source":"tilesets\/dungeon\/stoneSide.json"
         }, 
         {
          "firstgid":33,
-         "source":"dungeon\/stoneWall.json"
+         "source":"tilesets\/dungeon\/stoneWall.json"
         }, 
         {
          "firstgid":41,
-         "source":"dungeon\/stoneWallCorner.json"
+         "source":"tilesets\/dungeon\/stoneWallCorner.json"
         }, 
         {
          "firstgid":49,
-         "source":"dungeon\/stoneWallColumnIn.json"
+         "source":"tilesets\/dungeon\/stoneWallColumnIn.json"
         }, 
         {
          "firstgid":57,
-         "source":"dungeon\/stoneWallGateClosed.json"
+         "source":"tilesets\/dungeon\/stoneWallGateClosed.json"
         }, 
         {
          "firstgid":65,
-         "source":"dungeon\/tableRoundChairs.json"
+         "source":"tilesets\/dungeon\/tableRoundChairs.json"
         }, 
         {
          "firstgid":73,
-         "source":"dungeon\/tableRoundItemsChairs.json"
+         "source":"tilesets\/dungeon\/tableRoundItemsChairs.json"
         }, 
         {
          "firstgid":81,
-         "source":"dungeon\/woodenCrates.json"
+         "source":"tilesets\/dungeon\/woodenCrates.json"
         }, 
         {
          "firstgid":89,
-         "source":"dungeon\/woodenPile.json"
+         "source":"tilesets\/dungeon\/woodenPile.json"
         }, 
         {
          "firstgid":97,
-         "source":"dungeon\/chestClosed.json"
+         "source":"tilesets\/dungeon\/chestClosed.json"
         }, 
         {
          "firstgid":105,
-         "source":"library\/displayCaseSword.json"
+         "source":"tilesets\/library\/displayCaseSword.json"
         }, 
         {
          "firstgid":113,
-         "source":"library\/floorCarpet.json"
+         "source":"tilesets\/library\/floorCarpet.json"
         }, 
         {
          "firstgid":121,
-         "source":"library\/floorCarpetEnd.json"
+         "source":"tilesets\/library\/floorCarpetEnd.json"
         }, 
         {
          "firstgid":129,
-         "source":"library\/longTableDecorated.json"
+         "source":"tilesets\/library\/longTableDecorated.json"
         }],
  "tilewidth":256,
  "type":"map",
