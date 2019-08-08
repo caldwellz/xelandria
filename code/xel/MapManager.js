@@ -273,6 +273,26 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/Map"], function (requir
             sheet.name = resources[res].name;
             sheet.url = resources[res].url;
             sheet.imageName = resources[res].data["meta"]["image"];
+
+            // Import any custom directional animation data
+            if (sheet.data.directionalAnimations) {
+              var dirAnims = {};
+              for (var animGroupName in sheet.data.directionalAnimations) {
+                dirAnims[animGroupName] = [];
+                var animGroup = sheet.data.directionalAnimations[animGroupName];
+                for (var animNum in animGroup) {
+                  var animName = animGroup[animNum];
+                  var anim = sheet.animations[animName];
+                  if (anim)
+                    dirAnims[animGroupName].push(anim);
+                  else
+                    logger.warn("xel.MapManager.loadSpritesheets(): Animation '" + animName + "' in group '" + animGroupName + "' could not be found");
+                }
+              }
+              sheet.directionalAnimations = dirAnims;
+              sheet.defaultAnimationSpeed = sheet.data.defaultAnimationSpeed || 0;
+            }
+
             loadedSheets[sheet.name] = sheet;
             xel_MapManager._sheetCache[sheet.name] = xel_MapManager._sheetCache[sheet.imageName] = xel_MapManager._sheetCache[sheet.url] = sheet;
 

@@ -1,4 +1,37 @@
 {
+"directionalAnimations": {
+  "idle": [
+    "Male_Idle_0",
+    "Male_Idle_1",
+    "Male_Idle_2",
+    "Male_Idle_3",
+    "Male_Idle_4",
+    "Male_Idle_5",
+    "Male_Idle_6",
+    "Male_Idle_7"
+  ],
+  "run": [
+    "Male_Run_0",
+    "Male_Run_1",
+    "Male_Run_2",
+    "Male_Run_3",
+    "Male_Run_4",
+    "Male_Run_5",
+    "Male_Run_6",
+    "Male_Run_7"
+  ],
+  "pickup": [
+    "Male_Pickup_0",
+    "Male_Pickup_1",
+    "Male_Pickup_2",
+    "Male_Pickup_3",
+    "Male_Pickup_4",
+    "Male_Pickup_5",
+    "Male_Pickup_6",
+    "Male_Pickup_7"
+  ]
+},
+"defaultAnimationSpeed": 0.15,
 "frames": {
 	"Male_0_Idle0.png": {
 		"frame": {"x":1094, "y":997, "w":45, "h":133},
