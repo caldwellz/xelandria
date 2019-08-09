@@ -11,7 +11,16 @@ define(["logger", "xel"], function (logger, xel) {
   game.setup = function () {
     xel.setCursor("default", "cursor-grey.png");
     xel.setCursor("hover", "cursor-sepia.png");
-    xel.MapManager.activate("a0m0-iso");
+    xel.MapManager.activate("a0m0-iso", function () {
+      xel.InteractionGroups.on("loot_low", "pointerover", function () {
+        this.tint = 0x9999FF;
+        this.y -= 10;
+      });
+      xel.InteractionGroups.on("loot_low", "pointerout", function () {
+        this.tint = 0xFFFFFF;
+        this.y += 10;
+      });
+    });
 
     return true;
   };
