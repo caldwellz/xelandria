@@ -335,6 +335,9 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/Map"], function (requir
           xel_MapManager._maps[map].layers.visible = false;
       }
       map.layers.visible = true;
+
+      if (typeof callback === "function")
+        callback(map);
     }
     else
       logger.warn("xel.MapManager.activate(): map parameter invalid");
