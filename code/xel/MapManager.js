@@ -54,19 +54,8 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/Map"], function (requir
     var mapParams = {};
     for (var prop in mapData) {
       // Rename layer data so map.layers can be used for actual layer sprite containers
-      // Also do a shallow layer copy and import any custom layer properties
-      if (prop === "layers") {
-        mapParams.layerData = [];
-        for (var n = 0; n < mapData.layers.length; ++n) {
-          var layer = mapData.layers[n];
-          if (layer.properties) {
-            for (var customProp in layer.properties)
-              layer[layer.properties[customProp].name] = layer.properties[customProp].value;
-            //delete layer.properties;
-          }
-          mapParams.layerData[n] = layer;
-        }
-      }
+      if (prop === "layers")
+        mapParams.layerData = mapData.layers;
 
       // Import any custom map properties
       else if (prop === "properties")

@@ -4,7 +4,7 @@
 
 "use strict";
 
-define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager"], function (require, logger, PIXI, Config, EntityManager) {
+define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/InteractionGroups"], function (require, logger, PIXI, Config, EntityManager, InteractionGroups) {
   var xel_Map = {};
   xel_Map.prototype = {};
 
@@ -67,6 +67,13 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager"], functi
           container.y = layer.y;
           container.visible = layer.visible;
           container.alpha = layer.opacity;
+
+          // Import any custom layer properties set by Tiled
+          if (layer.properties) {
+            for (var customProp in layer.properties)
+              container[layer.properties[customProp].name] = layer.properties[customProp].value;
+            delete layer.properties;
+          }
 
           // Generate sprite creation list / options
           for (var n = 0; n < layer.data.length; ++n) {
@@ -152,8 +159,13 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager"], functi
             sprite[o] = opts[o];
 
           // Make sure the sprite is actually registered with the parent (e.g. the map layer)
-          if (sprite.parent)
+          if (sprite.parent) {
             sprite.parent.addChild(sprite);
+
+            // Check to see if parent is tagged as an interaction group
+            if (typeof sprite.parent.interactionGroup === "string")
+              InteractionGroups.addItems(sprite.parent.interactionGroup, sprite);
+          }
 
           // Check / calculate pixel coordinates from grid position
           if ((typeof sprite.gridX === "number") && (typeof sprite.gridY === "number") && map.orientation) {
