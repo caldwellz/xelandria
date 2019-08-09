@@ -195,6 +195,7 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/In
           var sprite = spriteList[n];
           if (sprite.spritesheet) {
             var sheet = loadedSheets[sprite.spritesheet];
+            sprite.spritesheet = sheet;
             if (sheet) {
               var texName = sheet._frameKeys[sprite.sheetIndex];
               sprite.texture = sheet.textures[texName];
