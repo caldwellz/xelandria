@@ -198,6 +198,14 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager", "xel/In
             if (sheet) {
               var texName = sheet._frameKeys[sprite.sheetIndex];
               sprite.texture = sheet.textures[texName];
+
+              // Set the sprite hit-test bounding box to be the actual trimmed image size (instead of the full tile area)
+              if (sprite.texture)
+                sprite.hitArea = sprite.texture.trim;
+              else {
+                logger.warn("xel.Map.prototype.addSprites(): Spritesheet valid but no texture found for sheetIndex '" + sprite.sheetIndex.toString() + "'");
+                logger.debug(texName);
+              }
             }
             else {
               // A load error was probably logged somewhere, and there's likely

@@ -54,9 +54,6 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager"], functi
           sprite.interactive = true;
           xel_InteractionGroups._groups[groupName].push(sprite);
 
-          // Set the hit-test bounding box to be the actual trimmed image size (instead of the full tile area)
-          sprite.hitArea = sprite.texture.trim;
-
           // Update the group list in the entity component
           if (sprite.entity) {
             var groupList = EntityManager.getComponent(sprite.entity, "interactionGroups") || [];
