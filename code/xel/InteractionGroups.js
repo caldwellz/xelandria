@@ -8,6 +8,13 @@ define(["require", "logger", "pixi5", "xel/Config", "xel/EntityManager"], functi
   var xel_InteractionGroups = {};
   xel_InteractionGroups._groups = {};
 
+  xel_InteractionGroups.getGroups = function () {
+    var nameList = [];
+    for (var name in xel_InteractionGroups._groups)
+      nameList.push(name);
+    return nameList;
+  }
+
 
   xel_InteractionGroups.addItems = function (groupName, items) {
     if ((typeof groupName === "string") && items) {
