@@ -18,9 +18,16 @@ logger.clear = function () {
 };
 
 
-logger.push = function (msg) {
-  if (msg) {
-    logger.messages.push(msg);
+logger.push = function (msg, color) {
+  if (typeof msg === 'string') {
+    if (typeof color === 'number')
+      color = "#" + color.toString(16);
+    if (typeof color === 'string') {
+      var msgHTML = '<span style="color: ' + color + '">' + msg + '</span>';
+      logger.messages.push(msgHTML);
+    }
+    else
+      logger.messages.push(msg);
     logger.logbox.innerHTML = logger.messages.join("<br />");
     logger.logbox.scrollTop = logger.logbox.scrollHeight;
   }
@@ -35,10 +42,9 @@ logger.rewrite = function (msg) {
 };
 
 
-logger.log = function (msg) {
+logger.log = function (msg, color) {
   if (msg) {
-    if (typeof msg === 'string')
-      logger.push(msg);
+    logger.push(msg, color);
     console.log(msg);
   }
 };
@@ -46,10 +52,8 @@ logger.log = function (msg) {
 
 logger.debug = function (msg) {
   if (msg && logger.debugMode) {
-    if (typeof msg === 'string') {
-      var msgHTML = '<span style="color: #909090;">[DBG] ' + msg + '</span>';
-      logger.push(msgHTML);
-    }
+    if (typeof msg === 'string')
+      logger.push("[DBG] " + msg, '#909090');
     console.debug(msg);
   }
 };
@@ -57,10 +61,8 @@ logger.debug = function (msg) {
 
 logger.warn = function (msg) {
   if (msg) {
-    if (typeof msg === 'string') {
-      var msgHTML = '<span style="color: orange;">[WARN] ' + msg + '</span>';
-      logger.push(msgHTML);
-    }
+    if (typeof msg === 'string')
+      logger.push("[WARN] " + msg, 'orange');
     console.warn(msg);
   }
 };
@@ -68,21 +70,17 @@ logger.warn = function (msg) {
 
 logger.error = function (msg) {
   if (msg) {
-    if (typeof msg === 'string') {
-      var msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
-      logger.push(msgHTML);
-    }
+    if (typeof msg === 'string')
+      logger.push("[ERR] " + msg, 'red');
     console.error(msg);
   }
 };
 
 
-// Uncaught throws will typically be logged in console by the window
+// Uncaught errors will typically already get logged in console by the window
 logger.boxError = function (msg) {
-  if (typeof msg === 'string') {
-    var msgHTML = '<span style="color: red;">[ERR] ' + msg + '</span>';
-    logger.push(msgHTML);
-  }
+  if (typeof msg === 'string')
+    logger.push("[CRIT] " + msg, 'red');
 };
 window.onerror = logger.boxError;
 
